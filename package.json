@@ -20,5 +20,13 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",
     "isomorphic-fetch": "^3.0.0"
-  }
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiap.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IchimakiKasura/kasu.nhentaiap.js/issues"
+  },
+  "homepage": "https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme"
 }
