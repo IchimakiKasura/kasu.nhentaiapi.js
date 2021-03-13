@@ -164,6 +164,3 @@ const val = await api.pRandSpecificTags("konosuba+aqua+sole-female", data=>{
 
 This is my First self-made API please enjoy using it!
 crediting me will be an appreciation!
-
-email me if theres a problem [Ichimaki Kasura](keanpepito9@gmail.com).
-sorry i don't have github I'm still new to these socialplatforms.
