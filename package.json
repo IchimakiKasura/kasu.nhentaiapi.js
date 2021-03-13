@@ -1,0 +1,24 @@
+{
+  "name": "kasu.nhentaiapi.js",
+  "version": "2.6.0",
+  "description": "easy nhentaiAPI module",
+  "main": "./lib/main.js",
+  "type": "commonjs",
+  "keywords": [
+    "nhentai",
+    "R18",
+    "api",
+    "hentai",
+    "unofficial"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "test": "node ./tests/debug.js"
+  },
+  "author": "Ichimaki Kasura",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
