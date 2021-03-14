@@ -1,6 +1,6 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "2.5.4",
+  "version": "2.7.2",
   "description": "easy nhentaiAPI module",
   "main": "./lib/main.js",
   "type": "commonjs",
@@ -12,8 +12,7 @@
     "unofficial"
   ],
   "scripts": {
-    "tsc": "tsc",
-    "test": "node ./tests/debug.js"
+    "test": "node ./test/test.js"
   },
   "author": "Ichimaki Kasura",
   "license": "MIT",
@@ -23,10 +22,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiap.js.git"
+    "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiapi.js.git"
   },
   "bugs": {
-    "url": "https://github.com/IchimakiKasura/kasu.nhentaiap.js/issues"
+    "url": "https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues"
   },
-  "homepage": "https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme"
+  "homepage": "https://github.com/IchimakiKasura/kasu.nhentaiapi.js#readme"
 }
