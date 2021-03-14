@@ -1,8 +1,8 @@
 <div style="text-align:center">
 <h1 style="font-weight:500">N-hentai API</h1>
 <p>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.5.4-brightgreen?style=flat"></a>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-12.9kB-green?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.5.5-brightgreen?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-11.6kB-green?style=flat"></a>
 <a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
 </p>
 </div>
@@ -160,7 +160,7 @@ const val = await api.pRandSpecificTags("konosuba+aqua+sole-female", data=>{
 * 1.0.3 - fixed data picture pages call
 * 2.0.0 - Updated the code to make it more light-weight less size
 * 2.5.0 - Fixed the ``.json()`` where the page array is ``undefined`` | added ``d.ts`` idk what that does but yeah you should see what kinda of function does 
-* 2.5.2 - fixed on readme.md typos
+* 2.5.2-2.5.5 - added github repos :> correct my codes! or add more? | fixed on readme.md typos. Probably will stay here for few months until i get back to work
 
 This is my First self-made API please enjoy using it!
 crediting me will be an appreciation!
