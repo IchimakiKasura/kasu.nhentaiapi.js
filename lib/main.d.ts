@@ -1,7 +1,7 @@
 // help
 export = main;
 declare class main {
-    getID(ID?:string|number): {
+    getID(ID?: string | number): {
         list: (data: {}) => Promise<any>;
         json: () => Promise<{
             base: {
