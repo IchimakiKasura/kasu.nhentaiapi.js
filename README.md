@@ -2,7 +2,7 @@
 <h1 style="font-weight:500">N-hentai API</h1>
 <p>
 <a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.0-brightgreen?style=flat"></a>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-11.6kB-green?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-12.6kB-green?style=flat"></a>
 <a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
 </p>
 </div>
