@@ -1,8 +1,8 @@
 <div style="text-align:center">
 <h1 style="font-weight:500">N-hentai API</h1>
 <p>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.5.4-brightgreen?style=flat"></a>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-12.9kB-green?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.0-brightgreen?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-11.6kB-green?style=flat"></a>
 <a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
 </p>
 </div>
@@ -155,13 +155,30 @@ const val = await api.pRandSpecificTags("konosuba+aqua+sole-female", data=>{
 
 ## updates
 
-* 1.0.0 - the creation
-* 1.0.1 - fixed some typos
-* 1.0.3 - fixed data picture pages call
-* 2.0.0 - Updated the code to make it more light-weight less size
-* 2.5.0 - Fixed the ``.json()`` where the page array is ``undefined`` | added ``d.ts`` idk what that does but yeah you should see what kinda of function does 
-* 2.5.2 - fixed on readme.md typos
-* 2.5.4 - added github repos :> correct my codes! or add more?
+[CHANGELOG](https://github.com/IchimakiKasura/kasu.nhentaiap.js/blob/main/CHANGELOG.md)
 
 This is my First self-made API please enjoy using it!
 crediting me will be an appreciation!
+
+# LICENSE 
+The MIT License (MIT)
+
+Copyright (c) 2021 Ichimaki Kasura
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
