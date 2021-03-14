@@ -17,7 +17,7 @@ Update
 
 Patch update
 
-* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme)
+* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiapi.js#readme)
 
 # 2.5.0
 
@@ -48,7 +48,7 @@ data.base.images.page_pic[0]
 
 Patch update
 
-* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme)
+* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiapi.js#readme)
 
 
 # 1.0.0
