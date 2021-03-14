@@ -1,3 +1,9 @@
+# 2.7.2
+
+Quick Hotfix Patch 
+
+* FIXED: ``main.js`` url is accidentally put to ``${url}`` instead of the link.
+
 # 2.7.0
 
 Minor update
@@ -17,7 +23,7 @@ Update
 
 Patch update
 
-* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiapi.js#readme)
+* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme)
 
 # 2.5.0
 
@@ -48,7 +54,7 @@ data.base.images.page_pic[0]
 
 Patch update
 
-* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiapi.js#readme)
+* Fixed some typos on the [readme.md](https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme)
 
 
 # 1.0.0
