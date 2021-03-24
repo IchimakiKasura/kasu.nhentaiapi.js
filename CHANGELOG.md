@@ -1,3 +1,10 @@
+# 2.7.3
+
+Patch update
+
+* updated: README.md
+* added my self-made discord bot called "nhentai-roulette" using this api
+
 # 2.7.2
 
 Quick Hotfix Patch 
