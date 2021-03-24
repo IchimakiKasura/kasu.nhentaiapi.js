@@ -4,6 +4,7 @@
 <a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.2-brightgreen?style=flat"></a>
 <a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-12.6kB-green?style=flat"></a>
 <a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
+<a href="https://discord.com/api/oauth2/authorize?client_id=816244016282599454&permissions=162816&scope=bot"><img alt="npm" src="https://img.shields.io/badge/Try%20the%20DiscordBot%20-gray?style=flat"></a>
 </p>
 </div>
 
@@ -41,7 +42,7 @@ api.getID(ID).list(data=>{
     data.title;         // EROGROS Vol. 2
     data.title_original // エログロス Vol.2
     data.cover;         // https://t.nhentai.net/galleries/1205270/cover.jpg
-    data.page_pics[0];     // https://t.nhentai.net/galleries/1205270/1t.jpg
+    data.page_pics[0];  // https://t.nhentai.net/galleries/1205270/1t.jpg
 
 })
 
@@ -50,30 +51,35 @@ async function json(){
     const val = await api.getID(ID).json()
     console.table(val)
     // {
-    //   BASE: {      
-    //     ID: 228922,
-    //     URL: 'https://nhentai.net/g/228922/',
-    //     TITLE: { ORIGIN: 'エログロス Vol.2', TRANSLATED: 'EROGROS Vol. 2' },
-    //     IMAGES: { 
+    //   id: {      
+    //     id: 228922,
+    //     url: 'https://nhentai.net/g/228922/',
+    //     title: { ORIGIN: 'エログロス Vol.2', TRANSLATED: 'EROGROS Vol. 2' },
+    //     images: { 
     //       cover: 'https://t.nhentai.net/galleries/1205270/cover.jpg'
     //       pages: [Array]
     //     },
-    //     TAG_TABLE: {
-    //       PARODIES: 'none',
-    //       CHARACTERS: 'none',
-    //       TAG: <censored>,
-    //       ARTISTS: 'uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu',
-    //       GROUPS: 'none',
-    //       LANGUAGES: 'japanese',
-    //       CATEGORIES: 'manga'
+    //     tag_table: {
+    //       parodies: 'none',
+    //       characters: 'none',
+    //       tag: <censored> sorry can't show it here,
+    //       artists: 'uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu',
+    //       groups: 'none',
+    //       languages: 'japanese',
+    //       categories: 'manga'
     //     },
-    //     pages: '244',
+    //     number_pages: '244',
     //     uploaded: '2 years, 1 month ago'
     //   }
     // }
 
     val.base.url // https://nhentai.net/g/228922/
 }
+
+// or you can do this on the json
+api.getID(ID).json().then(data=>{
+    data.base.url // https://nhentai.net/g/228922/
+})
 ```
 
 ## Modules
@@ -81,18 +87,14 @@ async function json(){
 ### getID(``id|string``)
 
 The ``id`` can be a string or a number or even the link itself.
-``getID()`` has functions ``.list(<fn>)`` and ``.json()``.
-
-Use ``.json()`` if re-defining a variable from the existing scope.
-If using ``.json()`` it always need inside an async function and needs an await or else 
-it wont work.
+``getID()`` has functions ``list(<fn>)`` and ``json()``.
 
 NOTE:
-``.json()`` defines are different from the others like:
+``json()`` calls are different from the ``list()``:
 ```js
-//json
+// json
 data.base.images.pages[0]
-//func
+// list
 data.page_pics[0]
 ```
 
@@ -112,7 +114,6 @@ await api.pRandom(data=>{
 
 ### pRand's
 
-**these modules need to be inside of the async function and use await before using them**
 * pRandTag
 * pRandParody
 * pRandArtist
