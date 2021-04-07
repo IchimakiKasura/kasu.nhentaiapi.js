@@ -1,8 +1,8 @@
 <div style="text-align:center">
 <h1 style="font-weight:500">N-hentai API</h1>
 <p>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.2-brightgreen?style=flat"></a>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-12.6kB-green?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.5-brightgreen?style=flat"></a>
+<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/lib%20folder%20size-13kB-green?style=flat"></a>
 <a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
 <a href="https://discord.com/api/oauth2/authorize?client_id=816244016282599454&permissions=162816&scope=bot"><img alt="npm" src="https://img.shields.io/badge/Try%20the%20DiscordBot%20-gray?style=flat"></a>
 </p>
@@ -43,7 +43,8 @@ api.getID(ID).list(data=>{
     data.title_original // エログロス Vol.2
     data.cover;         // https://t.nhentai.net/galleries/1205270/cover.jpg
     data.page_pics[0];  // https://t.nhentai.net/galleries/1205270/1t.jpg
-
+    //theres more
+    //tags, artist, groups, catergory, language, parodies, pages, characters, uploaded
 })
 
 // for json func
@@ -137,8 +138,8 @@ await pRandtag(data=>{
 
 Getting multiple tags? you'll need the ``pRandSpecificTags()``.
 
-It uses the Nhentai Searchbar functionality but with a twist.
-Every spaces needs to be a ``+`` and some needs ``-``.
+It uses the Nhentai Searchbar functionality but
+every spaces needs to have ``+`` if the sentence has 2 words like "sole female" it needs ``-`` as a spacing "sole-female".
 
 Example:
 ```js
@@ -156,30 +157,10 @@ const val = await api.pRandSpecificTags("konosuba+aqua+sole-female", data=>{
 
 ## updates
 
-[CHANGELOG](https://github.com/IchimakiKasura/kasu.nhentaiap.js/blob/main/CHANGELOG.md)
+[CHANGELOG](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md)
 
 This is my First self-made API please enjoy using it!
 crediting me will be an appreciation!
 
 # LICENSE 
-The MIT License (MIT)
-
-Copyright (c) 2021 Ichimaki Kasura
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+[MIT LICENSE](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md)
