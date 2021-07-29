@@ -1,7 +1,7 @@
 const API = require("../lib/main.js")
-api = new API()
+api = new API();
 
-async function test() {
+(async ()=>{
     const test = await api.getID(177013).json()
     console.log(`\ngetID().json():\n`)
 
@@ -26,6 +26,4 @@ async function test() {
         console.log(data.title)
         // METAMORPHOSIS
     })
-
-}
-test()
+})();

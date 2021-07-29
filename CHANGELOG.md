@@ -1,3 +1,10 @@
+# 2.7.6
+
+Quick Patch 
+
+* ``main.d.ts`` is finally fixed, I don't know how to use typescript but adding them so functions have meanings or 
+how they work. I don't know? Im not an expert.
+
 # 2.7.5
 
 Quick Hotfix Patch 
