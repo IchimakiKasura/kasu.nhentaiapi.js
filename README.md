@@ -164,3 +164,6 @@ crediting me will be an appreciation!
 
 # LICENSE 
 [MIT LICENSE](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md)
+
+## dev's note
+Thank you if you're using my repo. Star it if you liked it!
