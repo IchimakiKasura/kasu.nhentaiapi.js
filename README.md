@@ -1,10 +1,11 @@
 <div style="text-align:center">
 <h1 style="font-weight:500">N-hentai API</h1>
 <p>
-<a href="https://npmjs.com/package/kasu.nhentaiapi.js"><img alt="npm" src="https://img.shields.io/badge/stable%20version-2.7.6-brightgreen?style=flat"></a>
-<a href="https://nhentai.net/g/177013"><img alt="npm" src="https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat"></a>
-<a href="https://discord.com/api/oauth2/authorize?client_id=816244016282599454&permissions=162816&scope=bot"><img alt="npm" src="https://img.shields.io/badge/Try%20the%20DiscordBot%20-gray?style=flat"></a>
-</p>
+
+[![stable version](https://img.shields.io/badge/stable%20version-2.7.6-brightgreen?style=flat)](https://npmjs.com/package/kasu.nhentaiapi.js)
+[![Build Status](https://travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js.svg?branch=main)](https://travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
+[![badge 1](https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=flat) ](https://nhentai.net/g/177013)
+[![discord bot](https://img.shields.io/badge/Try%20the%20DiscordBot%20-gray?style=flat)](https://discord.com/api/oauth2/authorize?client_id=816244016282599454&permissions=162816&scope=bot)
 </div>
 
 The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") data.
