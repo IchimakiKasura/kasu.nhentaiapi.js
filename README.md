@@ -2,7 +2,7 @@
 <h1 style="font-weight:1000">N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-2.8.0-brightgreen?style=for-the-badge)](https://npmjs.com/package/kasu.nhentaiapi.js)
+[![stable version](https://img.shields.io/badge/stable%20version-2.8.1-brightgreen?style=for-the-badge)](https://npmjs.com/package/kasu.nhentaiapi.js)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 [![badge 1](https://img.shields.io/badge/unofficial%20nhentai%20API-gray?style=for-the-badge) ](https://nhentai.net/g/177013)
 [![discord bot](https://img.shields.io/badge/Try%20the%20DiscordBot%20-gray?style=for-the-badge)](https://discord.com/api/oauth2/authorize?client_id=816244016282599454&permissions=162816&scope=bot)
