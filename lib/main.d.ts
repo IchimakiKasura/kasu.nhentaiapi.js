@@ -6,8 +6,8 @@ declare module "kasu.nhentaiapi.js" {
 
         /**
         * @param {} ID {Required} Accepts string of numbers or just numbers. Any letter is declined.
-        * @returns list
-        * @returns json
+        * @returns list function
+        * @returns json function
         */
         getID:(ID:String|Number) => Promise<list|json>
 

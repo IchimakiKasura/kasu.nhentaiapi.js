@@ -1,3 +1,11 @@
+# 2.8.0
+
+Code update
+
+* Cleaned some trash code I've done like the 7 while statements on the ``shorter.js`` into a single
+for statement. like removing 1kb  from 3.86kb to 2.99kb* and Codes that repeats with same function but 
+different names has calling function so less space.
+
 # 2.7.6
 
 Quick Patch 
