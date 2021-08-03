@@ -29,7 +29,7 @@ to get the basic info about the ID/Doujin:
 
 ```js
 const API = require('kasu.nhentaiapi.js');
-const api = new API();
+const api = new API(); // name any you want "api, kasu, nhentai, ..." 
 
 // number | strings can do
 ID = 228922 //or "228922" or "https://nhentai.net/g/228922"
@@ -122,33 +122,34 @@ await api.pRandom(data=>{
 * pRandSpecificTags
 
 Tag,Parody,Artist,Group shares the same function it generate random ID based on the Given Tag
-NOTE: It only accepts 1 tag.
+NOTE: It only accepts 1 tag/name.
 ```js
 //returns a link
-await pRandtag().link
+await pRandtag("<name of the tag>").link
 
 //returns a ID
-await pRandtag().id
+await pRandtag("<name of the tag>").id
 
 //get data of the random generated ID of the given tag
-await pRandtag(data=>{
+await pRandtag("<name of the tag>", data=>{
     data.cover
 })
 ```
 
 Getting multiple tags? you'll need the ``pRandSpecificTags()``.
 
-It uses the Nhentai Searchbar functionality but
-every spaces needs to have ``+`` if the sentence has 2 words like "sole female" it needs ``-`` as a spacing "sole-female".
+It uses the Nhentai Searchbar functionality ~~but
+every spaces needs to have ``+`` if the sentence has 2 words like "sole female" it needs ``-`` as a spacing "sole-female".~~
+You can now do it without ``+`` because it will automatically add them after executing it.
 
 Example:
 ```js
 //getting only the ID
-const val = await api.pRandSpecificTags("konosuba+aqua+sole-female")
+const val = await api.pRandSpecificTags("konosuba aqua sole-female")
 console.log(val) //random ID of the given tags
 
 //gets the data of the given tags
-const val = await api.pRandSpecificTags("konosuba+aqua+sole-female", data=>{
+const val = await api.pRandSpecificTags("konosuba aqua sole-female", data=>{
     data.id
     data.title
     data.cover
