@@ -16,7 +16,15 @@ api = new API();
     // https://nhentai.net/g/177013/
     console.log(test.base.title.translated)
     // METAMORPHOSIS
+    
+    console.log(`\n==========================================================\n`)
+    // pRand Test
+    console.log(`pRandSpecificTags:\n`)
+    const val = await api.pRandSpecificTags("konosuba aqua sole-female")
+    console.log(val)
 
+    console.log(`\n==========================================================\n`)
+    
     api.getID(177013).list(data=>{
         console.log(`\ngetID().list():\n`)
         console.log(data.page_pics[0])
@@ -26,4 +34,6 @@ api = new API();
         console.log(data.title)
         // METAMORPHOSIS
     })
+
+
 })();
