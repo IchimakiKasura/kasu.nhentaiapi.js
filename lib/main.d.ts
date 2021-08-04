@@ -1,21 +1,16 @@
 declare module "kasu.nhentaiapi.js" {
-
     type list={};type json={};type Data=Function;
-
     class main {
-
         /**
         * @param {} ID {Required} Accepts string of numbers or just numbers. Any letter is declined.
         * @returns list function
         * @returns json function
         */
         getID:(ID:String|Number) => Promise<list|json>
-
         /**
         * @returns It returns a random "Existing" Doujin number
         */
         pRandID:() => Promise<Number>
-
         /**
         * Perhaps this is the most useful Function i've created.
         * @param {String} string {Required} spaces must be a "+" plus sign
@@ -49,9 +44,6 @@ declare module "kasu.nhentaiapi.js" {
         * @returns
         */
         pRandom:(data: Function) => Promise<Data>
-
     }
-
     export = main
-
 }
