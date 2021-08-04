@@ -15,7 +15,7 @@ api = new API();
     const val = await api.pRandSpecificTags("konosuba aqua sole-female")
     console.log(val)
     console.log(`\npRandTag:\n`)
-    const val2 = await api.pRandTag("sole female")
+    const val2 = await api.pRandTag("lolicon",()=>{},true) // should block when DiscordTOS is true 
     console.log(val2)
     console.log(`\n==========================================================\n`)
     
