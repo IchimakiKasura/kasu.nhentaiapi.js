@@ -1,3 +1,17 @@
+# 2.9.0
+
+## New Update
+### Added new `IsDiscord`
+* It blocks some selected tags that violate Discord rules.
+If the doujin has those tags it will throw an error. So that you will need to
+execute another one again until that doujin has a clean tags.
+- Added the `ReRollonFail` bool for this specific new feature.
+- this feature is credited to [crackheadakira](https://github.com/crackheadakira)
+
+`getID()` update:
+- the function `list()` is now removed so you can now only use 1 function `json()`
+this will cause changes on some codes that uses `list()` like `data.cover` is now `data.images.cover` see more on the [README](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md) page 
+
 # 2.8.1
 
 Code update
