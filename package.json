@@ -1,6 +1,6 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "2.8.5",
+  "version": "2.9.0",
   "description": "easy nhentaiAPI module",
   "main": "./lib/main.js",
   "type": "commonjs",

@@ -3,29 +3,28 @@ api = new API();
 
 // excess test are removed after build only important remains
 (async ()=>{
-    const test = await api.getID(177013).json()
-    console.log(`\ngetID().json():\n`)
-
-    console.log(test)
+    // const test = await api.getID(177013).json()
+    // console.log(`\ngetID().json():\n`)
+    // console.log(test)
     //should show a whole json
-    
     console.log(`\n==========================================================\n`)
+
+    api.IsDiscord = true;
     // pRand Test
     console.log(`pRandSpecificTags:\n`)
-    const val = await api.pRandSpecificTags("konosuba aqua sole-female")
-    console.log(val)
-    console.log(`\npRandTag:\n`)
-    try{
-        const val2 = await api.pRandTag("lolicon",()=>{},true) // should block when DiscordTOS is true 
-        console.log(val2)
-    } catch(e){console.log(e)} // should show the message
-    console.log(`\n==========================================================\n`)
-    
-    console.log(`\ngetID().list():\n`)
-    api.getID(177013).list(data=>{
-        console.log(data.url)
-        // https://nhentai.net/g/177013/
+    await api.pRandSpecificTags("konosuba aqua sole-female",data=>{
+        console.log(data.tags)
     })
 
+    api.ReRollonFail = true;
+    console.log(`\npRandTag: -crossdressing-\n`)
+    await api.pRandTag("crossdressing",(data)=>{console.log(data.tags)}) 
+    console.log(`\npRandTag: -lolicon-\n`)
+    try{
+        await api.pRandTag("lolicon",(data)=>{console.log(data.tags)}) // should cause and error
+    } catch(e) {
+        console.log(e)
+    }
 
+    console.log(`\n==========================================================\n`)
 })();
