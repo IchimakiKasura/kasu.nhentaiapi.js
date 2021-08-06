@@ -7,12 +7,14 @@ If the doujin has those tags it will throw an error. So that you will need to
 execute another one again until that doujin has a clean tags.
 - Added the `ReRollonFail` bool for this specific new feature.
 - this feature is credited to [crackheadakira](https://github.com/crackheadakira)
-
 `getID()` update:
 - the function `list()` is now removed so you can now only use 1 function `json()`
 this will cause changes on some codes that uses `list()` like `data.cover` is now `data.images.cover` see more on the [README](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md) page 
-
 - You can now download the mini file version of this 2.9 [here](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/releases/tag/2.9.0)
+
+- Problem right now after publishing 2.9:<br>
+the function `pRandom` has something weird saying `link is not defined` this will be fixed soon
+    
 # 2.8.1
 
 Code update
