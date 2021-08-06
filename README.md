@@ -90,7 +90,7 @@ await api.pRandom()
 
 // you can get the random number's data
 await api.pRandom(data=>{
-    data.iamges.cover
+    data.images.cover
 })
 ```
 
