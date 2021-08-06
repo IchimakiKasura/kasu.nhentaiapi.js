@@ -3,9 +3,9 @@ api = new API();
 
 // excess test are removed after build only important remains
 (async ()=>{
-    // const test = await api.getID(177013).json()
-    // console.log(`\ngetID().json():\n`)
-    // console.log(test)
+    const test = await api.getID(177013).json()
+    console.log(`\ngetID().json():\n`)
+    console.log(test)
     //should show a whole json
     console.log(`\n==========================================================\n`)
 
