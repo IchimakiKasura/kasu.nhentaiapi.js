@@ -1,30 +1,42 @@
+"use strict";
 const API = require("../lib/main.js")
-api = new API();
+const {exec} = require("child_process");
+let api = new API();
+
+const log = (...string)=>{
+    return console.log(...string);
+}
 
 // excess test are removed after build only important remains
 (async ()=>{
+    log(`   testing '.js' files: main.js`)
+    exec("node lib/main.js",(e,o,r)=>{log(o+r+'main.js done')})
+    log(`   testing '.js' files: fetcher.js`)
+    exec("node lib/src/fetcher.js",(e,o,r)=>{log(o+r+'fetcher.js done')})
+    log(`   testing '.js' files: shorter.js`)
+    exec("node lib/src/shorter.js",(e,o,r)=>{log(o+r+'shorter.js done')})
     const test = await api.getID(177013).json()
-    console.log(`\ngetID().json():\n`)
-    console.log(test)
+    log(`\ngetID().json():\n`)
+    log(test)
     //should show a whole json
-    console.log(`\n==========================================================\n`)
+    log(`\n==========================================================\n`)
 
     api.IsDiscord = true;
     // pRand Test
-    console.log(`pRandSpecificTags:\n`)
+    log(`pRandSpecificTags:\n`)
     await api.pRandSpecificTags("konosuba aqua sole-female",data=>{
-        console.log(data.tags)
+        log(data.tags)
     })
 
     api.ReRollonFail = true;
-    console.log(`\npRandTag: -crossdressing-\n`)
-    await api.pRandTag("crossdressing",(data)=>{console.log(data.tags)}) 
-    console.log(`\npRandTag: -lolicon-\n`)
+    log(`\npRandTag: -crossdressing-\n`)
+    await api.pRandTag("crossdressing",(data)=>{log(data.tags)}) 
+    log(`\npRandTag: -lolicon-\n`)
     try{
-        await api.pRandTag("lolicon",(data)=>{console.log(data.tags)}) // should cause and error
+        await api.pRandTag("lolicon",(data)=>{log(data.tags)}) // should cause and error
     } catch(e) {
-        console.log(e)
+        log(e)
     }
 
-    console.log(`\n==========================================================\n`)
+    log(`\n==========================================================\n`)
 })();

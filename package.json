@@ -12,7 +12,8 @@
     "unofficial"
   ],
   "scripts": {
-    "test": "node ./test/test.js"
+    "test": "node ./test/test.js",
+    "go": "node ./test/overAlltest.js"
   },
   "author": "Ichimaki Kasura",
   "license": "MIT",
