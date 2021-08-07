@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "13"
+  - node
 before_script:
   - npm i npm@latest
 script:
