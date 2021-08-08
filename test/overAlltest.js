@@ -19,10 +19,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     // basics
     log("\ngetID().json( data ):");
     await api.getID(350628).json(data=>{log(data.title)});
-    
-    log("\ndata = getID().json():");
+
+    log("data = getID().json():");
     let getIDdata = await api.getID(350628).json();
-    log(getIDdata.title.origin||getIDdata.title.translated);
+    log(getIDdata.title);
 
     // pRand functions
     log("\n     pRand functions:\n");
@@ -32,44 +32,44 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     //tag
     log("\npRandTag( data ):");
     await api.pRandTag("crossdressing",data=>{log(data.title)})
-    log("\ndata = pRandTag()");
+    log("data = pRandTag():");
     pRandData = await api.pRandTag("crossdressing")
-    log(pRandData.link);
+    log(pRandData);
 
     //artist
     log("\nRandArtist( data ):");
     await api.pRandArtist("abara",data=>{log(data.title)})
-    log("\ndata = pRandArtist()");
+    log("data = pRandArtist():");
     pRandData = await api.pRandArtist("abara")
-    log(pRandData.link);
+    log(pRandData);
 
     //parody
     log("\nRandParody( data ):");
     await api.pRandParody("kono subarashii sekai ni syukufuku o",data=>{log(data.title)})
-    log("\ndata = pRandParody()");
+    log("data = pRandParody():");
     pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-    log(pRandData.link);
+    log(pRandData);
 
     //group
     log("\nRandGroup( data ):");
     await api.pRandGroup("saisons",data=>{log(data.title)})
-    log("\ndata = pRandGroup()");
+    log("data = pRandGroup():");
     pRandData = await api.pRandGroup("saisons")
-    log(pRandData.link);
+    log(pRandData);
     
     //pRandom
     log("\nRandom( data ):");
     await api.pRandom(data=>{log(data.title)})
-    log("\ndata = pRandom()");
+    log("data = pRandom():");
     pRandData = await api.pRandom()
-    log(pRandData.link);
+    log(pRandData);
 
     //randomSpecificTag
     log("\nRandSpecificTags( data ):");
     await api.pRandSpecificTags("genshin impact venti",data=>{log(data.title)})
-    log("\ndata = pRandSpecificTags()");
+    log("data = pRandSpecificTags():");
     pRandData = await api.pRandSpecificTags("genshin impact venti")
-    log(pRandData.link);
+    log(pRandData);
 //#endregion
 
 //#region test with discord
@@ -88,7 +88,7 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     log("\ndata = getID().json():");
     try{
         const getIDdata = await api.getID(350628).json();
-        log(getIDdata.title.origin||getIDdata.title.translated);
+        log(getIDdata.title);
     }catch(e){log(e)}
     
     // pRand functions
@@ -101,10 +101,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandTag("crossdressing",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandTag()");
+    log("data = pRandTag():");
     try{
         pRandData = await api.pRandTag("crossdressing")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //artist
@@ -112,10 +112,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandArtist("abara",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandArtist()");
+    log("data = pRandArtist():");
     try{
         pRandData = await api.pRandArtist("abara")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //parody
@@ -123,10 +123,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandParody("kono subarashii sekai ni syukufuku o",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandParody()");
+    log("data = pRandParody():");
     try{
         pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //group
@@ -134,10 +134,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandGroup("saisons",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandGroup()");
+    log("data = pRandGroup():");
     try{
         pRandData = await api.pRandGroup("saisons")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //pRandom
@@ -145,10 +145,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandom(data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandom()");
+    log("data = pRandom():");
     try{
         pRandData = await api.pRandom()
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //randomSpecificTag
@@ -156,10 +156,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandSpecificTags("genshin impact venti",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandSpecificTags()");
+    log("data = pRandSpecificTags():");
     try{
         pRandData = await api.pRandSpecificTags("genshin impact venti")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 //#endregion
 
@@ -180,7 +180,7 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     log("\ndata = getID().json():");
     try{
         const getIDdata = await api.getID(350628).json();
-        log(getIDdata.title.origin||getIDdata.title.translated);
+        log(getIDdata.title);
     }catch(e){log(e)}
 
     // pRand functions
@@ -193,10 +193,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandTag("crossdressing",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandTag()");
+    log("data = pRandTag():");
     try{
         pRandData = await api.pRandTag("crossdressing")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //artist
@@ -204,10 +204,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandArtist("abara",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandArtist()");
+    log("data = pRandArtist():");
     try{
         pRandData = await api.pRandArtist("abara")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //parody
@@ -215,10 +215,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandParody("kono subarashii sekai ni syukufuku o",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandParody()");
+    log("data = pRandParody():");
     try{
         pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //group
@@ -226,10 +226,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandGroup("saisons",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandGroup()");
+    log("data = pRandGroup():");
     try{
         pRandData = await api.pRandGroup("saisons")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //pRandom
@@ -240,7 +240,7 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     log("\ndata = pRandom()");
     try{
         pRandData = await api.pRandom()
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 
     //randomSpecificTag
@@ -248,10 +248,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     try{
         await api.pRandSpecificTags("genshin impact venti",data=>{log(data.title)})
     }catch(e){log(e)}
-    log("\ndata = pRandSpecificTags()");
+    log("data = pRandSpecificTags():");
     try{
         pRandData = await api.pRandSpecificTags("genshin impact venti")
-        log(pRandData.link);
+        log(pRandData);
     }catch(e){log(e)}
 //#endregion
 

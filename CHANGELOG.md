@@ -1,3 +1,10 @@
+# 2.9.2
+Hotfix and code update
+
+- reduced the file size again by cleaning the codes.
+- `pRandom` is now fixed from giving `link is not defined` error message.
+- last 2.9.0 the json object that showed on the readme is fixed and available to all pRand functions. 
+
 # 2.9.0
 
 ## New Update
