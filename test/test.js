@@ -25,15 +25,15 @@ const log = (...string)=>{
     // pRand Test
     log(`pRandSpecificTags:\n`)
     await api.pRandSpecificTags("konosuba aqua sole-female",data=>{
-        log(data.tags)
+        log(data)
     })
 
     api.ReRollonFail = true;
     log(`\npRandTag: -crossdressing-\n`)
-    await api.pRandTag("crossdressing",(data)=>{log(data.tags)}) 
+    await api.pRandTag("crossdressing",(data)=>{log(data)}) 
     log(`\npRandTag: -lolicon-\n`)
     try{
-        await api.pRandTag("lolicon",(data)=>{log(data.tags)}) // should cause and error
+        await api.pRandTag("lolicon",(data)=>{log(data)}) // should cause and error
     } catch(e) {
         log(e)
     }
