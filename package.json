@@ -1,9 +1,10 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "2.9.2",
+  "version": "3.0.0",
   "description": "easy nhentaiAPI module",
   "main": "./lib/main.js",
   "type": "commonjs",
+  "typings": "./lib/main.d.ts",
   "keywords": [
     "nhentai",
     "R18",
@@ -12,8 +13,8 @@
     "unofficial"
   ],
   "scripts": {
-    "test": "node ./test/test.js",
-    "go": "node ./test/overAlltest.js"
+    "test": "test.bat",
+    "go": "node test/overAllTest"
   },
   "author": "Ichimaki Kasura",
   "license": "MIT",
