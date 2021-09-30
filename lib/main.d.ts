@@ -1,10 +1,42 @@
 declare module "kasu.nhentaiapi.js" {
-    type json={};type Data=Function;
+    interface Data {
+        id:string,
+        url:string,
+        title: {
+            origin:string,translated:string
+        },
+        images: {
+            cover:string,
+            pages:Array<string>
+        },
+        tag_table: {
+            parodies:string,
+            characters:string,
+            tag:string,
+            artist:string,
+            groups:string,
+            languages:string,
+            categories:string,
+        },
+        number_pages: number,
+        uploaded: string
+    }
+    type json = {
+        /**  
+         * @param {} json json
+         */
+        json(data: Data): Promise<Data>
+    }
     class main {
         /**
         * @param {} IsDiscord If you're using this API on discord bot enable this to true
         */
         IsDiscord:Boolean
+        /**
+        * @param {} blockedWords Add more blocked tags into the API
+        * @example blockedWords = "crossdressing brutality penetration"
+        */
+        blockedWords:string
         /**
         * @param {} ReRollonFail If you're using `IsDiscord` and don't wanna do your own retry `Func` use this.
         */
@@ -12,45 +44,49 @@ declare module "kasu.nhentaiapi.js" {
         /**
         * @param {} ID {Required} Accepts string of numbers or just numbers. Any letter is declined.
         * @returns
+        * @example
+        * getID(12938).json(data=>{})
+        * getID("12938").json(data=>{})
+        * getID("https://nhentai.net/g/12938").json(data=>{})
         */
-        getID:(ID:String|Number)=>Promise<json>
+        getID(ID:string|number):json
         /**
         * @returns It returns a random "Existing" Doujin number
         */
-        pRandID:()=>Promise<Number>
+        pRandID():Promise<number>
         /**
-        * Perhaps this is the most useful Function i've created.
-        * @param {String} string {Required} spaces must be a "+" plus sign
-        * @example pRandSpecificTags("konosuba+aqua+sole-female")
-        * @param {Function} data {optional} Use this if you want to get its properties like images or links etc.
+        * Perhaps this is the most useful function i've created.
+        * @param {string} string {Required} spaces must be a "+" plus sign
+        * @param {json} data {optional} Use this if you want to get its properties like images or links etc.
         * @returns
+        * @example pRandSpecificTags("konosuba+aqua+sole-female")
         */
-        pRandSpecificTags:(string:String,data:Function)=>Promise<Number|Data>
+        pRandSpecificTags(string:string,data:json):Promise<number|json>
         /**
         * Same as the "pRandSpecificTags" but strictly for Tag only. If a non-Tag entered will cause an error.
         * @returns
         */
-        pRandTag:(string:String,data:Function)=>Promise<Number|Data>
+        pRandTag(string:string,data:json):Promise<number|json>
         /**
-        * Same as the "pRandSpecificTags" but strictly for Parody only. If a non-Parody entered will cause an error.
+        * Same as the "pRandSpecificTags" but strictly for Parody only.
         * @returns
         */
-        pRandParody:(string:String,data:Function)=>Promise<Number|Data>
+        pRandParody(string:string,data:json):Promise<number|json>
         /**
-        * Same as the "pRandSpecificTags" but strictly for Artist only. If a non-Artist entered will cause an error.
+        * Same as the "pRandSpecificTags" but strictly for Artist only.
         * @returns
         */
-        pRandArtist:(string:String,data:Function)=>Promise<Number|Data>
+        pRandArtist(string:string,data:json):Promise<number|json>
         /**
-        * Same as the "pRandSpecificTags" but strictly for Group only. If a non-Group entered will cause an error.
+        * Same as the "pRandSpecificTags" but strictly for Group only.
         * @returns
         */
-        pRandGroup:(string:String,data:Function)=>Promise<Number|Data>
+        pRandGroup(string:string,data:json):Promise<number|json>
         /**
         * Same as the "pRandID" but will give you the properties of the selected random number.
         * @returns
         */
-        pRandom:(data: Function) => Promise<Data>
+        pRandom(data: json):Promise<json>
     }
-    export = main
+    export = main;
 }
