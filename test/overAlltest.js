@@ -1,15 +1,30 @@
 // this test file js is ignored on the package
 const API = require("../lib/main.js")
+const { exec } = require("child_process")
 api = new API();
 
 const log = (...string)=>{
     return console.log(...string);
 }
-
+function execPromise(command, name) {
+    return new Promise(function(resolve, reject) {
+        exec(command, (error, stdout, stderr) => {
+            resolve(name+" done");
+        });
+    });
+}
 (async ()=>{
+let start = new Date().getTime()
+log(`   testing '.js' files: main.js`)
+console.log(await execPromise("node lib/main.js",'main.js'))
+log(`   testing '.js' files: fetcher.js`)
+console.log(await execPromise("node lib/src/fetcher.js",'fetcher.js'))
+log(`   testing '.js' files: shorter.js`)
+console.log(await execPromise("node lib/src/shorter.js",'shorter.js'))
 log("\n\n------------------TEST STARTED------------------\n\n\n")
 
-    let pRandData = ""
+let pRandData = ""
+let startNoDiscord = new Date().getTime()
 //#region test with No discord
     log("       Test with no \"IsDiscord\" first:\n")
 
@@ -71,9 +86,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
     pRandData = await api.pRandSpecificTags("genshin impact venti")
     log(pRandData);
 //#endregion
-
+let endNoDiscord = new Date().getTime()
+let startDiscord = new Date().getTime()
 //#region test with discord
-    log("====================================================")
+    log("\n\n====================================================\n\n")
     log("       Test with \"IsDiscord\" second:\n")
     api.IsDiscord = true
     log(`api.IsDiscord    is set to ${api.IsDiscord}`)
@@ -162,9 +178,10 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
         log(pRandData);
     }catch(e){log(e)}
 //#endregion
-
+let endDiscord = new Date().getTime()
+let startDiscordReRollonFail = new Date().getTime()
 //#region test with discord and rerollonfail
-    log("====================================================")
+    log("\n\n====================================================\n\n")
     log("       Test with \"IsDiscord\" with \"ReRollonFail\" third:\n")
     api.IsDiscord = true
     log(`api.IsDiscord    is set to ${api.IsDiscord}`)
@@ -254,6 +271,108 @@ log("\n\n------------------TEST STARTED------------------\n\n\n")
         log(pRandData);
     }catch(e){log(e)}
 //#endregion
+let endDiscordReRollonFail = new Date().getTime()
+let startDiscordReRollonFailblockwords = new Date().getTime()
+//#region test with discord and rerollonfail and custom blockedwords
+    log("\n\n====================================================\n\n")
+    log("       Test with \"IsDiscord\" with \"ReRollonFail\" and \"blockedWords\"fourth:\n")
+    api.IsDiscord = true
+    log(`api.IsDiscord    is set to ${api.IsDiscord}`)
+    api.ReRollonFail = true
+    log(`api.ReRollonFail is set to ${api.ReRollonFail}`)
+    api.blockeWords = "crossdressing"
+    log(`api.blockeWords added blocked tag: ${api.blockeWords}`)
+    // basics
+    log("\ngetID().json( data ):");
 
+    try{
+        await api.getID(350628).json(data=>{log(data.title)});
+    }catch(e){log(e)}
+
+    log("\ndata = getID().json():");
+    try{
+        const getIDdata = await api.getID(350628).json();
+        log(getIDdata.title);
+    }catch(e){log(e)}
+
+    // pRand functions
+    log("\n     pRand functions:\n");
+    log("\npRandID():");
+    log(await api.pRandID())
+
+    //tag
+    log("\npRandTag( data ):");
+    try{
+        await api.pRandTag("crossdressing",data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("data = pRandTag():");
+    try{
+        pRandData = await api.pRandTag("crossdressing")
+        log(pRandData);
+    }catch(e){log(e)}
+
+    //artist
+    log("\nRandArtist( data ):");
+    try{
+        await api.pRandArtist("abara",data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("data = pRandArtist():");
+    try{
+        pRandData = await api.pRandArtist("abara")
+        log(pRandData);
+    }catch(e){log(e)}
+
+    //parody
+    log("\nRandParody( data ):");
+    try{
+        await api.pRandParody("kono subarashii sekai ni syukufuku o",data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("data = pRandParody():");
+    try{
+        pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
+        log(pRandData);
+    }catch(e){log(e)}
+
+    //group
+    log("\nRandGroup( data ):");
+    try{
+        await api.pRandGroup("saisons",data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("data = pRandGroup():");
+    try{
+        pRandData = await api.pRandGroup("saisons")
+        log(pRandData);
+    }catch(e){log(e)}
+
+    //pRandom
+    log("\nRandom( data ):");
+    try{
+        await api.pRandom(data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("\ndata = pRandom()");
+    try{
+        pRandData = await api.pRandom()
+        log(pRandData);
+    }catch(e){log(e)}
+
+    //randomSpecificTag
+    log("\nRandSpecificTags( data ):");
+    try{
+        await api.pRandSpecificTags("genshin impact venti",data=>{log(data.title)})
+    }catch(e){log(e)}
+    log("data = pRandSpecificTags():");
+    try{
+        pRandData = await api.pRandSpecificTags("genshin impact venti")
+        log(pRandData);
+    }catch(e){log(e)}
+//#endregion
+let endDiscordReRollonFailblockwords = new Date().getTime()
 log("\n\n------------------TEST FINISHED------------------\n\n\n")
+let end = new Date().getTime()
+log(`---------the test took '${end - start}ms' to finish---------`)
+log(`------the No discord took '${endNoDiscord - startNoDiscord}ms' to finish------`)
+log(`-----the with discord took '${endDiscord - startDiscord}ms' to finish-----`)
+log(`--the discord and rerollonfail took '${endDiscordReRollonFail - startDiscordReRollonFail}ms' to finish--`)
+log(`--the discord and rerollonfail and custom blockwords took '${endDiscordReRollonFailblockwords - startDiscordReRollonFailblockwords}ms' to finish--`)
+log(`NOTE: TIME DOES NOT START UNTIL THE JS IS STARTED`)
 })();
