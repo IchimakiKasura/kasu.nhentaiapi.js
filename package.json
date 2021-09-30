@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "test": "test.bat",
-    "go": "node ./test/overAllTest.js"
+    "go": "node ./test/overAlltest.js"
   },
   "author": "Ichimaki Kasura",
   "license": "MIT",
