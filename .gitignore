@@ -1,2 +1,15 @@
-/node_modules/
-/.npmignore
+# dependencies
+node_modules
+
+# ignores the overalltest.js when publishing to npm
+.npmignore
+
+# minified files
+/lib/main.min.js
+/lib/src/fetcher.min.js
+/lib/src/shorter.min.js
+
+minifier.js
+
+# So I'll no longer include the minified download files
+# I'll just minify the file before publishing it.
