@@ -32,9 +32,9 @@ echo.
 echo.
 echo Running Javascript test
 node ./test/test.js
+echo.
 echo TEST ENDED
 title TEST ENDED -simple test-
-pause>nul
 exit
 
 :otest
@@ -53,9 +53,9 @@ echo.
 echo.
 echo Running Javascript test
 node ./test/overAlltest.js
+echo.
 echo TEST ENDED
 title TEST ENDED -overall test-
-pause>nul
 exit
 
 @REM the minifier.js is hidden sorry
@@ -86,7 +86,7 @@ echo Minifying shorter.js - DONE
 echo minifying fectcher.js - DONE
 echo.
 echo.
-echo Renaming contents..
+echo Finishing contents..
 node minifier.js
 echo DONE
 exit
