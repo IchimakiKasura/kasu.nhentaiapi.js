@@ -2,9 +2,9 @@
 <img src="https://i.redd.it/fkg9yip5yyl21.png" height="50" title="nhentai"/><h1 style="font-weight:1000">N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-3.0.0-brightgreen?style=for-the-badge)](https://npmjs.com/package/kasu.nhentaiapi.js)
+[![stable version](https://img.shields.io/badge/stable%20version-3.0.1-brightgreen?style=for-the-badge)](https://npmjs.com/package/kasu.nhentaiapi.js)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
-![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "3.0.0 version is now already MINIFIED!")<br/>
+![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
 <img src="https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge" title="unofficial api of nhentai"/>
 </div>
 
