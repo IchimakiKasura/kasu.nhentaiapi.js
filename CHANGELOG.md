@@ -1,5 +1,10 @@
 <!-- official changelog will only store upto 5 versions -->
 <!-- go to the "CHANGELOG.history.md" to check all the changes -->
+# 3.0.1
+## Quick patch
+- version 3.0.0 code clean has some problem, putted too many `awaits` that makes it slow is now Fixed.</br>
+note: `overAlltest.js` should always end with a 1min test or lower, If it exceed 1min30sec means there's something wrong in my code please do a PR.
+
 # 3.0.0
 
 ## Update
@@ -44,10 +49,3 @@ Code update
 * Cleaned some trash code I've done like the 7 while statements on the ``shorter.js`` into a single
 for statement. like removing 1kb  from 3.86kb to 2.99kb* and Codes that repeats with same function but 
 different names has calling function so less space.
-
-# 2.7.6
-
-Quick Patch 
-
-* ``main.d.ts`` is finally fixed, I don't know how to use typescript but adding them so functions have meanings or 
-how they work. I don't know? Im not an expert.
