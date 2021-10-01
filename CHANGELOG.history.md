@@ -1,4 +1,9 @@
 <!-- All versions changelog -->
+# 3.0.1
+## Quick patch
+- version 3.0.0 code clean has some problem, putted too many `awaits` that makes it slow is now Fixed.</br>
+note: `overAlltest.js` should always end with a 1min test or lower, If it exceed 1min30sec means there's something wrong in my code please do a PR.
+
 # 3.0.0
 
 ## Update
