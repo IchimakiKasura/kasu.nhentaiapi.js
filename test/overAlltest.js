@@ -1,7 +1,9 @@
 // this test file js is ignored on the package
-const API = require("../lib/main.js")
-const { exec } = require("child_process")
-api = new API();
+const API = require("../lib/main.min.js")
+const exec = require("child_process").exec
+let api = new API();
+
+const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 
 const log = (...string)=>{
     return console.log(...string);
@@ -369,10 +371,10 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
 let endDiscordReRollonFailblockwords = new Date().getTime()
 log("\n\n------------------TEST FINISHED------------------\n\n\n")
 let end = new Date().getTime()
-log(`---------the test took '${end - start}ms' to finish---------`)
-log(`------the No discord took '${endNoDiscord - startNoDiscord}ms' to finish------`)
-log(`-----the with discord took '${endDiscord - startDiscord}ms' to finish-----`)
-log(`--the discord and rerollonfail took '${endDiscordReRollonFail - startDiscordReRollonFail}ms' to finish--`)
-log(`--the discord and rerollonfail and custom blockwords took '${endDiscordReRollonFailblockwords - startDiscordReRollonFailblockwords}ms' to finish--`)
+log(`---------the test took '${date(end - start)}' to finish---------`)
+log(`------the No discord took '${date(endNoDiscord - startNoDiscord)}' to finish------`)
+log(`-----the with discord took '${date(endDiscord - startDiscord)}' to finish-----`)
+log(`--the discord and rerollonfail took '${date(endDiscordReRollonFail - startDiscordReRollonFail)}' to finish--`)
+log(`--the discord and rerollonfail and custom blockwords took '${date(endDiscordReRollonFailblockwords - startDiscordReRollonFailblockwords)}' to finish--`)
 log(`NOTE: TIME DOES NOT START UNTIL THE JS IS STARTED`)
 })();

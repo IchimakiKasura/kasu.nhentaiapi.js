@@ -3,6 +3,8 @@ const API = require("../lib/main.min.js")
 const exec = require("child_process").exec;
 let api = new API();
 
+const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
+
 const log = (...string)=>{
     return console.log(...string);
 }
@@ -56,6 +58,6 @@ let start = new Date().getTime()
     }catch(e){log(e)}
     log(`\n==========================================================\n`)
 let end = new Date().getTime()
-log(`---------the test took '${end - start}ms' to finish---------`)
+log(`---------the test took '${date(end - start)}' to finish---------`)
 log(`NOTE: TIME DOES NOT START UNTIL THE JAVASCRIPT IS STARTED`)
 })();
