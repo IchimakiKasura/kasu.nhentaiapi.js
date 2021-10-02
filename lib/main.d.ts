@@ -21,17 +21,14 @@ declare module "kasu.nhentaiapi.js" {
         number_pages: number,
         uploaded: string
     }
-    type json = {
-        /**  
-         * @param {} json json
-         */
-        json(data: Data): Promise<Data>
-    }
+    type json = function(Data)
+    type returns = {json(data?: json): void}
+    
     class main {
         /**
         * @param {} IsDiscord If you're using this API on discord bot enable this to true
         */
-        IsDiscord:Boolean
+        IsDiscord:boolean
         /**
         * @param {} blockedWords Add more blocked tags into the API
         * @example blockedWords = "crossdressing brutality penetration"
@@ -40,7 +37,7 @@ declare module "kasu.nhentaiapi.js" {
         /**
         * @param {} ReRollonFail If you're using `IsDiscord` and don't wanna do your own retry `Func` use this.
         */
-        ReRollonFail:Boolean
+        ReRollonFail:boolean
         /**
         * @param {} ID {Required} Accepts string of numbers or just numbers. Any letter is declined.
         * @returns
@@ -49,44 +46,44 @@ declare module "kasu.nhentaiapi.js" {
         * getID("12938").json(data=>{})
         * getID("https://nhentai.net/g/12938").json(data=>{})
         */
-        getID(ID:string|number):json
+        getID(ID:string|number): returns
         /**
         * @returns It returns a random "Existing" Doujin number
         */
         pRandID():Promise<number>
         /**
         * Perhaps this is the most useful function i've created.
-        * @param {string} string {Required} spaces must be a "+" plus sign
+        * @param {string} string {Required} Any tags would do.
         * @param {json} data {optional} Use this if you want to get its properties like images or links etc.
         * @returns
-        * @example pRandSpecificTags("konosuba+aqua+sole-female")
+        * @example pRandSpecificTags("konosuba aqua sole-female")
         */
-        pRandSpecificTags(string:string,data:json):Promise<number|json>
+        pRandSpecificTags(string?:string,data?:json):Promise<number|json>
         /**
         * Same as the "pRandSpecificTags" but strictly for Tag only. If a non-Tag entered will cause an error.
         * @returns
         */
-        pRandTag(string:string,data:json):Promise<number|json>
+        pRandTag(string?:string,data?:json):Promise<number|json>
         /**
         * Same as the "pRandSpecificTags" but strictly for Parody only.
         * @returns
         */
-        pRandParody(string:string,data:json):Promise<number|json>
+        pRandParody(string?:string,data?:json):Promise<number|json>
         /**
         * Same as the "pRandSpecificTags" but strictly for Artist only.
         * @returns
         */
-        pRandArtist(string:string,data:json):Promise<number|json>
+        pRandArtist(string?:string,data?:json):Promise<number|json>
         /**
         * Same as the "pRandSpecificTags" but strictly for Group only.
         * @returns
         */
-        pRandGroup(string:string,data:json):Promise<number|json>
+        pRandGroup(string?:string,data?:json):Promise<number|json>
         /**
         * Same as the "pRandID" but will give you the properties of the selected random number.
         * @returns
         */
-        pRandom(data: json):Promise<json>
+        pRandom(data?: json):Promise<json>
     }
     export = main;
 }
