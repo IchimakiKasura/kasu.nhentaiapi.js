@@ -1,5 +1,34 @@
 <!-- official changelog will only store upto 5 versions -->
 <!-- go to the "CHANGELOG.history.md" to check all the changes -->
+# 3.2.1
+## Quick Fix
+- [issue #3](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/3) is fixed.
+## Changes
+- You can now see the property inside of the json's Data on the new Declaration.<br>
+example of the new declaration:
+<br>
+<img src="https://user-images.githubusercontent.com/80595346/137313293-342282e4-fa55-475f-aa9b-47dcab9c8cc6.png" width="450px"><br>
+
+- New property `requestHeaders`
+- API's fetcher now uses `https`. If you experience slowdowns you can use `Isomorpic-fetch` again from the
+previous version but you can't use the new property `requestHeaders`. check my test on some few "[fetchers](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/src/bruh.log)" 
+
+## idk
+- Added `IgnoreNone`, Idk about this but it just removes the "blank/empty" tags on the Json when received. Example:
+```js
+// IgnoreNone = false;
+// the json object will join the empty tags
+    title: {
+        origin: 'none'
+        translated: 'example'
+    }
+// IgnoreNone = true;
+// It'll remove the 'none' or 'blank/empty' tags in the object
+    title: {
+        translated: 'example'
+    }
+// calling the removed tag will result in an error if IgnoreNone is True.
+```
 # 3.0.1
 ## Quick patch
 - version 3.0.0 code clean has some problem, putted too many `awaits` that makes it slow is now Fixed.</br>
@@ -41,11 +70,3 @@ this will cause changes on some codes that uses `list()` like `data.cover` is no
 
 - Problem right now after publishing 2.9:<br>
 the function `pRandom` has something weird saying `link is not defined` this will be fixed soon
-    
-# 2.8.1
-
-Code update
-
-* Cleaned some trash code I've done like the 7 while statements on the ``shorter.js`` into a single
-for statement. like removing 1kb  from 3.86kb to 2.99kb* and Codes that repeats with same function but 
-different names has calling function so less space.
