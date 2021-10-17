@@ -2,17 +2,17 @@
 <img src="https://i.redd.it/fkg9yip5yyl21.png" height="50" title="nhentai"/><h1 style="font-weight:1000">N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-3.0.1-brightgreen?style=for-the-badge)](https://npmjs.com/package/kasu.nhentaiapi.js)
-[![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
+[![stable version](https://img.shields.io/badge/stable%20version-3.2.1-brightgreen?style=for-the-badge)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md#321)
+[![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
 <img src="https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge" title="unofficial api of nhentai"/>
 </div>
 
 The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") data.
-* Fast
+* Fast*
 * Easy to use
 * Reliable* :>
-* >! Discord friendly?
+* > Discord friendly?
 ### Install
 To install "N-hentai-api" type these:
 ```
@@ -23,23 +23,24 @@ npm i kasu.nhentaiapi.js
 To get the basic info about the ID/Doujin:
 
 ```js
-const API = require('kasu.nhentaiapi.js');
-const api = new API(); // name any you want "api, kasu, nhentai, ..." 
+const Example = require('kasu.nhentaiapi.js');
+const ExampleApi = new Example(); // name any you want "api, kasu, nhentai, ..." 
 
 //          ----number | strings can do----
-ID = 228922 //or "228922" or "https://nhentai.net/g/228922"
+const ID = 228922 //or "228922" or "https://nhentai.net/g/228922"
 async function json(){
-    const val = await api.getID(ID).json()
-    val.url // https://nhentai.net/g/228922/
+    const val = await ExampleApi.getID(ID).json()
+    val.url
+    // OR
+    ExampleApi.getID(ID).json(data=>{data.url})
+    // OR
+    (await ExampleApi.getID(ID).json()).url
+    // result: https://nhentai.net/g/228922/
 }
-api.getID(ID).json().then(data=>{
-    data.url // https://nhentai.net/g/228922/
-})
 ```
 ## Modules
 ### getID(``id|string``)
 The ``id`` can be a string or a number or even the link itself.
-``getID()`` has function ``json()``.
 - ### ``Json``:
 ```json
 // This object is also used on pRand's data functions.
@@ -48,14 +49,16 @@ The ``id`` can be a string or a number or even the link itself.
     "url": "https://nhentai.net/g/228922/",
     "title": { 
         "origin": "エログロス Vol.2",
-        "translated": "EROGROS Vol. 2"
+        "translated": "EROGROS Vol. 2",
+        "originFull": "[アンソロジー] エログロス Vol.2 [DL版]",
+        "translatedFull": "[Anthology] EROGROS Vol. 2 [Digital]"
     },
     "images": { 
         "cover": "https://t.nhentai.net/galleries/1205270/cover.jpg",
         "pages": [
             "https://t.hentain.net/galleries/1205270/1t.jpg"
             "https://t.hentain.net/galleries/1205270/2t.jpg"
-            // < and so on and on.. >
+            "and 242 more"
         ]
     },
     "tag_table": {
@@ -89,7 +92,8 @@ await api.pRandom(data=>{
 * pRandGroup(`tag`, `function`)
 * pRandSpecificTags(`tag`, `function`)
 * pRandom(`function`)
-Tag,Parody,Artist,Group shares the same function it generate random ID based on the Given Tag. <br/>
+
+Tag, Parody, Artist, Group shares the same function it generate random ID based on the Given Tag. <br/>
 NOTE: It only accepts 1 tag/name that **exist** on the nhentai database.
 ```js
 //returns a link | id
@@ -101,8 +105,9 @@ The ``pRandSpecificTags()`` uses the Nhentai Searchbar functionality.
 Example:
 ```js
 //gets the data of the given tags
-const val = await api.pRandSpecificTags("konosuba aqua sole female", data=>{/* data.[json object] */})
+await api.pRandSpecificTags("konosuba aqua sole female", data=>{/* data.[json object] */})
 ```
+## Properties
 ### IsDiscord `boolean`
 - default bool set is `false`.
 <br/>
@@ -111,7 +116,21 @@ If you're using this API on your DiscordBot Enabling this will block some tags t
 ### blockedWords `string`
 - you can add your own blocked tags here.
 ### ReRollonFail `boolean`
-- note: By enabling this it might slow down the process unless if you have a fast internet.
+- note: By enabling this it might slow down the process unless if you have a fast internet or processor.
+### IgnoreNone `boolean`
+- Ignore showing empty / none tags on the json object.
+```js
+// false
+{
+    "tag": "none",
+    "parodies": "konosuba"
+}
+// true
+{
+    "parodies": "konosuba"
+}
+```
+### requestHeaders `object`
 # Updates
 [CHANGELOG](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md)
 # LICENSE 
