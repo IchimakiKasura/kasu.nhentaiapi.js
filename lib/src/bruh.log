@@ -1,0 +1,53 @@
+should improve the speed tho or idk pls help
+
+you might experience slowdowns on the new fetcher because of
+my shit "redirect" code or etc. Or i'm just experiencing this because of my
+slow ass "2.40ghz" cpu clock and bad internet.
+
+check the overAlltest and test
+
+ Tested on some few packages.
+isomorphic-fetch
+1: 401.79
+2: 414.49
+3: 477.77
+4: 490.30
+5: 579.25
+
+avg: 472.72
+
+isomorphic-fetch (no options)
+1: 336.96
+2: 353.57
+3: 418.74
+4: 417.87
+5: 466.33
+
+avg: 398.69
+
+undici
+1: 344.65
+2: 398.92
+3: 354.25
+4: 401.53
+5: 420.32
+
+avg: 383.93
+
+node-fetch
+1: 338.41
+2: 344.95
+3: 407.45
+4: 471.50
+5: 410.94
+
+avg: 394.65
+
+https
+1: 402.17
+2: 328.16
+3: 337.39
+4: 340.87
+5: 422.21
+
+avg: 366.16
