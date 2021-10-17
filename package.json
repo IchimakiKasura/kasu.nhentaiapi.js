@@ -1,16 +1,20 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "3.0.1",
-  "description": "easy nhentaiAPI module",
+  "version": "3.2.1",
+  "contributors": [
+    "crackheadakira"
+  ],
+  "description": "Easy nhentai API",
   "main": "./lib/main.min.js",
   "type": "commonjs",
-  "typings": "./lib/main.d.ts",
+  "types": "./lib/main.d.ts",
   "keywords": [
     "nhentai",
     "R18",
     "api",
     "hentai",
-    "unofficial"
+    "unofficial",
+    "wrapper"
   ],
   "scripts": {
     "test": "test.bat",
@@ -19,8 +23,11 @@
   "author": "Ichimaki Kasura",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "isomorphic-fetch": "^3.0.0"
+    "cheerio": "^1.0.0-rc.10"
+  },
+  "devDependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "undici": "^4.7.3"
   },
   "repository": {
     "type": "git",
