@@ -1,7 +1,7 @@
 "use strict";
-const API = require("../lib/main.min.js")
+const API = require("../lib/main")
 const exec = require("child_process").exec;
-let api = new API();
+const api = new API();
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 
@@ -18,19 +18,21 @@ let execPromise=(command, name)=>{
 // excess test are removed after build only important remains
 (async ()=>{
 let start = new Date().getTime()
+    api.IgnoreNone = true;
     log(`   testing '.js' files: main.js`)
     console.log(await execPromise("node lib/main.js",'main.js'))
     log(`   testing '.js' files: fetcher.js`)
     console.log(await execPromise("node lib/src/fetcher.js",'fetcher.js'))
     log(`   testing '.js' files: shorter.js`)
     console.log(await execPromise("node lib/src/shorter.js",'shorter.js'))
-    const test = await api.getID(177013).json()
+    const test = await api.getID("https://nhentai.net/g/228922/").json()
     log(`\ngetID().json():\n`)
     log(test)
     //should show a whole json
     log(`\n==========================================================\n`)
 
     api.IsDiscord = true;
+    api.ReRollonFail = true;
     // pRand Test
     log(`pRandSpecificTags:\n`)
     try{
@@ -39,7 +41,6 @@ let start = new Date().getTime()
 
     log(`\n==========================================================\n`)
 
-    api.ReRollonFail = true;
     log(`\npRandTag: -crossdressing-\n`)
     try{
         await api.pRandTag("crossdressing",(data)=>{log(data)}) 

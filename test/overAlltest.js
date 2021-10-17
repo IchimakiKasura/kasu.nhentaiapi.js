@@ -1,13 +1,10 @@
 // this test file js is ignored on the package
-const API = require("../lib/main.min.js")
+const API = require("../lib/main")
 const exec = require("child_process").exec
 let api = new API();
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
-
-const log = (...string)=>{
-    return console.log(...string);
-}
+const log = (...string)=>{return console.log(...string);}
 function execPromise(command, name) {
     return new Promise(function(resolve, reject) {
         exec(command, (error, stdout, stderr) => {
@@ -51,42 +48,42 @@ let startNoDiscord = new Date().getTime()
     await api.pRandTag("crossdressing",data=>{log(data.title)})
     log("data = pRandTag():");
     pRandData = await api.pRandTag("crossdressing")
-    log(pRandData);
+    log(pRandData.tag_table.tag);
 
     //artist
     log("\nRandArtist( data ):");
-    await api.pRandArtist("abara",data=>{log(data.title)})
+    await api.pRandArtist("zinno",data=>{log(data.title)})
     log("data = pRandArtist():");
-    pRandData = await api.pRandArtist("abara")
-    log(pRandData);
+    pRandData = await api.pRandArtist("zinno")
+    log(pRandData.tag_table.tag);
 
     //parody
     log("\nRandParody( data ):");
     await api.pRandParody("kono subarashii sekai ni syukufuku o",data=>{log(data.title)})
     log("data = pRandParody():");
     pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-    log(pRandData);
+    log(pRandData.tag_table.tag);
 
     //group
     log("\nRandGroup( data ):");
     await api.pRandGroup("saisons",data=>{log(data.title)})
     log("data = pRandGroup():");
     pRandData = await api.pRandGroup("saisons")
-    log(pRandData);
+    log(pRandData.tag_table.tag);
     
     //pRandom
     log("\nRandom( data ):");
     await api.pRandom(data=>{log(data.title)})
     log("data = pRandom():");
     pRandData = await api.pRandom()
-    log(pRandData);
+    log(pRandData.tag_table.tag);
 
     //randomSpecificTag
     log("\nRandSpecificTags( data ):");
     await api.pRandSpecificTags("genshin impact venti",data=>{log(data.title)})
     log("data = pRandSpecificTags():");
     pRandData = await api.pRandSpecificTags("genshin impact venti")
-    log(pRandData);
+    log(pRandData.tag_table.tag);
 //#endregion
 let endNoDiscord = new Date().getTime()
 let startDiscord = new Date().getTime()
@@ -122,18 +119,18 @@ let startDiscord = new Date().getTime()
     log("data = pRandTag():");
     try{
         pRandData = await api.pRandTag("crossdressing")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //artist
     log("\nRandArtist( data ):");
     try{
-        await api.pRandArtist("abara",data=>{log(data.title)})
+        await api.pRandArtist("zinno",data=>{log(data.title)})
     }catch(e){log(e)}
     log("data = pRandArtist():");
     try{
-        pRandData = await api.pRandArtist("abara")
-        log(pRandData);
+        pRandData = await api.pRandArtist("zinno")
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //parody
@@ -144,7 +141,7 @@ let startDiscord = new Date().getTime()
     log("data = pRandParody():");
     try{
         pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //group
@@ -155,7 +152,7 @@ let startDiscord = new Date().getTime()
     log("data = pRandGroup():");
     try{
         pRandData = await api.pRandGroup("saisons")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //pRandom
@@ -166,7 +163,7 @@ let startDiscord = new Date().getTime()
     log("data = pRandom():");
     try{
         pRandData = await api.pRandom()
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //randomSpecificTag
@@ -177,7 +174,7 @@ let startDiscord = new Date().getTime()
     log("data = pRandSpecificTags():");
     try{
         pRandData = await api.pRandSpecificTags("genshin impact venti")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 //#endregion
 let endDiscord = new Date().getTime()
@@ -215,18 +212,18 @@ let startDiscordReRollonFail = new Date().getTime()
     log("data = pRandTag():");
     try{
         pRandData = await api.pRandTag("crossdressing")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //artist
     log("\nRandArtist( data ):");
     try{
-        await api.pRandArtist("abara",data=>{log(data.title)})
+        await api.pRandArtist("zinno",data=>{log(data.title)})
     }catch(e){log(e)}
     log("data = pRandArtist():");
     try{
-        pRandData = await api.pRandArtist("abara")
-        log(pRandData);
+        pRandData = await api.pRandArtist("zinno")
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //parody
@@ -237,7 +234,7 @@ let startDiscordReRollonFail = new Date().getTime()
     log("data = pRandParody():");
     try{
         pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //group
@@ -248,7 +245,7 @@ let startDiscordReRollonFail = new Date().getTime()
     log("data = pRandGroup():");
     try{
         pRandData = await api.pRandGroup("saisons")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //pRandom
@@ -259,7 +256,7 @@ let startDiscordReRollonFail = new Date().getTime()
     log("\ndata = pRandom()");
     try{
         pRandData = await api.pRandom()
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //randomSpecificTag
@@ -270,7 +267,7 @@ let startDiscordReRollonFail = new Date().getTime()
     log("data = pRandSpecificTags():");
     try{
         pRandData = await api.pRandSpecificTags("genshin impact venti")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 //#endregion
 let endDiscordReRollonFail = new Date().getTime()
@@ -282,8 +279,8 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log(`api.IsDiscord    is set to ${api.IsDiscord}`)
     api.ReRollonFail = true
     log(`api.ReRollonFail is set to ${api.ReRollonFail}`)
-    api.blockeWords = "crossdressing"
-    log(`api.blockeWords added blocked tag: ${api.blockeWords}`)
+    api.blockedWords = "crossdressing"
+    log(`api.blockeWords added blocked tag: ${api.blockedWords}`)
     // basics
     log("\ngetID().json( data ):");
 
@@ -310,18 +307,18 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log("data = pRandTag():");
     try{
         pRandData = await api.pRandTag("crossdressing")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //artist
     log("\nRandArtist( data ):");
     try{
-        await api.pRandArtist("abara",data=>{log(data.title)})
+        await api.pRandArtist("zinno",data=>{log(data.title)})
     }catch(e){log(e)}
     log("data = pRandArtist():");
     try{
-        pRandData = await api.pRandArtist("abara")
-        log(pRandData);
+        pRandData = await api.pRandArtist("zinno")
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //parody
@@ -332,7 +329,7 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log("data = pRandParody():");
     try{
         pRandData = await api.pRandParody("kono subarashii sekai ni syukufuku o")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //group
@@ -343,7 +340,7 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log("data = pRandGroup():");
     try{
         pRandData = await api.pRandGroup("saisons")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //pRandom
@@ -354,7 +351,7 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log("\ndata = pRandom()");
     try{
         pRandData = await api.pRandom()
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 
     //randomSpecificTag
@@ -365,7 +362,7 @@ let startDiscordReRollonFailblockwords = new Date().getTime()
     log("data = pRandSpecificTags():");
     try{
         pRandData = await api.pRandSpecificTags("genshin impact venti")
-        log(pRandData);
+        log(pRandData.tag_table.tag);
     }catch(e){log(e)}
 //#endregion
 let endDiscordReRollonFailblockwords = new Date().getTime()
