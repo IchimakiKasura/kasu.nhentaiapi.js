@@ -13,6 +13,7 @@ The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]
 * Easy to use
 * Reliable* :>
 * > Discord friendly?
+
 ### Install
 To install "N-hentai-api" type these:
 ```
@@ -21,7 +22,6 @@ npm i kasu.nhentaiapi.js
 ## Examples
 ### How to use n-hentai-api
 To get the basic info about the ID/Doujin:
-
 ```js
 const Example = require('kasu.nhentaiapi.js');
 const ExampleApi = new Example(); // name any you want "api, kasu, nhentai, ..." 
@@ -38,103 +38,10 @@ async function json(){
     // result: https://nhentai.net/g/228922/
 }
 ```
-## Modules
-### getID(``id|string``)
-The ``id`` can be a string or a number or even the link itself.
-- ### ``Json``:
-```json
-// This object is also used on pRand's data functions.
-{
-    "id": 228922,
-    "url": "https://nhentai.net/g/228922/",
-    "title": { 
-        "origin": "エログロス Vol.2",
-        "translated": "EROGROS Vol. 2",
-        "originFull": "[アンソロジー] エログロス Vol.2 [DL版]",
-        "translatedFull": "[Anthology] EROGROS Vol. 2 [Digital]"
-    },
-    "images": { 
-        "cover": "https://t.nhentai.net/galleries/1205270/cover.jpg",
-        "pages": [
-            "https://t.hentain.net/galleries/1205270/1t.jpg"
-            "https://t.hentain.net/galleries/1205270/2t.jpg"
-            "and 242 more"
-        ]
-    },
-    "tag_table": {
-        "parodies": "none",
-        "characters": "none",
-        "tag": "<censored> sorry can't show it here",
-        "artists": "uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu",
-        "groups": "none",
-        "languages": "japanese",
-        "categories": "manga"
-    },
-    "number_pages": "244",
-    "uploaded": "2 years, 1 month ago"
-}
-```
-### pRandom()
-Generate random ID based on the website's button 'Random'.
-use:
-```js
-// gives random number
-await api.pRandom()
-// you can get the random number's data
-await api.pRandom(data=>{
-    data.images.cover
-})
-```
-### pRand's
-* pRandTag(`tag`, `function`)
-* pRandParody(`tag`, `function`)
-* pRandArtist(`tag`, `function`)
-* pRandGroup(`tag`, `function`)
-* pRandSpecificTags(`tag`, `function`)
-* pRandom(`function`)
-
-Tag, Parody, Artist, Group shares the same function it generate random ID based on the Given Tag. <br/>
-NOTE: It only accepts 1 tag/name that **exist** on the nhentai database.
-```js
-//returns a link | id
-await pRandtag("<name of the tag>").link | .id
-//get data of the random generated ID of the given tag
-await pRandtag("<name of the tag>", data=>{/* data.[json object] */})
-```
-The ``pRandSpecificTags()`` uses the Nhentai Searchbar functionality.
-Example:
-```js
-//gets the data of the given tags
-await api.pRandSpecificTags("konosuba aqua sole female", data=>{/* data.[json object] */})
-```
-## Properties
-### IsDiscord `boolean`
-- default bool set is `false`.
-<br/>
-If you're using this API on your DiscordBot Enabling this will block some tags that is inappropriate or violates DiscordTOS.
-
-### blockedWords `string`
-- you can add your own blocked tags here.
-### ReRollonFail `boolean`
-- note: By enabling this it might slow down the process unless if you have a fast internet or processor.
-### IgnoreNone `boolean`
-- Ignore showing empty / none tags on the json object.
-```js
-// false
-{
-    "tag": "none",
-    "parodies": "konosuba"
-}
-// true
-{
-    "parodies": "konosuba"
-}
-```
-### requestHeaders `object`
-# Updates
-[CHANGELOG](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md)
-# LICENSE 
-[MIT LICENSE](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md)
+# Click here for more info
+[![](https://user-images.githubusercontent.com/80595346/137633689-c34f0162-4c6c-43ed-972d-7df8d372ef47.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/LICENSE)
+[![](https://user-images.githubusercontent.com/80595346/137633687-421900f1-3660-408f-a716-96753f1dc32e.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md)
+[![](https://user-images.githubusercontent.com/80595346/137633691-98187d07-fa4b-4c2d-91f5-8be5190a9c38.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/docs/Documentation.md)
 <hr>
 <p align="center">
 Enjoy using it! crediting me will be an appreciation!<br/>
