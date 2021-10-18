@@ -1,4 +1,8 @@
 <!-- All versions changelog -->
+# 3.2.2
+## Documentation Update
+- Added Documentation
+- New readme.md style
 # 3.2.1
 ## Quick Fix
 - [issue #3](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/3) is fixed.

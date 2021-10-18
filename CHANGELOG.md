@@ -1,5 +1,9 @@
 <!-- official changelog will only store upto 5 versions -->
 <!-- go to the "CHANGELOG.history.md" to check all the changes -->
+# 3.2.2
+## Documentation Update
+- Added Documentation
+- New readme.md style
 # 3.2.1
 ## Quick Fix
 - [issue #3](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/3) is fixed.
@@ -53,20 +57,3 @@ Hotfix and code update
 - `pRandom` is now fixed from giving `link is not defined` error message.
 - last 2.9.0 the json object that showed on the readme is fixed and available to all pRand functions. 
 - updated the `fetcher.js`.
-
-# 2.9.0
-
-## New Update
-### Added new `IsDiscord`
-* It blocks some selected tags that violate Discord rules.
-If the doujin has those tags it will throw an error. So that you will need to
-execute another one again until that doujin has a clean tags.
-- Added the `ReRollonFail` bool for this specific new feature.
-- this feature is credited to [crackheadakira](https://github.com/crackheadakira)
-`getID()` update:
-- the function `list()` is now removed so you can now only use 1 function `json()`
-this will cause changes on some codes that uses `list()` like `data.cover` is now `data.images.cover` see more on the [README](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md) page 
-- You can now download the mini file version of this 2.9 [here](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/releases/tag/2.9.0)
-
-- Problem right now after publishing 2.9:<br>
-the function `pRandom` has something weird saying `link is not defined` this will be fixed soon
