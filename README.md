@@ -45,7 +45,7 @@ async function json(){
 <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
 
 [![](https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/LICENSE "MIT Licence")<br/>
-[![](https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/docs/Documentation.md "API Documentation")<br/>
+[![](https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/ "API Documentation")<br/>
 [![](https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md "Update History")
 <hr>
 Enjoy using it! crediting me will be an appreciation!<br/>

@@ -9,6 +9,8 @@ node_modules
 /lib/src/fetcher.min.js
 /lib/src/shorter.min.js
 
+/docs/other/Documentation.md
+
 minifier.js
 
 # So I'll no longer include the minified download files

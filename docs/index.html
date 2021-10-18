@@ -1,91 +1,74 @@
+<!-- *()</span></a> -->
 <html>
 
 <head></head>
 
 <body>
-    <link rel="stylesheet" type="text/css" href="1.css" id="_theme">
-    <link rel="stylesheet" type="text/css" href="2.css" id="_theme">
+    <link rel="stylesheet" type="text/css" href="other/1.css" id="_theme">
+    <link rel="stylesheet" type="text/css" href="other/2.css" id="_theme">
     <div id="_html" class="markdown-body">
-        <!-- <style>
-    body{
-        background-image: url("https://wallpaperaccess.com/full/2725825.jpg"); 
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-</style> -->
         <div align="center">
-
+            <img src="https://i.redd.it/fkg9yip5yyl21.png" height="140px" title="nhentai" style="margin:0"/>
             <h1 id="api-documentation">API Documentation</h1>
             <p>-=Documentation for the kasu.<a href="https://nhentai.net">nhentai</a>api.js=-</p>
         </div>
-
         <details>
             <summary><a href="#apidocumentation">Overview</a></summary>
-
-            <ul>
-                <li><a href="#get-started">install</a></li>
-                <li><a href="#basics">Basic use</a></li>
-            </ul>
+            <div class="content">
+                <ul>
+                    <li><a href="#get-started">install</a></li>
+                    <li><a href="#basics">Basic use</a></li>
+                </ul>
+            </div>
         </details>
-
-
-
         <details>
             <summary><a href="#⠀constructor⠀" title="module">kasu.nhentaiapi.js</a></summary>
-
+            <div class="content">
             <ul>
-                <li><a href="#%E2%A0%80constructor%E2%A0%80" title="main">Class</a>
+                <li><a href="#⠀constructor⠀" title="main">Class</a>
                     <ul>
-                        <li><a href="#%E2%A0%80property-classes%E2%A0%80" title="Class Properties">Properties</a>
+                        <li><a href="#property-classes" title="Class Properties">Properties</a>
                             <ul>
-                                <li><a href="#%E2%A0%80isdiscord-boolean%E2%A0%80" title="IsDiscord">class.IsDiscord</a></li>
-                                <li><a href="#%E2%A0%80blockedwords-string%E2%A0%80" title="blockedWords">class.blockedWords</a></li>
-                                <li><a href="#%E2%A0%80rerollonfail-boolean%E2%A0%80" title="ReRollonFaile">class.ReRollonFail</a></li>
-                                <li><a href="#%E2%A0%80ignorenone-boolean%E2%A0%80" title="IgnoreNone">class.IgnoreNone</a></li>
-                                <li><a href="#%E2%A0%80requestheaders-object%E2%A0%80" title="requestHeaders">class.requestHeaders</a></li>
+                                <li><a href="#⠀isdiscord⠀-boolean" title="IsDiscord">class.IsDiscord</a></li>
+                                <li><a href="#⠀blockedwords⠀-string" title="blockedWords">class.blockedWords</a></li>
+                                <li><a href="#⠀rerollonfail⠀-boolean" title="ReRollonFaile">class.ReRollonFail</a></li>
+                                <li><a href="#⠀ignorenone⠀-boolean" title="IgnoreNone">class.IgnoreNone</a></li>
+                                <li><a href="#⠀requestheaders⠀-object" title="requestHeaders">class.requestHeaders</a></li>
                             </ul>
                         </li>
-                        <li><a href="#%E2%A0%80method-classes%E2%A0%80" title="Class Method">Methods</a>
+                        <li><a href="#method-classes" title="Class Method">Methods</a>
                             <ul>
-                                <li><a href="#%E2%A0%80getidstring%E2%A0%80" title="getID()">class.getID</a></li>
-                                <li><a href="#%E2%A0%80prandid%E2%A0%80" title="pRandID()">class.pRandID</a></li>
-                                <li><a href="#%E2%A0%80prandspecifictags-string-fn-%E2%A0%80" title="pRandSpecificTags()">class.pRandSpecificTags</a></li>
+                                <li><a href="#⠀getidstring⠀" title="getID()">class.getID</a></li>
+                                <li><a href="#⠀prandid⠀" title="pRandID()">class.pRandID</a></li>
+                                <li><a href="#⠀prandspecifictags-string-fn-⠀" title="pRandSpecificTags()">class.pRandSpecificTags</a></li>
                                 <li><a href="#prands" title="pRand">pRand</a>
                                     <ul>
-                                        <li><a href="#%E2%A0%80prandtag-tag-fn-%E2%A0%80" title="pRandTag()">class.pRandTag</a></li>
-                                        <li><a href="#%E2%A0%80prandparody-tag-fn-%E2%A0%80" title="pRandParody()">class.pRandParody</a></li>
-                                        <li><a href="#%E2%A0%80prandartist-tag-fn-%E2%A0%80" title="pRandAtist()">class.pRandArtist</a></li>
-                                        <li><a href="#%E2%A0%80prandgroup-tag-fn-%E2%A0%80" title="pRandGroup()">class.pRandGroup</a></li>
+                                        <li><a href="#⠀prandtag-tag-fn-⠀" title="pRandTag()">class.pRandTag</a></li>
+                                        <li><a href="#⠀prandparody-tag-fn-⠀" title="pRandParody()">class.pRandParody</a></li>
+                                        <li><a href="#⠀prandartist-tag-fn-⠀" title="pRandAtist()">class.pRandArtist</a></li>
+                                        <li><a href="#⠀prandgroup-tag-fn-⠀" title="pRandGroup()">class.pRandGroup</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#%E2%A0%80prandom-fn-%E2%A0%80" title="pRandom()">class.pRandom</a></li>
+                                <li><a href="#⠀prandom-fn-⠀" title="pRandom()">class.pRandom</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
             </ul>
+            </div>
         </details>
-
-
-
-
-
-
-
         <details>
             <summary><a href="#json-object" title="json">Json Object</a></summary>
-
+            <div class="content">
             <ul>
                 <li><a href="#interface">Interface</a></li>
             </ul>
+            </div>
         </details>
-
-
-
         <hr>
-        <h2 id="get-started"><a class="anchor" name="get-started" href="#get-started"><span class="octicon octicon-link"></span></a>Get started</h2>
+        <h2 id="get-started">Get started</h2>
         <pre><code>npm i kasu.nhentaiapi.js</code></pre>
-        <h2 id="basics"><a class="anchor" name="basics" href="#basics"><span class="octicon octicon-link"></span></a>Basics</h2>
+        <h2 id="basics">Basics</h2>
         <pre class=" language-js"><code class=" language-js"><span class="jskeyword">const</span> Example <span class="jsoperator">=</span> <span class="jsfunction">require</span><span class="jspunctuation">(</span><span style="color:#a5d6ff">'kasu.nhentaiapi.js'</span><span class="jspunctuation">)</span><span class="jspunctuation">;</span>
 <span class="jskeyword">const</span> ExampleApi <span class="jsoperator">=</span> <span class="jskeyword">new</span> <span class="jsclass">Example</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span><span class="jspunctuation">;</span> <span class="jscomment">// name any you want "api, kasu, nhentai, ..." </span>
 
@@ -101,25 +84,25 @@
     <span class="jscomment">// result: https://nhentai.net/g/228922/</span>
 <span class="jspunctuation">}</span></code></pre>
         <hr>
-        <h1 id="⠀constructor⠀"><a class="anchor" name="⠀constructor⠀" href="#⠀constructor⠀"><span class="octicon octicon-link"></span></a><code>⠀Constructor⠀</code></h1>
-        <h1 id="property-classes"><a class="anchor" name="property-classes" href="#property-classes"><span class="octicon octicon-link"></span></a>Property classes</h1>
-        <h3 id="⠀isdiscord⠀-boolean"><a class="anchor" name="⠀isdiscord⠀-boolean" href="#⠀isdiscord⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀IsDiscord⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <h1 id="⠀constructor⠀"><code>⠀Constructor⠀</code></h1>
+        <h1 id="property-classes">Property classes</h1>
+        <h3 id="⠀isdiscord⠀-boolean"><code>⠀IsDiscord⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
         <ul>
             <li>If you're using this API on your DiscordBot Enabling this will block some tags that is inappropriate or violates DiscordTOS.</li>
             <li>default bool set is <code>false</code>.</li>
         </ul>
-        <h3 id="⠀blockedwords⠀-string"><a class="anchor" name="⠀blockedwords⠀-string" href="#⠀blockedwords⠀-string"><span class="octicon octicon-link"></span></a><code>⠀blockedWords⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em></h3>
+        <h3 id="⠀blockedwords⠀-string"><code>⠀blockedWords⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em></h3>
         <ul>
             <li>Add more tags that will be blocked.<pre class=" language-js"><code class=" language-js">  blockedWords <span class="jsoperator">=</span> <span style="color:#a5d6ff">"crossdressing brutality penetration"</span></code></pre>
             </li>
         </ul>
-        <h3 id="⠀rerollonfail⠀-boolean"><a class="anchor" name="⠀rerollonfail⠀-boolean" href="#⠀rerollonfail⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀ReRollonFail⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <h3 id="⠀rerollonfail⠀-boolean"><code>⠀ReRollonFail⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
         <ul>
             <li>If you're using <a href="#isdiscord-boolean"><code>IsDiscord</code></a> and don't wanna do your own retry function use this.</li>
             <li>note: By enabling this it might slow down the process unless if you have a fast internet or processor.</li>
             <li>default bool set is <code>false</code>.</li>
         </ul>
-        <h3 id="⠀ignorenone⠀-boolean"><a class="anchor" name="⠀ignorenone⠀-boolean" href="#⠀ignorenone⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀IgnoreNone⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <h3 id="⠀ignorenone⠀-boolean"><code>⠀IgnoreNone⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
         <ul>
             <li>Ignore showing empty / none tags on the json object.</li>
             <li>default bool set is <code>false</code>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">// false</span>
@@ -133,24 +116,24 @@
 <span class="jspunctuation">}</span></code></pre>
             </li>
         </ul>
-        <h3 id="⠀requestheaders⠀-object"><a class="anchor" name="⠀requestheaders⠀-object" href="#⠀requestheaders⠀-object"><span class="octicon octicon-link"></span></a><code>⠀requestHeaders⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em></h3>
+        <h3 id="⠀requestheaders⠀-object"><code>⠀requestHeaders⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em></h3>
         <ul>
             <li>default header is <code>{ "content-type": "text/plain; charset=utf-8" }</code></li>
         </ul>
         <br>
 
-        <h1 id="method-classes"><a class="anchor" name="method-classes" href="#method-classes"><span class="octicon octicon-link"></span></a>Method classes</h1>
-        <h3 id="⠀getidstring⠀"><a class="anchor" name="⠀getidstring⠀" href="#⠀getidstring⠀"><span class="octicon octicon-link"></span></a><code>⠀getID(string)⠀</code></h3>
+        <h1 id="method-classes">Method classes</h1>
+        <h3 id="⠀getidstring⠀"><code>⠀getID(string)⠀</code></h3>
         <ul>
             <li><code>string</code> can be a string or a number or even the link itself. Example of this method can be seen on the <a href="#basics">Basics</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.</li>
         </ul>
-        <h3 id="⠀prandid⠀"><a class="anchor" name="⠀prandid⠀" href="#⠀prandid⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandID()⠀</code></h3>
+        <h3 id="⠀prandid⠀"><code>⠀pRandID()⠀</code></h3>
         <ul>
             <li>Generate random ID based on the website's button 'Random'.</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> an ID only!</li>
         </ul>
-        <h3 id="⠀prandspecifictags-string-fn-⠀"><a class="anchor" name="⠀prandspecifictags-string-fn-⠀" href="#⠀prandspecifictags-string-fn-⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandSpecificTags( string, fn )⠀</code></h3>
+        <h3 id="⠀prandspecifictags-string-fn-⠀"><code>⠀pRandSpecificTags( string, fn )⠀</code></h3>
         <ul>
             <li>It uses the <a href="https://nhentai.net">Nhentai</a> Searchbar functionality.</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">//gets the data of the given tags</span>
@@ -159,11 +142,11 @@
 <span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
             </li>
         </ul>
-        <h3 id="prands"><a class="anchor" name="prands" href="#prands"><span class="octicon octicon-link"></span></a>pRand's</h3>
-        <h3 id="⠀prandtag-tag-fn-⠀"><a class="anchor" name="⠀prandtag-tag-fn-⠀" href="#⠀prandtag-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandTag( tag fn )⠀</code></h3>
-        <h3 id="⠀prandparody-tag-fn-⠀"><a class="anchor" name="⠀prandparody-tag-fn-⠀" href="#⠀prandparody-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandParody( tag, fn )⠀</code></h3>
-        <h3 id="⠀prandartist-tag-fn-⠀"><a class="anchor" name="⠀prandartist-tag-fn-⠀" href="#⠀prandartist-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandArtist( tag, fn )⠀</code></h3>
-        <h3 id="⠀prandgroup-tag-fn-⠀"><a class="anchor" name="⠀prandgroup-tag-fn-⠀" href="#⠀prandgroup-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
+        <h3 id="prands">pRand's</h3>
+        <h3 id="⠀prandtag-tag-fn-⠀">&nbsp; &nbsp; <code>⠀pRandTag( tag fn )⠀</code></h3>
+        <h3 id="⠀prandparody-tag-fn-⠀">&nbsp; &nbsp; <code>⠀pRandParody( tag, fn )⠀</code></h3>
+        <h3 id="⠀prandartist-tag-fn-⠀">&nbsp; &nbsp; <code>⠀pRandArtist( tag, fn )⠀</code></h3>
+        <h3 id="⠀prandgroup-tag-fn-⠀">&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
         <ul>
             <li><a href="https://nhentai.net/tags">Tag</a>, <a href="https://nhentai.net/parodies">Parody</a>, <a href="https://nhentai.net/artists">Artist</a>, <a href="https://nhentai.net/groups">Group</a> shares the same function it generate random ID
                 based on the Given Tag. <br> NOTE: It only accepts 1 tag/name that <strong>exist</strong> on the <a href="https://nhentai.net">Nhentai</a> database.</li>
@@ -175,7 +158,7 @@
 <span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
             </li>
         </ul>
-        <h3 id="⠀prandom-fn-⠀"><a class="anchor" name="⠀prandom-fn-⠀" href="#⠀prandom-fn-⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandom( fn )⠀</code></h3>
+        <h3 id="⠀prandom-fn-⠀"><code>⠀pRandom( fn )⠀</code></h3>
         <ul>
             <li>Generate random ID based on the website's button 'Random'.</li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">// gives random number</span>
@@ -185,11 +168,10 @@
   data<span class="jspunctuation">.</span>images<span class="jspunctuation">.</span>cover
 <span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
                 <br>
-
             </li>
         </ul>
         <hr>
-        <h2 id="json-object"><a class="anchor" name="json-object" href="#json-object"><span class="octicon octicon-link"></span></a>Json Object</h2>
+        <h2 id="json-object">Json Object</h2>
         <p>This object is also used on <code>pRand's</code> data functions.</p>
         <pre class=" language-json"><code class=" language-json"><span class="jsonpunctuation">{</span>
     <span class="jsonproperty">"id"</span><span class="jsonoperator">:</span> <span class="jsonnumber">228922</span><span class="jsonpunctuation">,</span>
@@ -220,19 +202,19 @@
     <span class="jsonproperty">"number_pages"</span><span class="jsonoperator">:</span> <span class="jsonstring">"244"</span><span class="jsonpunctuation">,</span>
     <span class="jsonproperty">"uploaded"</span><span class="jsonoperator">:</span> <span class="jsonstring">"2 years, 1 month ago"</span>
 <span class="jsonpunctuation">}</span></code></pre>
-        <h2 id="interface"><a class="anchor" name="interface" href="#interface"><span class="octicon octicon-link"></span></a>Interface</h2>
+        <h2 id="interface">Interface</h2>
         <p>NOTE: Some of it is literally nonsense because this is what is in the declaration file.</p>
-        <h3 id="⠀id⠀--number"><a class="anchor" name="⠀id⠀--number" href="#⠀id⠀--number"><span class="octicon octicon-link"></span></a><code>⠀id⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></h3>
+        <h3 id="⠀id⠀--number"><code>⠀id⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></h3>
         <ul>
             <li>ID or Code or whatever you call.
                 <br><br></li>
         </ul>
-        <h3 id="⠀url⠀--string"><a class="anchor" name="⠀url⠀--string" href="#⠀url⠀--string"><span class="octicon octicon-link"></span></a><code>⠀url⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <h3 id="⠀url⠀--string"><code>⠀url⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
         <ul>
             <li>Url of the selected code.
                 <br><br></li>
         </ul>
-        <h3 id="⠀title⠀--object"><a class="anchor" name="⠀title⠀--object" href="#⠀title⠀--object"><span class="octicon octicon-link"></span></a><code>⠀title⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <h3 id="⠀title⠀--object"><code>⠀title⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
         <ul>
             <li>titles?
                 <h4 id="⠀⠀--⠀origin⠀--string">⠀⠀- <code>⠀origin⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
@@ -245,7 +227,7 @@
                 ⠀⠀⠀⠀• YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.
                 <br><br></li>
         </ul>
-        <h3 id="⠀images⠀--object"><a class="anchor" name="⠀images⠀--object" href="#⠀images⠀--object"><span class="octicon octicon-link"></span></a><code>⠀images⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <h3 id="⠀images⠀--object"><code>⠀images⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
         <ul>
             <li>images?
                 <h4 id="⠀⠀--⠀cover⠀--string">⠀⠀- <code>⠀cover⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
@@ -254,7 +236,7 @@
                 ⠀⠀⠀⠀• Array of images or the doujin.
                 <br><br></li>
         </ul>
-        <h3 id="⠀tag_table⠀--object"><a class="anchor" name="⠀tag_table⠀--object" href="#⠀tag_table⠀--object"><span class="octicon octicon-link"></span></a><code>⠀tag_table⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <h3 id="⠀tag_table⠀--object"><code>⠀tag_table⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
         <ul>
             <li>tags?
                 <h4 id="⠀⠀--⠀parodies⠀--string">⠀⠀- <code>⠀parodies⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
@@ -273,17 +255,146 @@
                 ⠀⠀⠀⠀• ca
                 <br><br></li>
         </ul>
-        <h3 id="⠀number_pages⠀--string"><a class="anchor" name="⠀number_pages⠀--string" href="#⠀number_pages⠀--string"><span class="octicon octicon-link"></span></a><code>⠀number_pages⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <h3 id="⠀number_pages⠀--string"><code>⠀number_pages⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
         <ul>
             <li>haha 69 pages seems cool.
                 <br><br></li>
         </ul>
-        <h3 id="⠀uploaded⠀--string"><a class="anchor" name="⠀uploaded⠀--string" href="#⠀uploaded⠀--string"><span class="octicon octicon-link"></span></a><code>⠀uploaded⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <h3 id="⠀uploaded⠀--string"><code>⠀uploaded⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
         <ul>
             <li>Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.<br> In 1722 the government made a law banning hentai manga, which means it was common even earlier.<br> Suzumi-fune is probobly the oldest hentai anime,
                 it's from 1932.<br></li>
         </ul>
+        <hr>
+        <div align="center">
+            <h2 id="clicky-buttons">clicky buttons</h2>
+            <p><a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/LICENSE" title="MIT Licence"><img src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png" alt=""></a><br><br>
+            <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md" title="Update History"><img src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png" alt=""></a><br><br>
+            <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a></p>
+            <p>
+                <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a><br>
+                ©copyright 2021
+            </p>
+        </div>
     </div>
 </body>
+<!-- copy&paste haha brr -->
+<script>
+    class Accordion {
+  constructor(el) {
+    // Store the <details> element
+    this.el = el;
+    // Store the <summary> element
+    this.summary = el.querySelector('summary');
+    // Store the <div class="content"> element
+    this.content = el.querySelector('.content');
 
+    // Store the animation object (so we can cancel it if needed)
+    this.animation = null;
+    // Store if the element is closing
+    this.isClosing = false;
+    // Store if the element is expanding
+    this.isExpanding = false;
+    // Detect user clicks on the summary element
+    this.summary.addEventListener('click', (e) => this.onClick(e));
+  }
+
+  onClick(e) {
+    // Stop default behaviour from the browser
+    e.preventDefault();
+    // Add an overflow on the <details> to avoid content overflowing
+    this.el.style.overflow = 'hidden';
+    // Check if the element is being closed or is already closed
+    if (this.isClosing || !this.el.open) {
+      this.open();
+    // Check if the element is being openned or is already open
+    } else if (this.isExpanding || this.el.open) {
+      this.shrink();
+    }
+  }
+
+  shrink() {
+    // Set the element as "being closed"
+    this.isClosing = true;
+    
+    // Store the current height of the element
+    const startHeight = `${this.el.offsetHeight}px`;
+    // Calculate the height of the summary
+    const endHeight = `${this.summary.offsetHeight}px`;
+    
+    // If there is already an animation running
+    if (this.animation) {
+      // Cancel the current animation
+      this.animation.cancel();
+    }
+    
+    // Start a WAAPI animation
+    this.animation = this.el.animate({
+      // Set the keyframes from the startHeight to endHeight
+      height: [startHeight, endHeight]
+    }, {
+      duration: 300,
+      easing: 'ease-out'
+    });
+    
+    // When the animation is complete, call onAnimationFinish()
+    this.animation.onfinish = () => this.onAnimationFinish(false);
+    // If the animation is cancelled, isClosing variable is set to false
+    this.animation.oncancel = () => this.isClosing = false;
+  }
+
+  open() {
+    // Apply a fixed height on the element
+    this.el.style.height = `${this.el.offsetHeight}px`;
+    // Force the [open] attribute on the details element
+    this.el.open = true;
+    // Wait for the next frame to call the expand function
+    window.requestAnimationFrame(() => this.expand());
+  }
+
+  expand() {
+    // Set the element as "being expanding"
+    this.isExpanding = true;
+    // Get the current fixed height of the element
+    const startHeight = `${this.el.offsetHeight}px`;
+    // Calculate the open height of the element (summary height + content height)
+    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+    
+    // If there is already an animation running
+    if (this.animation) {
+      // Cancel the current animation
+      this.animation.cancel();
+    }
+    
+    // Start a WAAPI animation
+    this.animation = this.el.animate({
+      // Set the keyframes from the startHeight to endHeight
+      height: [startHeight, endHeight]
+    }, {
+      duration: 300,
+      easing: 'ease-out'
+    });
+    // When the animation is complete, call onAnimationFinish()
+    this.animation.onfinish = () => this.onAnimationFinish(true);
+    // If the animation is cancelled, isExpanding variable is set to false
+    this.animation.oncancel = () => this.isExpanding = false;
+  }
+
+  onAnimationFinish(open) {
+    // Set the open attribute based on the parameter
+    this.el.open = open;
+    // Clear the stored animation
+    this.animation = null;
+    // Reset isClosing & isExpanding
+    this.isClosing = false;
+    this.isExpanding = false;
+    // Remove the overflow hidden and the fixed height
+    this.el.style.height = this.el.style.overflow = '';
+  }
+}
+
+document.querySelectorAll('details').forEach((el) => {
+  new Accordion(el);
+});
+</script>
 </html>
