@@ -1,32 +1,34 @@
-<center>
+<div align="center">
 
 # API Documentation
 -=Documentation for the kasu.[nhentai](https://nhentai.net)api.js version 3.2.1=-
-</center>
+</div>
 
 - [Overview](#api-documentation)
     - [install](#get-started)
     - [Basic use](#basics)
 
-- [kasu.nhentaiapi.js](#kasu.nhentaiapi.js)
-    - [Class](#kasu.nhentaiapi.js)
-        - [Properties](#property-classes)
-            - [class.IsDiscord](#isdiscord-boolean)
-            - [class.blockedWords](#blockedwords-string)
-            - [class.ReRollonFail](#rerollonfail-boolean)
-            - [class.IgnoreNone](#ignorenone-boolean)
-            - [class.requestHeaders](#requestheaders-object)
-        - [Methods](#method-classes)
-            - [class.getID](#getidstring)
-            - [class.pRandID](#prandid)
-            - [class.pRandSpecificTags](#prands)
-            - [class.pRandTag](#prands)
-            - [class.pRandParody](#prands)
-            - [class.pRandArtist](#prands)
-            - [class.pRandGroup](#prands)
-            - [class.pRandom](#prandom-fn-)
+- [kasu.nhentaiapi.js](#kasu.nhentaiapi.js "module")
+    - [Class](#kasu.nhentaiapi.js "main")
+        - [Properties](#property-classes "Class Properties")
+            - [class.IsDiscord](#isdiscord-boolean "IsDiscord")
+            - [class.blockedWords](#blockedwords-string "blockedWords")
+            - [class.ReRollonFail](#rerollonfail-boolean "ReRollonFaile")
+            - [class.IgnoreNone](#ignorenone-boolean "IgnoreNone")
+            - [class.requestHeaders](#requestheaders-object "requestHeaders")
+        - [Methods](#method-classes "Class Method")
+            - [class.getID](#getidstring "getID()")
+            - [class.pRandID](#prandid "pRandID()")
+            - [class.pRandSpecificTags](#prandspecifictags-string-fn- "pRandSpecificTags()")
+            - [pRand](#prands "pRand")
+                - [class.pRandTag](#prandtag-tag-fn- "pRandTag()")
+                - [class.pRandParody](#prandparody-tag-fn- "pRandParody()")
+                - [class.pRandArtist](#prandartist-tag-fn- "pRandAtist()")
+                - [class.pRandGroup](#prandgroup-tag-fn- "pRandGroup()")
+            - [class.pRandom](#prandom-fn- "pRandom()")
 
-    - [Json Object](#json-object)
+    - [Json Object](#json-object "JSON")
+        - [Interface](#interface)
 
 ---
 ## Get started
@@ -52,24 +54,24 @@ async function json(){
 ```
 ---
 
-# `kasu.nhentaiapi.js`
+# `⠀kasu.nhentaiapi.js⠀`
 ## Property classes
-### `IsDiscord` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
+### `⠀IsDiscord⠀` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
 - If you're using this API on your DiscordBot Enabling this will block some tags that is inappropriate or violates DiscordTOS.
 - default bool set is `false`.
 
-### `blockedWords` _[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)_
+### `⠀blockedWords⠀` _[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)_
 - Add more tags that will be blocked.
 ```js
     blockedWords = "crossdressing brutality penetration"
 ```
 
-### `ReRollonFail` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
+### `⠀ReRollonFail⠀` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
 - If you're using [`IsDiscord`](#isdiscord-boolean) and don't wanna do your own retry function use this.
 - note: By enabling this it might slow down the process unless if you have a fast internet or processor.
 - default bool set is `false`.
 
-### `IgnoreNone` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
+### `⠀IgnoreNone⠀` _[boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)_
 - Ignore showing empty / none tags on the json object.
 - default bool set is `false`.
 ```js
@@ -84,17 +86,19 @@ async function json(){
 }
 ```
 
-### `requestHeaders` _[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)_
+### `⠀requestHeaders⠀` _[object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)_
 - default header is `{ "content-type": "text/plain; charset=utf-8" }`
 
 ## Method classes
-### `getID(string)`
+### `⠀getID(string)⠀`
 - `string` can be a string or a number or even the link itself. Example of this method can be seen on the [Basics](#basics)
 - [returns](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) a [`json object`](#json-object).
 
-### `pRandID()`
+### `⠀pRandID()⠀`
+- Generate random ID based on the website's button 'Random'.
+- [returns](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) an ID only!
 
-### `pRandSpecificTags( string, fn )`
+### `⠀pRandSpecificTags( string, fn )⠀`
 - It uses the [Nhentai](https://nhentai.net) Searchbar functionality.
 - [returns](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) a [`json object`](#json-object).
 ```js
@@ -104,13 +108,13 @@ await api.pRandSpecificTags("konosuba aqua sole female", data=>{
 })
 ```
 
-## pRand's
-### &nbsp; &nbsp; `pRandTag( tag fn )`
-### &nbsp; &nbsp; `pRandParody( tag, fn )`
-### &nbsp; &nbsp; `pRandArtist( tag, fn )`
-### &nbsp; &nbsp; `pRandGroup( tag, fn )`
+### pRand's
+### &nbsp; &nbsp; `⠀pRandTag( tag fn )⠀`
+### &nbsp; &nbsp; `⠀pRandParody( tag, fn )⠀`
+### &nbsp; &nbsp; `⠀pRandArtist( tag, fn )⠀`
+### &nbsp; &nbsp; `⠀pRandGroup( tag, fn )⠀`
 
-- [Tag](https://nhentai.net/tag), [Parody](https://nhentai.net/parody), [Artist](https://nhentai.net/artist), [Group](https://nhentai.net/group) shares the same function it generate random ID based on the Given Tag. <br/>
+- [Tag](https://nhentai.net/tags), [Parody](https://nhentai.net/parodies), [Artist](https://nhentai.net/artists), [Group](https://nhentai.net/groups) shares the same function it generate random ID based on the Given Tag. <br/>
 NOTE: It only accepts 1 tag/name that **exist** on the [Nhentai](https://nhentai.net) database.
 - [returns](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) a [`json object`](#json-object).
 ```js
@@ -122,7 +126,7 @@ await pRandtag("<name of the tag>", data=>{
 })
 ```
 
-### `pRandom( fn )`
+### `⠀pRandom( fn )⠀`
 - Generate random ID based on the website's button 'Random'.
 - [returns](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) a [`json object`](#json-object).
 ```js
@@ -158,7 +162,7 @@ This object is also used on `pRand's` data functions.
     "tag_table": {
         "parodies": "none",
         "characters": "none",
-        "tag": "<censored> sorry can't show it here",
+        "tag": "<censored> sorry can't show on github",
         "artists": "uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu",
         "groups": "none",
         "languages": "japanese",
@@ -169,15 +173,54 @@ This object is also used on `pRand's` data functions.
 }
 ```
 
+## Interface
+NOTE: Some of it is literally nonsense because this is what is in the declaration file.
 
+### `⠀id⠀` : [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- ID or Code or whatever you call.
 
+### `⠀url⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Url of the selected code.
 
+### `⠀title⠀` : [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- titles?
+#### ⠀⠀- `⠀origin⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• original
+#### ⠀⠀- `⠀translated⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• トランスレイト??? wait it's supposed to be in english cuz' it's translated.
+#### ⠀⠀- `⠀originFull⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• original but its full version of it.
+#### ⠀⠀- `⠀translatedFull⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.
 
+### `⠀images⠀` : [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- images?
+#### ⠀⠀- `⠀cover⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• Doujin cover image.
+#### ⠀⠀- `⠀pages⠀` : [array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+⠀⠀⠀⠀• Array of images or the doujin.
 
+### `⠀tag_table⠀` : [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- tags?
+#### ⠀⠀- `⠀parodies⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• I Like konosuba
+#### ⠀⠀- `⠀characters⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• I love megumin
+#### ⠀⠀- `⠀tag⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• what?
+#### ⠀⠀- `⠀artist⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• I don't really know about this
+#### ⠀⠀- `⠀groups⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• Can't think 1 group tag.
+#### ⠀⠀- `⠀languages⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• english ofc.
+#### ⠀⠀- `⠀categories⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+⠀⠀⠀⠀• ca
 
+### `⠀number_pages⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- haha 69 pages seems cool.
 
-
-
-
-
-
+### `⠀uploaded⠀` : [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.<br/>
+In 1722 the government made a law banning hentai manga, which means it was common even earlier.<br/>
+Suzumi-fune is probobly the oldest hentai anime, it's from 1932.<br/>
