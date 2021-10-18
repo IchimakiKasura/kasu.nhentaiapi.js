@@ -1,0 +1,289 @@
+<html>
+
+<head></head>
+
+<body>
+    <link rel="stylesheet" type="text/css" href="1.css" id="_theme">
+    <link rel="stylesheet" type="text/css" href="2.css" id="_theme">
+    <div id="_html" class="markdown-body">
+        <!-- <style>
+    body{
+        background-image: url("https://wallpaperaccess.com/full/2725825.jpg"); 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style> -->
+        <div align="center">
+
+            <h1 id="api-documentation">API Documentation</h1>
+            <p>-=Documentation for the kasu.<a href="https://nhentai.net">nhentai</a>api.js=-</p>
+        </div>
+
+        <details>
+            <summary><a href="#apidocumentation">Overview</a></summary>
+
+            <ul>
+                <li><a href="#get-started">install</a></li>
+                <li><a href="#basics">Basic use</a></li>
+            </ul>
+        </details>
+
+
+
+        <details>
+            <summary><a href="#⠀constructor⠀" title="module">kasu.nhentaiapi.js</a></summary>
+
+            <ul>
+                <li><a href="#%E2%A0%80constructor%E2%A0%80" title="main">Class</a>
+                    <ul>
+                        <li><a href="#%E2%A0%80property-classes%E2%A0%80" title="Class Properties">Properties</a>
+                            <ul>
+                                <li><a href="#%E2%A0%80isdiscord-boolean%E2%A0%80" title="IsDiscord">class.IsDiscord</a></li>
+                                <li><a href="#%E2%A0%80blockedwords-string%E2%A0%80" title="blockedWords">class.blockedWords</a></li>
+                                <li><a href="#%E2%A0%80rerollonfail-boolean%E2%A0%80" title="ReRollonFaile">class.ReRollonFail</a></li>
+                                <li><a href="#%E2%A0%80ignorenone-boolean%E2%A0%80" title="IgnoreNone">class.IgnoreNone</a></li>
+                                <li><a href="#%E2%A0%80requestheaders-object%E2%A0%80" title="requestHeaders">class.requestHeaders</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#%E2%A0%80method-classes%E2%A0%80" title="Class Method">Methods</a>
+                            <ul>
+                                <li><a href="#%E2%A0%80getidstring%E2%A0%80" title="getID()">class.getID</a></li>
+                                <li><a href="#%E2%A0%80prandid%E2%A0%80" title="pRandID()">class.pRandID</a></li>
+                                <li><a href="#%E2%A0%80prandspecifictags-string-fn-%E2%A0%80" title="pRandSpecificTags()">class.pRandSpecificTags</a></li>
+                                <li><a href="#prands" title="pRand">pRand</a>
+                                    <ul>
+                                        <li><a href="#%E2%A0%80prandtag-tag-fn-%E2%A0%80" title="pRandTag()">class.pRandTag</a></li>
+                                        <li><a href="#%E2%A0%80prandparody-tag-fn-%E2%A0%80" title="pRandParody()">class.pRandParody</a></li>
+                                        <li><a href="#%E2%A0%80prandartist-tag-fn-%E2%A0%80" title="pRandAtist()">class.pRandArtist</a></li>
+                                        <li><a href="#%E2%A0%80prandgroup-tag-fn-%E2%A0%80" title="pRandGroup()">class.pRandGroup</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#%E2%A0%80prandom-fn-%E2%A0%80" title="pRandom()">class.pRandom</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </details>
+
+
+
+
+
+
+
+        <details>
+            <summary><a href="#json-object" title="json">Json Object</a></summary>
+
+            <ul>
+                <li><a href="#interface">Interface</a></li>
+            </ul>
+        </details>
+
+
+
+        <hr>
+        <h2 id="get-started"><a class="anchor" name="get-started" href="#get-started"><span class="octicon octicon-link"></span></a>Get started</h2>
+        <pre><code>npm i kasu.nhentaiapi.js</code></pre>
+        <h2 id="basics"><a class="anchor" name="basics" href="#basics"><span class="octicon octicon-link"></span></a>Basics</h2>
+        <pre class=" language-js"><code class=" language-js"><span class="jskeyword">const</span> Example <span class="jsoperator">=</span> <span class="jsfunction">require</span><span class="jspunctuation">(</span><span style="color:#a5d6ff">'kasu.nhentaiapi.js'</span><span class="jspunctuation">)</span><span class="jspunctuation">;</span>
+<span class="jskeyword">const</span> ExampleApi <span class="jsoperator">=</span> <span class="jskeyword">new</span> <span class="jsclass">Example</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span><span class="jspunctuation">;</span> <span class="jscomment">// name any you want "api, kasu, nhentai, ..." </span>
+
+<span class="jscomment">//          ----number | strings can do----</span>
+<span class="jskeyword">const</span> <span class="jsconstant">ID</span> <span class="jsoperator">=</span> <span class="jsnumber">228922</span> <span class="jscomment">//or "228922" or "https://nhentai.net/g/228922"</span>
+<span class="jskeyword">async</span> <span class="jskeyword">function</span> <span class="jsfunction">json</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span><span class="jspunctuation">{</span>
+    <span class="jskeyword">const</span> val <span class="jsoperator">=</span> <span class="jskeyword">await</span> ExampleApi<span class="jspunctuation">.</span><span class="jsfunction">getID</span><span class="jspunctuation">(</span><span class="jsconstant">ID</span><span class="jspunctuation">)</span><span class="jspunctuation">.</span><span class="jsfunction">json</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span>
+    val<span class="jspunctuation">.</span>url
+    <span class="jscomment">// OR</span>
+    ExampleApi<span class="jspunctuation">.</span><span class="jsfunction">getID</span><span class="jspunctuation">(</span><span class="jsconstant">ID</span><span class="jspunctuation">)</span><span class="jspunctuation">.</span><span class="jsfunction">json</span><span class="jspunctuation">(</span><span class="jsparameter">data</span><span class="jsoperator">=&gt;</span><span class="jspunctuation">{</span>data<span class="jspunctuation">.</span>url<span class="jspunctuation">}</span><span class="jspunctuation">)</span>
+    <span class="jscomment">// OR</span>
+    <span class="jspunctuation">(</span><span class="jskeyword">await</span> ExampleApi<span class="jspunctuation">.</span><span class="jsfunction">getID</span><span class="jspunctuation">(</span><span class="jsconstant">ID</span><span class="jspunctuation">)</span><span class="jspunctuation">.</span><span class="jsfunction">json</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span><span class="jspunctuation">)</span><span class="jspunctuation">.</span>url
+    <span class="jscomment">// result: https://nhentai.net/g/228922/</span>
+<span class="jspunctuation">}</span></code></pre>
+        <hr>
+        <h1 id="⠀constructor⠀"><a class="anchor" name="⠀constructor⠀" href="#⠀constructor⠀"><span class="octicon octicon-link"></span></a><code>⠀Constructor⠀</code></h1>
+        <h1 id="property-classes"><a class="anchor" name="property-classes" href="#property-classes"><span class="octicon octicon-link"></span></a>Property classes</h1>
+        <h3 id="⠀isdiscord⠀-boolean"><a class="anchor" name="⠀isdiscord⠀-boolean" href="#⠀isdiscord⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀IsDiscord⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <ul>
+            <li>If you're using this API on your DiscordBot Enabling this will block some tags that is inappropriate or violates DiscordTOS.</li>
+            <li>default bool set is <code>false</code>.</li>
+        </ul>
+        <h3 id="⠀blockedwords⠀-string"><a class="anchor" name="⠀blockedwords⠀-string" href="#⠀blockedwords⠀-string"><span class="octicon octicon-link"></span></a><code>⠀blockedWords⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em></h3>
+        <ul>
+            <li>Add more tags that will be blocked.<pre class=" language-js"><code class=" language-js">  blockedWords <span class="jsoperator">=</span> <span style="color:#a5d6ff">"crossdressing brutality penetration"</span></code></pre>
+            </li>
+        </ul>
+        <h3 id="⠀rerollonfail⠀-boolean"><a class="anchor" name="⠀rerollonfail⠀-boolean" href="#⠀rerollonfail⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀ReRollonFail⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <ul>
+            <li>If you're using <a href="#isdiscord-boolean"><code>IsDiscord</code></a> and don't wanna do your own retry function use this.</li>
+            <li>note: By enabling this it might slow down the process unless if you have a fast internet or processor.</li>
+            <li>default bool set is <code>false</code>.</li>
+        </ul>
+        <h3 id="⠀ignorenone⠀-boolean"><a class="anchor" name="⠀ignorenone⠀-boolean" href="#⠀ignorenone⠀-boolean"><span class="octicon octicon-link"></span></a><code>⠀IgnoreNone⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em></h3>
+        <ul>
+            <li>Ignore showing empty / none tags on the json object.</li>
+            <li>default bool set is <code>false</code>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">// false</span>
+<span class="jspunctuation">{</span>
+  <span style="color:#a5d6ff">"tag"</span><span class="jsoperator">:</span> <span style="color:#a5d6ff">"none"</span><span class="jspunctuation">,</span>
+  <span style="color:#a5d6ff">"parodies"</span><span class="jsoperator">:</span> <span style="color:#a5d6ff">"konosuba"</span>
+<span class="jspunctuation">}</span>
+<span class="jscomment">// true</span>
+<span class="jspunctuation">{</span>
+  <span style="color:#a5d6ff">"parodies"</span><span class="jsoperator">:</span> <span style="color:#a5d6ff">"konosuba"</span>
+<span class="jspunctuation">}</span></code></pre>
+            </li>
+        </ul>
+        <h3 id="⠀requestheaders⠀-object"><a class="anchor" name="⠀requestheaders⠀-object" href="#⠀requestheaders⠀-object"><span class="octicon octicon-link"></span></a><code>⠀requestHeaders⠀</code> <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em></h3>
+        <ul>
+            <li>default header is <code>{ "content-type": "text/plain; charset=utf-8" }</code></li>
+        </ul>
+        <br>
+
+        <h1 id="method-classes"><a class="anchor" name="method-classes" href="#method-classes"><span class="octicon octicon-link"></span></a>Method classes</h1>
+        <h3 id="⠀getidstring⠀"><a class="anchor" name="⠀getidstring⠀" href="#⠀getidstring⠀"><span class="octicon octicon-link"></span></a><code>⠀getID(string)⠀</code></h3>
+        <ul>
+            <li><code>string</code> can be a string or a number or even the link itself. Example of this method can be seen on the <a href="#basics">Basics</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.</li>
+        </ul>
+        <h3 id="⠀prandid⠀"><a class="anchor" name="⠀prandid⠀" href="#⠀prandid⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandID()⠀</code></h3>
+        <ul>
+            <li>Generate random ID based on the website's button 'Random'.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> an ID only!</li>
+        </ul>
+        <h3 id="⠀prandspecifictags-string-fn-⠀"><a class="anchor" name="⠀prandspecifictags-string-fn-⠀" href="#⠀prandspecifictags-string-fn-⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandSpecificTags( string, fn )⠀</code></h3>
+        <ul>
+            <li>It uses the <a href="https://nhentai.net">Nhentai</a> Searchbar functionality.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">//gets the data of the given tags</span>
+<span class="jskeyword">await</span> api<span class="jspunctuation">.</span><span class="jsfunction">pRandSpecificTags</span><span class="jspunctuation">(</span><span style="color:#a5d6ff">"konosuba aqua sole female"</span><span class="jspunctuation">,</span> <span class="jsparameter">data</span><span class="jsoperator">=&gt;</span><span class="jspunctuation">{</span>
+  <span class="jscomment">/* data.[json object] */</span>
+<span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
+            </li>
+        </ul>
+        <h3 id="prands"><a class="anchor" name="prands" href="#prands"><span class="octicon octicon-link"></span></a>pRand's</h3>
+        <h3 id="⠀prandtag-tag-fn-⠀"><a class="anchor" name="⠀prandtag-tag-fn-⠀" href="#⠀prandtag-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandTag( tag fn )⠀</code></h3>
+        <h3 id="⠀prandparody-tag-fn-⠀"><a class="anchor" name="⠀prandparody-tag-fn-⠀" href="#⠀prandparody-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandParody( tag, fn )⠀</code></h3>
+        <h3 id="⠀prandartist-tag-fn-⠀"><a class="anchor" name="⠀prandartist-tag-fn-⠀" href="#⠀prandartist-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandArtist( tag, fn )⠀</code></h3>
+        <h3 id="⠀prandgroup-tag-fn-⠀"><a class="anchor" name="⠀prandgroup-tag-fn-⠀" href="#⠀prandgroup-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
+        <ul>
+            <li><a href="https://nhentai.net/tags">Tag</a>, <a href="https://nhentai.net/parodies">Parody</a>, <a href="https://nhentai.net/artists">Artist</a>, <a href="https://nhentai.net/groups">Group</a> shares the same function it generate random ID
+                based on the Given Tag. <br> NOTE: It only accepts 1 tag/name that <strong>exist</strong> on the <a href="https://nhentai.net">Nhentai</a> database.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">//returns a link | id</span>
+<span class="jskeyword">await</span> <span class="jsfunction">pRandtag</span><span class="jspunctuation">(</span><span style="color:#a5d6ff">"&lt;name of the tag&gt;"</span><span class="jspunctuation">)</span><span class="jspunctuation">.</span>link <span class="jsoperator">|</span> <span class="jspunctuation">.</span>id
+<span class="jscomment">//get data of the random generated ID of the given tag</span>
+<span class="jskeyword">await</span> <span class="jsfunction">pRandtag</span><span class="jspunctuation">(</span><span style="color:#a5d6ff">"&lt;name of the tag&gt;"</span><span class="jspunctuation">,</span> <span class="jsparameter">data</span><span class="jsoperator">=&gt;</span><span class="jspunctuation">{</span>
+  <span class="jscomment">/* data.[json object] */</span>
+<span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
+            </li>
+        </ul>
+        <h3 id="⠀prandom-fn-⠀"><a class="anchor" name="⠀prandom-fn-⠀" href="#⠀prandom-fn-⠀"><span class="octicon octicon-link"></span></a><code>⠀pRandom( fn )⠀</code></h3>
+        <ul>
+            <li>Generate random ID based on the website's button 'Random'.</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a> a <a href="#json-object"><code>json object</code></a>.<pre class=" language-js"><code class=" language-js"><span class="jscomment">// gives random number</span>
+<span class="jskeyword">await</span> api<span class="jspunctuation">.</span><span class="jsfunction">pRandom</span><span class="jspunctuation">(</span><span class="jspunctuation">)</span>
+<span class="jscomment">// you can get the random number's data</span>
+<span class="jskeyword">await</span> api<span class="jspunctuation">.</span><span class="jsfunction">pRandom</span><span class="jspunctuation">(</span><span class="jsparameter">data</span><span class="jsoperator">=&gt;</span><span class="jspunctuation">{</span>
+  data<span class="jspunctuation">.</span>images<span class="jspunctuation">.</span>cover
+<span class="jspunctuation">}</span><span class="jspunctuation">)</span></code></pre>
+                <br>
+
+            </li>
+        </ul>
+        <hr>
+        <h2 id="json-object"><a class="anchor" name="json-object" href="#json-object"><span class="octicon octicon-link"></span></a>Json Object</h2>
+        <p>This object is also used on <code>pRand's</code> data functions.</p>
+        <pre class=" language-json"><code class=" language-json"><span class="jsonpunctuation">{</span>
+    <span class="jsonproperty">"id"</span><span class="jsonoperator">:</span> <span class="jsonnumber">228922</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"url"</span><span class="jsonoperator">:</span> <span class="jsonstring">"https://nhentai.net/g/228922/"</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"title"</span><span class="jsonoperator">:</span> <span class="jsonpunctuation">{</span> 
+        <span class="jsonproperty">"origin"</span><span class="jsonoperator">:</span> <span class="jsonstring">"エログロス Vol.2"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"translated"</span><span class="jsonoperator">:</span> <span class="jsonstring">"EROGROS Vol. 2"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"originFull"</span><span class="jsonoperator">:</span> <span class="jsonstring">"[アンソロジー] エログロス Vol.2 [DL版]"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"translatedFull"</span><span class="jsonoperator">:</span> <span class="jsonstring">"[Anthology] EROGROS Vol. 2 [Digital]"</span>
+    <span class="jsonpunctuation">}</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"images"</span><span class="jsonoperator">:</span> <span class="jsonpunctuation">{</span> 
+        <span class="jsonproperty">"cover"</span><span class="jsonoperator">:</span> <span class="jsonstring">"https://t.nhentai.net/galleries/1205270/cover.jpg"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"pages"</span><span class="jsonoperator">:</span> <span class="jsonpunctuation">[</span>
+            <span class="jsonstring">"https://t.hentain.net/galleries/1205270/1t.jpg"</span>
+            <span class="jsonstring">"https://t.hentain.net/galleries/1205270/2t.jpg"</span>
+            <span class="jsonstring">"and 242 more"</span>
+        <span class="jsonpunctuation">]</span>
+    <span class="jsonpunctuation">}</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"tag_table"</span><span class="jsonoperator">:</span> <span class="jsonpunctuation">{</span>
+        <span class="jsonproperty">"parodies"</span><span class="jsonoperator">:</span> <span class="jsonstring">"none"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"characters"</span><span class="jsonoperator">:</span> <span class="jsonstring">"none"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"tag"</span><span class="jsonoperator">:</span> <span class="jsonstring">"&lt;censored&gt; sorry can't show on github"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"artists"</span><span class="jsonoperator">:</span> <span class="jsonstring">"uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"groups"</span><span class="jsonoperator">:</span> <span class="jsonstring">"none"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"languages"</span><span class="jsonoperator">:</span> <span class="jsonstring">"japanese"</span><span class="jsonpunctuation">,</span>
+        <span class="jsonproperty">"categories"</span><span class="jsonoperator">:</span> <span class="jsonstring">"manga"</span>
+    <span class="jsonpunctuation">}</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"number_pages"</span><span class="jsonoperator">:</span> <span class="jsonstring">"244"</span><span class="jsonpunctuation">,</span>
+    <span class="jsonproperty">"uploaded"</span><span class="jsonoperator">:</span> <span class="jsonstring">"2 years, 1 month ago"</span>
+<span class="jsonpunctuation">}</span></code></pre>
+        <h2 id="interface"><a class="anchor" name="interface" href="#interface"><span class="octicon octicon-link"></span></a>Interface</h2>
+        <p>NOTE: Some of it is literally nonsense because this is what is in the declaration file.</p>
+        <h3 id="⠀id⠀--number"><a class="anchor" name="⠀id⠀--number" href="#⠀id⠀--number"><span class="octicon octicon-link"></span></a><code>⠀id⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></h3>
+        <ul>
+            <li>ID or Code or whatever you call.
+                <br><br></li>
+        </ul>
+        <h3 id="⠀url⠀--string"><a class="anchor" name="⠀url⠀--string" href="#⠀url⠀--string"><span class="octicon octicon-link"></span></a><code>⠀url⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <ul>
+            <li>Url of the selected code.
+                <br><br></li>
+        </ul>
+        <h3 id="⠀title⠀--object"><a class="anchor" name="⠀title⠀--object" href="#⠀title⠀--object"><span class="octicon octicon-link"></span></a><code>⠀title⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <ul>
+            <li>titles?
+                <h4 id="⠀⠀--⠀origin⠀--string">⠀⠀- <code>⠀origin⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• original
+                <h4 id="⠀⠀--⠀translated⠀--string">⠀⠀- <code>⠀translated⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• トランスレイト??? wait it's supposed to be in english cuz' it's translated.
+                <h4 id="⠀⠀--⠀originfull⠀--string">⠀⠀- <code>⠀originFull⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• original but its full version of it.
+                <h4 id="⠀⠀--⠀translatedfull⠀--string">⠀⠀- <code>⠀translatedFull⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.
+                <br><br></li>
+        </ul>
+        <h3 id="⠀images⠀--object"><a class="anchor" name="⠀images⠀--object" href="#⠀images⠀--object"><span class="octicon octicon-link"></span></a><code>⠀images⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <ul>
+            <li>images?
+                <h4 id="⠀⠀--⠀cover⠀--string">⠀⠀- <code>⠀cover⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• Doujin cover image.
+                <h4 id="⠀⠀--⠀pages⠀--array">⠀⠀- <code>⠀pages⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></h4>
+                ⠀⠀⠀⠀• Array of images or the doujin.
+                <br><br></li>
+        </ul>
+        <h3 id="⠀tag_table⠀--object"><a class="anchor" name="⠀tag_table⠀--object" href="#⠀tag_table⠀--object"><span class="octicon octicon-link"></span></a><code>⠀tag_table⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></h3>
+        <ul>
+            <li>tags?
+                <h4 id="⠀⠀--⠀parodies⠀--string">⠀⠀- <code>⠀parodies⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• I Like konosuba
+                <h4 id="⠀⠀--⠀characters⠀--string">⠀⠀- <code>⠀characters⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• I love megumin
+                <h4 id="⠀⠀--⠀tag⠀--string">⠀⠀- <code>⠀tag⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• what?
+                <h4 id="⠀⠀--⠀artist⠀--string">⠀⠀- <code>⠀artist⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• I don't really know about this
+                <h4 id="⠀⠀--⠀groups⠀--string">⠀⠀- <code>⠀groups⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• Can't think 1 group tag.
+                <h4 id="⠀⠀--⠀languages⠀--string">⠀⠀- <code>⠀languages⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• english ofc.
+                <h4 id="⠀⠀--⠀categories⠀--string">⠀⠀- <code>⠀categories⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h4>
+                ⠀⠀⠀⠀• ca
+                <br><br></li>
+        </ul>
+        <h3 id="⠀number_pages⠀--string"><a class="anchor" name="⠀number_pages⠀--string" href="#⠀number_pages⠀--string"><span class="octicon octicon-link"></span></a><code>⠀number_pages⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <ul>
+            <li>haha 69 pages seems cool.
+                <br><br></li>
+        </ul>
+        <h3 id="⠀uploaded⠀--string"><a class="anchor" name="⠀uploaded⠀--string" href="#⠀uploaded⠀--string"><span class="octicon octicon-link"></span></a><code>⠀uploaded⠀</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></h3>
+        <ul>
+            <li>Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.<br> In 1722 the government made a law banning hentai manga, which means it was common even earlier.<br> Suzumi-fune is probobly the oldest hentai anime,
+                it's from 1932.<br></li>
+        </ul>
+    </div>
+</body>
+
+</html>
