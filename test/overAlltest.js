@@ -1,7 +1,7 @@
 // this test file js is ignored on the package
 const API = require("../lib/kasuApi")
 const exec = require("child_process").exec
-let api = new API('start');
+let api = new API('start','https://nhentai.net',true);
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 const log = (...string)=>{return console.log(...string);}

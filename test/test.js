@@ -1,7 +1,7 @@
 "use strict";
 const API = require("../lib/kasuApi")
 const exec = require("child_process").exec;
-const api = new API('start');
+const api = new API('start','https://nhentai.net',true);
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 
