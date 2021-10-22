@@ -1,7 +1,7 @@
 // this test file js is ignored on the package
-const API = require("../lib/main")
+const API = require("../lib/kasuApi")
 const exec = require("child_process").exec
-let api = new API();
+let api = new API('start');
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 const log = (...string)=>{return console.log(...string);}
@@ -374,4 +374,5 @@ log(`-----the with discord took '${date(endDiscord - startDiscord)}' to finish--
 log(`--the discord and rerollonfail took '${date(endDiscordReRollonFail - startDiscordReRollonFail)}' to finish--`)
 log(`--the discord and rerollonfail and custom blockwords took '${date(endDiscordReRollonFailblockwords - startDiscordReRollonFailblockwords)}' to finish--`)
 log(`NOTE: TIME DOES NOT START UNTIL THE JS IS STARTED`)
+api.connection.close()
 })();

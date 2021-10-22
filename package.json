@@ -5,16 +5,18 @@
     "crackheadakira"
   ],
   "description": "Easy nhentai API",
-  "main": "./lib/main.min.js",
-  "type": "commonjs",
-  "types": "./lib/main.d.ts",
+  "main": "./lib/kasuApi.js",
+  "types": "./lib/kasuApi.d.ts",
   "keywords": [
     "nhentai",
+    "nhentai.net",
+    "nhentai.to",
     "R18",
     "api",
     "hentai",
     "unofficial",
-    "wrapper"
+    "wrapper",
+    "parser"
   ],
   "scripts": {
     "test": "test.bat",
@@ -25,10 +27,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.10"
   },
-  "devDependencies": {
-    "isomorphic-fetch": "^3.0.0",
-    "undici": "^4.7.3"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiapi.js.git"

@@ -1,5 +1,33 @@
 <!-- official changelog will only store upto 5 versions -->
 <!-- go to the "CHANGELOG.history.md" to check all the changes -->
+# 3.5.0
+## New Update
+- Class constructor changed.
+- New properties Added:
+    - url
+    - connection
+
+- New methods Added:
+    - pHomepage
+    - pLanguagePage
+    - pSearch
+    - pTagPage
+
+-> [See the Documentation for more info](https://ichimakikasura.github.io/kasu.nhentaiapi.js/)
+
+**Removed** request headers property:<br>
+> Module's fetcher is now changed from `https` to `http2` which no longer require `keepAlive` which is also made the module performance better*
+
+### Code rebuild!
+The `fecther` and `shorter` is now one piece and named `parser.js`.<br>
+Code rebuild also improve some performance*.
+
+Definition is also more friendly to be able to access properties, methods and more.
+>![](https://user-images.githubusercontent.com/80595346/138507052-91cc4737-99de-4c77-888e-b6a8e2518e8c.png)
+![](https://user-images.githubusercontent.com/80595346/138507326-99124b4a-2e83-49c7-aed1-6e1f4e51fb17.png)
+![](https://user-images.githubusercontent.com/80595346/138507826-0901a67f-bd49-42dc-b18d-ce9d932e0ef0.png)
+![](https://user-images.githubusercontent.com/80595346/138507546-b99afde1-8d69-4eda-9909-ef9caabffee9.png)
+
 # 3.2.2
 ## Documentation Update
 - Added Documentation
@@ -49,11 +77,3 @@ example:
     api.blockedWords = "crossderssing gore etc"
     // or "crossderssing,gore,etc" or "crossderssing gore,etc"
 ```
-
-# 2.9.2
-Hotfix and code update
-
-- reduced the file size again by cleaning the codes.
-- `pRandom` is now fixed from giving `link is not defined` error message.
-- last 2.9.0 the json object that showed on the readme is fixed and available to all pRand functions. 
-- updated the `fetcher.js`.

@@ -63,27 +63,19 @@ exit
 cls
 echo Minifying JS files...
 echo.
-echo Minifying main.js
-call minify ./lib/main.js > ./lib/main.min.js
+echo Minifying kasuApi.js
+call minify ./lib/kasuApi.js > ./lib/kasuApi.min.js
 cls
 echo Minifying JS files...
 echo.
-echo Minifying main.js - DONE
-echo Minifying shorter.js
-call minify ./lib/src/shorter.js > ./lib/src/shorter.min.js
+echo Minifying kasuApi.js - DONE
+echo Minifying parser.js
+call minify ./lib/src/parser.js > ./lib/src/parser.min.js
 cls
 echo Minifying JS files...
 echo.
-echo Minifying main.js - DONE
-echo Minifying shorter.js - DONE
-echo minifying fectcher.js
-call minify ./lib/src/fetcher.js > ./lib/src/fetcher.min.js
-cls
-echo Minifying JS files...
-echo.
-echo Minifying main.js - DONE
-echo Minifying shorter.js - DONE
-echo minifying fectcher.js - DONE
+echo Minifying kasuApi.js - DONE
+echo Minifying parser.js - DONE
 echo.
 echo.
 echo Finishing contents..

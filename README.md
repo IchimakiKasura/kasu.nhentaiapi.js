@@ -3,14 +3,14 @@
 <h1>N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-3.2.2-brightgreen?style=for-the-badge)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md#321)
+[![stable version](https://img.shields.io/badge/stable%20version-3.5.0-brightgreen?style=for-the-badge)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md#321)
 [![Downloads](https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&style=for-the-badge)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/CHANGELOG.md#321)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
 ![lol](https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge "unofficial api of nhentai")
 </div>
 
-The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") data.
+The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") and [nhentai.to]("https://nhentai.to/") data.
 * Fast*
 * Easy to use
 * Reliable* :>
@@ -25,12 +25,24 @@ npm i kasu.nhentaiapi.js
 ### How to use n-hentai-api
 To get the basic info about the ID/Doujin:
 ```js
-const Example = require('kasu.nhentaiapi.js');
-const ExampleApi = new Example(); // name any you want "api, kasu, nhentai, ..." 
+const Example = require('KasuNhentai'); // experimental, if it doesn't work use 'kasu.nhentaiapi.js'
+const ExampleApi = new Example();
+/**
+ * or const ExampleApi = new Example('start', "https://nhentai.net");
+ * If you don't want to add the url and connection.start() after it.
+ * because it automatically start the connection.
+ * 
+ * Check the documentation for more info.
+*/
 
 //          ----number | strings can do----
 const ID = 228922 //or "228922" or "https://nhentai.net/g/228922"
 async function json(){
+
+    // start the connection
+    ExampleApi.url = "https://nhentai.net"
+    ExampleApi.connection.start()
+
     const val = await ExampleApi.getID(ID).json()
     val.url
     // OR
@@ -38,6 +50,9 @@ async function json(){
     // OR
     (await ExampleApi.getID(ID).json()).url
     // result: https://nhentai.net/g/228922/
+
+    // closes the connection
+    ExampleApi.connection.close()
 }
 ```
 <div align="center">

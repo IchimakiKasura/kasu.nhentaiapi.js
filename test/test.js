@@ -1,7 +1,7 @@
 "use strict";
-const API = require("../lib/main")
+const API = require("../lib/kasuApi")
 const exec = require("child_process").exec;
-const api = new API();
+const api = new API('start');
 
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 
@@ -15,16 +15,15 @@ let execPromise=(command, name)=>{
         });
     });
 }
+
 // excess test are removed after build only important remains
 (async ()=>{
 let start = new Date().getTime()
     api.IgnoreNone = true;
-    log(`   testing '.js' files: main.js`)
-    console.log(await execPromise("node lib/main.js",'main.js'))
-    log(`   testing '.js' files: fetcher.js`)
-    console.log(await execPromise("node lib/src/fetcher.js",'fetcher.js'))
-    log(`   testing '.js' files: shorter.js`)
-    console.log(await execPromise("node lib/src/shorter.js",'shorter.js'))
+    log(`   testing '.js' files: kasuApi.js`)
+    console.log(await execPromise("node lib/kasuApi.js",'kasuApi.js'))
+    log(`   testing '.js' files: Parser.js`)
+    console.log(await execPromise("node lib/src/shorter.js",'Parse.js'))
     const test = await api.getID("https://nhentai.net/g/228922/").json()
     log(`\ngetID().json():\n`)
     log(test)
@@ -36,29 +35,30 @@ let start = new Date().getTime()
     // pRand Test
     log(`pRandSpecificTags:\n`)
     try{
-        await api.pRandSpecificTags("konosuba aqua sole-female",data=>{log(data)})
+        await api.pRandSpecificTags("konosuba aqua sole-female",data=>{log(data.title)})
     }catch(e){log(e)}
 
     log(`\n==========================================================\n`)
 
     log(`\npRandTag: -crossdressing-\n`)
     try{
-        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
+        await api.pRandTag("crossdressing",(data)=>{log(data.title)}) 
     }catch(e){log(e)}
     log(`\n==========================================================\n`)
     log(`\npRandTag: -lolicon-\n`)
     try{
-        await api.pRandTag("lolicon",(data)=>{log(data)}) // should cause and error
+        await api.pRandTag("lolicon",(data)=>{log(data.title)}) // should cause and error
     }catch(e){log(e)}
     api.blockedWords = "crossdressing"
     log(`\n==========================================================\n`)
     log(`\nAdds crossdressing to blocked Tags:`)
     log(`\npRandTag: -crossdressing-\n`)
     try{
-        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
+        await api.pRandTag("crossdressing",(data)=>{log(data.title)}) 
     }catch(e){log(e)}
     log(`\n==========================================================\n`)
 let end = new Date().getTime()
 log(`---------the test took '${date(end - start)}' to finish---------`)
 log(`NOTE: TIME DOES NOT START UNTIL THE JAVASCRIPT IS STARTED`)
+api.connection.close()
 })();

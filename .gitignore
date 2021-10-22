@@ -1,6 +1,6 @@
 # dependencies
 node_modules
-
+/excess
 # ignores the overalltest.js when publishing to npm
 .npmignore
 
@@ -8,8 +8,8 @@ node_modules
 /lib/main.min.js
 /lib/src/fetcher.min.js
 /lib/src/shorter.min.js
-
-/docs/other/Documentation.md
+/docs/other/*.md
+test.js
 
 minifier.js
 

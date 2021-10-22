@@ -1,0 +1,192 @@
+/**Thank you for choosing this API library.*/
+declare module "KasuNhentai" {
+    
+//#region Tags
+type tags = "39tei"|"3d"|"abortion"|"absorption"|"aburitoro-salmon-o-kawari"|"adventitious-vagina"|"afro"|"age-progression"|"age-regression"|"ahegao"|"ahoge-kinoko"|"airpink"|"aizawa-anji"|"aizawa-seinikuten"|"aji-ponntarou"|"akaimelon"|"akigami-satoru"|"akuyaku-warai-sandankatsuyou"|"a-kyokufuri"|"albino"|"alien"|"alien-girl"|"all-the-way-through"|"already-uploaded"|"amamiya-kokoro"|"amputee"|"anal"|"anal-birth"|"anal-intercourse"|"analphagia"|"angel"|"angel-ice"|"animated"|"animegao"|"anorexic"|"anthology"|"aoto-kage"|"apparel-bukkake"|"apron"|"ari-and-mura"|"arisawa-touta"|"armpit-licking"|"armpit-sex"|"artbook"|"artistcg"|"arurukaana7a"|"asatsuki-aoi"|"ashino"|"ash-plus"|"asphyxiation"|"ass-expansion"|"assjob"|"atelier30"|"aunt"|"autofellatio"|"autopaizuri"|"a.w.u"|"ayase-mio"|"azamidon"|"babu-no-ki"|"bald"|"balljob"|"balls-expansion"|"ball-sucking"|"bandages"|"bandaid"|"bankoku-ayuya"|"barghest"|"bat-girl"|"battenkyuuki"|"bbm"|"bbw"|"bdsm"|"bear"|"bear-girl"|"beauty-mark"|"bee-girl"|"bestiality"|"big-areolae"|"big-ass"|"big-balls"|"big-breasts"|"big-clit"|"big-lips"|"big-muscles"|"big-nipples"|"big-penis"|"big-vagina"|"bike-shorts"|"bikini"|"birth"|"biscuitone"|"bisexual"|"blackmail"|"blind"|"blindfold"|"blood"|"bloomers"|"blowjob"|"blowjob-face"|"body-modification"|"body-painting"|"bodystocking"|"bodysuit"|"body-swap"|"body-writing"|"bondage"|"bonus-call"|"bori"|"brain-fuck"|"breast-expansion"|"breast-feeding"|"breast-reduction"|"bride"|"brother"|"bukkake"|"bull"|"bunbuku-nagi"|"bunny-boy"|"bunny-girl"|"burping"|"business-suit"|"butler"|"calmflower"|"cannibalism"|"cappuccino"|"capsaicin"|"cardfight-v-master"|"carter"|"cashier"|"cat"|"catboy"|"catfight"|"catgirl"|"catgirlwitch"|"catnip-s-tablet"|"cbt"|"cementite"|"censorship"|"centaur"|"cervix-penetration"|"cervix-prolapse"|"cha-bou"|"chastity-belt"|"cheating"|"cheerleader"|"cherry-blossoms"|"chikan"|"chikichikin"|"chikumaya"|"chikuwa-factory"|"chinese-dress"|"chinpan"|"chiparu"|"chirotata"|"chitsu-kara-liver"|"chiyou-yoyuchi"|"chloroform"|"christmas"|"circle-ism"|"circle-takaya"|"clamp"|"clit-growth"|"clit-insertion"|"clone"|"closed-eyes"|"clothed-female-nude-male"|"clothed-male-nude-female"|"clothed-paizuri"|"coach"|"cockphagia"|"cocoroach"|"collar"|"collon-club"|"comic"|"compilation"|"condom"|"conejologia"|"coprophagia"|"corruption"|"corset"|"cosplaying"|"cousin"|"cow"|"cowgirl"|"cowman"|"cream-punch"|"croriin"|"crossdressing"|"cross-road"|"crotch-tattoo"|"crown"|"cum-bath"|"cumflation"|"cum-in-eye"|"cum-swap"|"cunnilingus"|"cuntboy"|"cuntbusting"|"dakimakura"|"dan-oniroku"|"dark-nipples"|"dark-sclera"|"dark-skin"|"darymaya"|"daughter"|"deepthroat"|"deer-girl"|"defloration"|"deko-ga-areba-boko-ga-aru."|"deluxe-kougyou"|"demon"|"demon-girl"|"denki-anma"|"densetsu-guji"|"denyel"|"diaper"|"dickgirl-on-dickgirl"|"dickgirl-on-male"|"dickgirls-only"|"dick-growth"|"dicknipples"|"dilf"|"dinosaur"|"dismantling"|"doemutan"|"dog"|"dogaya"|"dog-boy"|"doggie-yu"|"dog-girl"|"doll-joints"|"dolphin"|"domination-loss"|"domino-gumi"|"donmaikingdom"|"donshoku-echiechi-dragon"|"double-anal"|"double-blowjob"|"double-penetration"|"double-vaginal"|"dougi"|"doujinharuga"|"doujinshi"|"do-wa"|"dragon"|"drd"|"drill-hair"|"drugs"|"drunk"|"dummy-kaiko"|"ear-fuck"|"ebi-fry-teishoku"|"ebio"|"echigonokuni"|"eel"|"eggs"|"eihikanshi"|"el115"|"electric-shocks"|"electromonkey"|"elf"|"els-tasmin"|"emotionless-sex"|"emuo"|"enami-nao"|"enari"|"endeaa"|"enema"|"eroiroe"|"ero-trap-dungeon"|"exercise-abc"|"exhibitionism"|"eye-covering-bang"|"eyemask"|"eyepatch"|"eye-penetration"|"ezaki-yui"|"facesitting"|"facial-hair"|"fairy"|"farting"|"father"|"fe3c"|"females-only"|"femdom"|"feminization"|"fengxi"|"fff-threesome"|"ffm-threesome"|"fft-threesome"|"figure"|"filming"|"fingering"|"first-person-perspective"|"fish"|"fishnets"|"fisting"|"fliming"|"focus-anal"|"focus-blowjob"|"focus-paizuri"|"foot-insertion"|"footjob"|"foot-licking"|"forbidden-content"|"forced-exposure"|"forniphilia"|"fox"|"fox-boy"|"fox-girl"|"foxtail-project"|"freckles"|"frog"|"frog-girl"|"frottage"|"fuguta-ke"|"fujii-kasai"|"fujiwarake"|"full-body-tattoo"|"full-censorship"|"full-color"|"fundoshi"|"furry"|"furube"|"furukoto-takaichi"|"furutani"|"futaba-channel"|"futaba-tsukushi"|"futanari"|"fuwatoro-lion"|"fuwatoro-opanchu-cake"|"gag"|"gairou"|"gamanuntaka"|"gan-sukii"|"gaping"|"garter-belt"|"gasmask"|"gatekeeper"|"gender-bender"|"genkotsu-13-gou"|"ghost"|"giant"|"giantess"|"giant-sperm"|"gigantic-breasts"|"gijinka"|"ginmaru"|"girigirimai"|"glasses"|"glory-hole"|"gloves"|"goblin"|"gokkun"|"golden-bazooka"|"gorilla"|"gorilla-mountain-shikoku"|"gorou"|"gothic-lolita"|"goudoushi"|"granddaughter"|"grandfather"|"grandmother"|"great-akuta"|"group"|"growth"|"gunjou-croquette"|"guradesu"|"guro"|"gurotuki"|"guusuka"|"gyaru"|"gyaru-oh"|"gymshorts"|"gyoumuin-a"|"hachimaru-extreme"|"haigure"|"hair-buns"|"hairjob"|"hairy"|"hairy-armpits"|"handicapped"|"handjob"|"harem"|"harness"|"harpy"|"haru-chan-kikaku"|"haruharu-dou"|"harusame-kakigoori"|"hazuki-younosuke"|"headless"|"headphones"|"henzutsuu"|"heterochromia"|"hidden-sex"|"higehurai"|"higuchi-shuu"|"higuti-syu"|"hijab"|"hikaru-toyama"|"hikawa-ritsu"|"hinyari"|"hirobi"|"hironikuru-senga-anarogu"|"hironobu"|"hiropons"|"hitozuma-lollipop"|"hiuh"|"hololive"|"home-center-tenco"|"honjou-tatami"|"hood"|"horns"|"horse"|"horse-boy"|"horse-cock"|"horse-girl"|"hoshigaki-seizoujo"|"hoshina-shinya"|"hoshino-takanashi"|"hotate-san"|"hotpants"|"houwa-aji"|"how-to"|"huge-breasts"|"huge-penis"|"hugo-baint-renxandt"|"hugo-baint-von-renxandt"|"human-cattle"|"human-on-furry"|"human-pet"|"humiliation"|"hyouzan-daibakuha"|"hyper-uc-circle"|"ichi-gsm"|"ido-nite"|"ijou-shiniki"|"ill"|"imageset"|"impregnation"|"incest"|"incomplete"|"infantilism"|"inflation"|"insect"|"insect-boy"|"insect-girl"|"inseki"|"internal-urination"|"inverted-nipples"|"invisible"|"ishihara-norihiro"|"ishimari-yuuya"|"ishoku-dougen"|"isshiki-fuji"|"itokon-code"|"itsuki-itsuki"|"iwahisa-tsuki"|"iyo-no-kama"|"iyoudon"|"jero"|"jewelry-box"|"jikken-b-tou"|"jikomanzoku-manga-shuudan"|"jiko-moratorium"|"josou-seme"|"juki-kazu"|"jumyou-wa-isshukan"|"kagaku-chop"|"kaito-dokuringo"|"kakoriri"|"kakucho-parts"|"kamenoashi"|"kame-no-kotawashi"|"kancho"|"kappa"|"karnatia-seri-anabald"|"kawara-soba"|"kazaoka"|"kazefuki-poni"|"keiji-kurobi"|"kemonomimi"|"kien-biu"|"kigurumi"|"kigurumi-pajama"|"kimono"|"kindergarten-uniform"|"kinoto-kanade"|"kirakou"|"kiriko"|"kisetsufuu"|"kisetsu-fuu"|"kissing"|"kitsune-no-nijibiya"|"kiyomiya-ryou"|"kneepit-sex"|"kobamiso"|"kodomokai"|"komyaku"|"kosuke-poke"|"kouun-ryuusui"|"koyama-hayato"|"k.t."|"kuba-yodomu"|"kuchibiru-chazuke"|"kudou-maimu"|"kujo-shima"|"kuki-isu"|"kumarin"|"kumata-katsumi"|"kunoichi"|"kuremente"|"kuri-dango-ya-sora"|"kurosaki-shun"|"kuroyume-koubou"|"kutsudaru"|"kuusou-jikkenshitsu"|"lab-coat"|"lactation"|"lander"|"large-insertions"|"large-tattoo"|"latex"|"layer-cake"|"leash"|"legjob"|"leg-lock"|"leotard"|"levi"|"lingerie"|"little-note"|"living-clothes"|"lizard-girl"|"lizard-guy"|"lolicon"|"loli-fan"|"long-tongue"|"loon-koubou"|"love-tan"|"low-bestiality"|"low-guro"|"low-lolicon"|"low-scat"|"low-shotacon"|"low-smegma"|"ludonic-alien"|"luo-xiaohei"|"machida-march"|"machine"|"madden"|"maggot"|"magical-girl"|"mahomaho"|"mahomaho-koubou"|"maid"|"makeup"|"male-on-dickgirl"|"males-onl"|"males-only"|"manga"|"maou-dante"|"maripaka"|"masaru"|"mase-ryuuki"|"mash."|"mashi-miyuki"|"masked-face"|"masturbation"|"masuta"|"matsuda-val"|"matumoto-ke"|"maturbation"|"mature"|"mecha-boy"|"mecha-girl"|"meimeikomei"|"melonbooks"|"menstruation"|"mentoru"|"mermaid"|"merman"|"mesuiki"|"metal-armor"|"mian-mubo"|"miato"|"micchi"|"midget"|"miki-hime"|"miko"|"mikoshiba"|"mikoshiro-nagitoh"|"milf"|"military"|"milking"|"mimamoriencyo"|"miminoura"|"minato-mirai"|"mind-break"|"mind-control"|"mine-mura"|"minigirl"|"miniguy"|"minotaur"|"misakitou"|"misc"|"missing-cover"|"mitari-gakuen"|"miyahama-ryou"|"miyamoto-smoke"|"mizuhara-zakuro"|"mizuiro-penra"|"mizutamari-no-uta"|"mmf-threesome"|"mmm-threesome"|"mmt-threesome"|"mochichimaru"|"mofuaki"|"moheji"|"mokkindou"|"mokko"|"momomo-gasshuukoku"|"momoya"|"monimonimo"|"monkey"|"monkey-girl"|"monoeye"|"monster"|"monster-girl"|"moomoomilk"|"moral-degeneration"|"moriyama-inu"|"mosaic-censorship"|"mosoya"|"mother"|"mouse"|"mouse-boy"|"mouse-girl"|"mouth-mask"|"mr.-bobo"|"mtf-threesome"|"muchuu-yakou"|"mugen-murasaki"|"multimouth-blowjob"|"multipanel-sequence"|"multiple-arms"|"multiple-assjob"|"multiple-breasts"|"multiple-footjob"|"multiple-handjob"|"multiple-nipples"|"multiple-orgasm"|"multiple-orgasms"|"multiple-paizuri"|"multiple-penises"|"multiple-straddling"|"multi-work-series"|"mult-work-series"|"murai-toyo"|"murakami-harumasa"|"mura-mura"|"murasaki-reika"|"muscle"|"muscle-growth"|"mute"|"myuu"|"nagahama-kenji"|"najimaarc"|"najimaru"|"nakadashi"|"nakamura-kafka"|"namaniku"|"namiitcho"|"naminori-kamome"|"narumieru"|"navel-fuck"|"nazi"|"nazono"|"necrophilia"|"neko-no-tendon"|"neo-tokugawake"|"nero-tarou."|"netorare"|"nf-freak"|"nicolai-no-yome"|"niece"|"nijimaarc"|"nijimaru"|"nijisanji"|"ninja"|"nintai-akira"|"nipple-birth"|"nipple-expansion"|"nipple-fuck"|"nitouhen"|"niwaka-daimyou"|"nobiruko"|"non-h"|"no-penetration"|"noraneko-nicole"|"nose-fuck"|"nose-hook"|"no-tengo-nada"|"nudity-only"|"nun"|"nurse"|"nyantomo"|"nya-tan"|"ocita-micawa"|"octopus"|"oil"|"oishii-oshiri"|"oishii-oshiri-cafe"|"oishinbo"|"ojarumaru"|"okemaruta"|"old-lady"|"old-man"|"omorashi"|"onahole"|"oni"|"onigunsow"|"oosaki"|"oppai-loli"|"orc"|"ore-teki-doremi-e"|"orgasm-denial"|"ouroboros"|"out-of-order"|"oyakodon"|"pai-genji"|"paizuri"|"pants-o-pants"|"pantyhose"|"pantyjob"|"parareyukicchu"|"parasite"|"pasties"|"patapo"|"payochiyo"|"pegging"|"penis-birth"|"petplay"|"petrification"|"phase-e"|"phimosis"|"phone-sex"|"pichinki"|"piercing"|"pig"|"pig-girl"|"pig-man"|"pillory"|"pinez"|"pinkpaper"|"pinochika"|"pirate"|"piss-drinking"|"pixie-cut"|"plant-girl"|"poco-pene"|"pole-dancing"|"policeman"|"policewoman"|"ponkotsu-afro"|"ponygirl"|"ponytail"|"poor-grammar"|"possession"|"poyojirou"|"pregnant"|"prehensile-hair"|"priest"|"prismatic-boy"|"prolapse"|"prostate-massage"|"prostitution"|"pubic-stubble"|"public-use"|"qiujun"|"raccoon-girl"|"race-queen"|"rainy-eternity"|"rakudai-ninja-rantaro"|"randoseru"|"rape"|"rayou."|"rayzhai"|"record-of-ragnarok"|"red-light-red"|"redosukan"|"red-plum-dianthus"|"redraw"|"reitou-yakisoba"|"replaced"|"reptile"|"reversible"|"rimjob"|"robot"|"rof"|"ryona"|"ryou"|"ryuuguu"|"saikime"|"saikoro"|"sakakibara-bieru"|"sakurai-mizuki"|"salad-oil"|"saliva"|"sample"|"sarashi"|"sasada-aki"|"sasaki-kazuyuki"|"satotsuki-chiyo"|"sayama-yukihiro"|"scan"|"scanmark"|"scar"|"scat"|"schoolboy-uniform"|"schoolgirl-uniform"|"school-gym-uniform"|"school-swimsuit"|"scrotal-lingerie"|"seiniku-aikoukai"|"seisha-ryuso"|"seishokuki"|"sekaiju-no-hakoniwa"|"seki-hirame"|"sekito-sakurada"|"selfcest"|"senoo-hibiteru"|"sesshouin-kiara"|"seto-ryouko"|"sex-toys"|"shared-senses"|"shark-boy"|"shark-girl"|"shaved-head"|"sheep-girl"|"shemale"|"shiawase-na-choushoku"|"shibari"|"shibudaku-seisaku-iinkai"|"shiga-hanako"|"shigemaru-shigeru"|"shimaidon"|"shimapan"|"shimenawa-to-onna-no-ko"|"shimizu-masaharu"|"shimon-ryuushirou"|"shinka-san"|"shioimo"|"shiokaze-toride"|"shiragi-mana"|"shiranai-uchi-ni-level-max-ni-nattemashita"|"shiratamaya"|"shiromaru"|"shishio"|"shittori-bouzu"|"shizaki-tsukiyo"|"shizukuno-reyu"|"shotacon"|"shoujo-yoshitsune-den"|"shrimp-cake"|"shrinking"|"shuhan"|"shunga-no-hassan"|"siansi"|"siruto"|"sister"|"skeb"|"sketch-lines"|"skinsuit"|"skunk-girl"|"slave"|"sleeping"|"slime"|"slime-boy"|"slime-girl"|"slime-taoshite-300-nen-shiranai-uchi-ni-level-max-ni-nattemashita"|"slug"|"small-breasts"|"small-penis"|"smegma"|"smell"|"smile-foran-company"|"smoking"|"snail-girl"|"snake"|"snake-boy"|"snake-girl"|"snuff"|"soboro"|"sockjob"|"sokushi"|"sole-dickgirl"|"sole-female"|"sole-femla"|"sole-fmelae"|"sole-male"|"solo-action"|"sonna-bakana"|"soudeiba"|"soushuuhen"|"spanking"|"speculum"|"spider"|"spider-girl"|"squid-boy"|"squid-girl"|"squirrel-girl"|"squirting"|"ssbbm"|"ssbbw"|"stealthcraftwork"|"stealth-koubou"|"stewardess"|"stirrup-legwear"|"stockings"|"stomach-deformation"|"story-arc"|"straitjacket"|"stranded"|"strand-infinity"|"strap-on"|"stretching"|"stuck-in-wall"|"sudou-raikuu"|"suelecia-zagan-analeit"|"suga-juurou"|"sugishin"|"sukuna"|"sumairu"|"sumata"|"sundress"|"sunglasses"|"suzugaeru"|"suzuki-takeshi"|"suzunashi-rei"|"suzuoka-chitose"|"sway"|"sweating"|"swimsuit"|"swinging"|"syake-ama"|"syno"|"synolee"|"syntier13"|"syringe"|"syunka-kikaku"|"syunkarow"|"table-masturbation"|"tachibana-ruri"|"tachiko"|"tail"|"tailjob"|"tailphagia"|"tail-plug"|"taimanin"|"taiyaki-pan"|"taiyou-no-nishi"|"takeefu"|"takemitsu-tenta"|"tall-girl"|"tall-man"|"tankoubon"|"tankouyon"|"tanlines"|"tasuke-seinyuu"|"ta-ta"|"tawashi"|"teacher"|"tekko"|"tenga"|"tenkoinu"|"tentacles"|"tetsudou-hisakawa"|"texteater"|"the-legend-of-luoxiaohei"|"thick-eyebrows"|"thigh-high-boots"|"thirty8ght"|"tiara"|"tickling"|"tiger"|"tights"|"time-stop"|"tkf"|"tkosukotei"|"tokakukaku"|"tokyo-kumitaisou-gumi"|"tomatoedge"|"tomboy"|"tomgirl"|"tomikadou"|"tonari-toyama"|"toorisugari-kari"|"toprush"|"tops"|"toranoana"|"tori-seisakusho"|"tornado"|"torotei"|"torture"|"totorina"|"toubousha"|"tracksuit"|"trampling"|"tranformation"|"transformation"|"tribadism"|"triple-anal"|"triple-penetration"|"triple-vaginal"|"truffe"|"tsujidou-ayase"|"tsuruga"|"ttf-threesome"|"ttm-threesome"|"ttt-threesome"|"tube"|"tuna-empire"|"turisasu"|"turquoise"|"tutor"|"twinkyweeb"|"twins"|"twintails"|"tyontyon"|"uchuu-jin-tanaka-tarou"|"udokurokujou"|"umai"|"umeda"|"umeda-ku"|"umou"|"unbirth"|"uncensored"|"uncle"|"underwater"|"unicorn"|"unusual-insertions"|"unusual-pupils"|"unusual-teeth"|"unya"|"unyakun"|"urethra-insertion"|"urination"|"uri-tan"|"usaman-senpai"|"ushiking"|"uwatteru"|"uyuu"|"vacbed"|"vaginal-sticker"|"vampire"|"variant-set"|"very-long-hair"|"vildred"|"virginity"|"vomit"|"vore"|"vorevore"|"voyeurism"|"vtuber"|"waiter"|"waitress"|"wakimiunten"|"walkure"|"watermarked"|"watosu-mama"|"webtoon"|"weight-gain"|"western"|"western-cg"|"western-imageset"|"western-non-h"|"wet-clothes"|"whip"|"widow"|"widower"|"wings"|"witch"|"wolf"|"wolf-boy"|"wolf-girl"|"wooden-horse"|"worm"|"wormhole"|"wrestling"|"wsplus"|"x-ray"|"yagen-nankotsu"|"yakumo-ryojin"|"yamano-muraotto"|"yamazaki-takumi"|"yami-books"|"yamito"|"yan2252"|"yanagie-terasu"|"yandere"|"yaniku"|"yao-ha-ducy"|"yaoi"|"yariyo"|"yashima-tetsuya"|"yawaraka-shouten"|"yokochichi-lingerie"|"yongo"|"yo-o-shinobu"|"yoro"|"yorozu-company"|"yoshiwara-tatsuhiko"|"yoshiyoshi-ya"|"youkai-club"|"young-farm"|"yugioh-arc-v"|"yukino-makoto"|"yukkuri"|"yumeki"|"yumemori"|"yumiko"|"yunusuko"|"yuri"|"yuuki-reina"|"yuzu-onsen"|"zijou"|"zombie"
+//#endregion
+
+    interface Data {
+        /**ID or Code or whatever you call.*/
+        id: string,
+        /**Url of the selected code.*/
+        url: string,
+        /**titles?*/
+        title: {
+            /**original.*/
+            origin: string,
+            /**トランスレイト??? wait it's supposed to be in english cuz' it's translated.*/
+            translated: string
+            /**original but its full version of it.*/
+            originFull: string,
+            /**YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.*/
+            translatedFull: string
+        },
+        /**images?*/
+        images: {
+            /**Doujin cover image.*/
+            cover: string,
+            /**Doujin image source.*/
+            pages_source: string,
+            /**Int specifies the image number page.*/
+            pages(pages?: number): void
+        },
+        /**tags?*/
+        tag_table: {
+            /**I Like konosuba*/
+            parodies: string,
+            /**I love megumin*/
+            characters: string,
+            /**what?*/
+            tag: string,
+            /**I don't really know about this*/
+            artist: string,
+            /**Can't think 1 group tag.*/
+            groups: string,
+            /**english ofc.*/
+            languages: string,
+            /**ca*/
+            categories: string,
+        },
+        /**haha 69 pages seems cool.*/
+        number_pages: number,
+        /**
+        Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.
+
+        In 1722 the government made a law banning hentai manga, which means it was common even earlier.
+
+        Suzumi-fune is probobly the oldest hentai anime, it's from 1932.
+        */
+        uploaded: string
+    }
+    /**Idk why it named 0? pls help*/
+    type PageInfo = [
+        {
+            /**Gives the Url.*/
+            CurrentURL: string,
+            /**idk*/
+            typePage: string,
+            /**Gives an index number of what page you are currently in.*/
+            CurrentPage: number,
+            /**Total arrays.*/
+            Total: number,
+            /**Total Pages ofc.*/
+            TotalPage: string,
+        }, ...{
+            /**ID or Code or whatever you call.*/
+            id: string,
+            /**taitoru.*/
+            title: string,
+            /**Cover picture.*/
+            thumbnail: string,
+            /**It's just the combination of the currenturl with id innit.*/
+            url: string,
+            /**NANI TTE-*/
+            languages: string,
+        }[]]
+    type json = (response: Data) => {}
+    type returns = {
+        /**Retrieve the response json object.*/
+        json(data?: json): Promise<Data>
+    }
+    type connection = {
+        /**start the connection?*/
+        start(debug?: boolean): void
+        /**close the connection?*/
+        close(debug?: boolean): void
+    } | "start"
+    type _url = "https://nhentai.net" | "https://nhentai.to"
+    type language = "japanese"|"japan"|"jp"|"english"|"eng"|"chinese"|"china"|"translated"
+    /**You horni user.*/
+    class Main {
+        /**
+         * `connection` has 1 inputs that can be accepted, start. Same as the connection function below. It just automatically start the connection without calling the connection property.
+
+        `url` https://nhentai.net or https://nhentai.to
+
+        `debug` If set to true It will show a log that shows that it is working and connected.
+        */
+        constructor(connection: connection, url: _url, debug: boolean)
+        /**The Inputted URL will be used to connect. As of the 3.5.0 update the domain .to is now supported.
+         
+        https://nhentai.net or https://nhentai.to the https:// must be included.*/
+        url: _url
+        /**if you want to start the connection provided by the url.*/
+        connection: connection
+        /**If you're using this API on discord bot enable this to true
+        
+        default: `false`*/
+        IsDiscord: boolean
+        /**Add more blocked tags into the API
+        
+        Example:
+         ```js
+        blockedWords = "crossdressing brutality penetration"
+        ```
+        contributer: crackheadakira*/
+        blockedWords: string
+        /**If you're using `IsDiscord` and don't wanna do your own retry function use this.
+        
+        default: `false`*/
+        ReRollonFail: boolean
+        /**
+         No longer shows a blank or empty json object.
+         
+         Only used if showing json as full text.
+         
+         default: `false`*/
+        IgnoreNone: boolean
+        /**
+        `ID`ー Accepts string of numbers or just numbers. Any letter is declined.
+        
+        Example
+        ```js
+        getID(12938 | "12938" | "https://nhentai.net/g/12938")
+        ```
+        */
+        getID(ID: string | number): returns
+        /**
+        `returns` a random "Existing" Doujin number
+        */
+        pRandID(): Promise<number>
+        /**
+       `string`ー Any tags would do or mixed tag, see example below.
+        
+        `data`ー Use this if you want to get its properties like images or links etc.
+        If no callback it will return a number or the selected ID.
+        
+        Example: 
+        ```js
+        // using callback can access list object
+        pRandSpecificTags("konosuba aqua sole-female",data=>{data.images.cover})
+        
+        // no callback will return a number | ID
+        pRandSpecificTags("konosuba aqua sole-female") // returns ID only
+        ```
+        */
+        pRandSpecificTags(string?: string, data?: json): Promise<Data>
+        /**
+        Same as the `pRandSpecificTags` but strictly for Tag Search only.
+        
+        If a non-Tag entered will cause an error.
+        */
+        pRandTag(string?: tags, data?: json): Promise<Data>
+        /**Same as the `pRandSpecificTags` but strictly for Parody Search only.*/
+        pRandParody(string?: string, data?: json): Promise<Data>
+        /**Same as the `pRandSpecificTags` but strictly for Artist Search only.*/
+        pRandArtist(string?: string, data?: json): Promise<Data>
+        /**Same as the `pRandSpecificTags` but strictly for Group Search only.*/
+        pRandGroup(string?: string, data?: json): Promise<Data>
+        /**Same as the `pRandID` but will give you the properties of the selected random number.*/
+        pRandom(data?: json): Promise<Data>
+        /**`int` specifies the page. Shows the Homepage of the selected URL. */
+        pHomepage(page?: number): Promise<PageInfo>
+        /**`str` only accepts 4 string **japanese**, **english**, **chinese** and **translated** (is this even a language). it also accepts shortcuts like **jp**, **japan**, **eng**, **china**. `int` specifies the page. */
+        pLanguagePage(string: language, page?: number): Promise<PageInfo>
+        /**Shows some list of the searched string of `str`. `int` specifies the page. */
+        pSearch(string: string, page?: number): Promise<PageInfo>
+        /**Shows some list of the searched tag string of `str`. `int` specifies the page. */
+        pTagePage(string: tags, page?: number): Promise<PageInfo>
+
+    }
+    export = Main;
+}
