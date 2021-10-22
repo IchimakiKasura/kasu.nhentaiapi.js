@@ -1,5 +1,8 @@
 <!-- official changelog will only store upto 5 versions -->
 <!-- go to the "CHANGELOG.history.md" to check all the changes -->
+# 3.5.1
+- IF YOU HAVE A FAST AF INTERNET PLS CAN U SLOW?<BR>
+On my travis.ci build on 3.5.0 It has a status code 429 which stands for "too many request" so do not request TOO MUCH or TOO MANY if you have a fast internet. I don't know how to fix this yet but I will find a way soon.
 # 3.5.0
 ## New Update
 - Class constructor changed.
@@ -65,15 +68,3 @@ previous version but you can't use the new property `requestHeaders`. check my t
 ## Quick patch
 - version 3.0.0 code clean has some problem, putted too many `awaits` that makes it slow is now Fixed.</br>
 note: `overAlltest.js` should always end with a 1min test or lower, If it exceed 1min30sec means there's something wrong in my code please do a PR.
-
-# 3.0.0
-
-## Update
-- cleaned the codes to reduce the file size.
-- all JS files are now minified when installing through `npm install`.
-- Added `blockedWords` for `IsDiscord`.</br>
-example:
-```js
-    api.blockedWords = "crossderssing gore etc"
-    // or "crossderssing,gore,etc" or "crossderssing gore,etc"
-```
