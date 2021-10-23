@@ -1,11 +1,11 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "contributors": [
     "crackheadakira"
   ],
   "description": "Easy nhentai API",
-  "main": "./lib/kasuApi.js",
+  "main": "./lib/kasuApi.min.js",
   "types": "./lib/kasuApi.d.ts",
   "keywords": [
     "nhentai",
