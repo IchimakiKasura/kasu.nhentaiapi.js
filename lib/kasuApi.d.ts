@@ -3,7 +3,7 @@ declare module "KasuNhentai" {
     
     /**Download Full list on github for maximum experience*/
     type tags = "39tei"|"3d"|"abortion"|"absorption"|"netorare"|"crossdressings"|"sister"|"sole-female"|"yuri"|"yaoi"|"zombie"
-
+    /**book data*/
     interface Data {
         /**ID or Code or whatever you call.*/
         id: string,
@@ -46,6 +46,8 @@ declare module "KasuNhentai" {
             /**ca*/
             categories: string,
         },
+        /**damn that many people ey?*/
+        favorites: number,
         /**haha 69 pages seems cool.*/
         number_pages: number,
         /**
@@ -69,7 +71,7 @@ declare module "KasuNhentai" {
             /**Total arrays.*/
             Total: number,
             /**Total Pages ofc.*/
-            TotalPage: string,
+            TotalPage: number,
         }, ...{
             /**ID or Code or whatever you call.*/
             id: string,
@@ -82,6 +84,7 @@ declare module "KasuNhentai" {
             /**NANI TTE-*/
             languages: string,
     }[]]
+    /**j s o n*/
     type json = (response: Data) => {}
     type returns = {
         /**Retrieve the response json object.*/
@@ -93,7 +96,9 @@ declare module "KasuNhentai" {
         /**close the connection?*/
         close(debug?: boolean): void
     } | "start"
+    /**book*/
     type _url = "https://nhentai.net" | "https://nhentai.to"
+    /**language*/
     type language = "japanese"|"japan"|"jp"|"english"|"eng"|"chinese"|"china"|"translated"
     /**You horni user.*/
     class Main {
@@ -177,14 +182,14 @@ declare module "KasuNhentai" {
         pRandGroup(string?: string, data?: json): Promise<Data>
         /**Same as the `pRandID` but will give you the properties of the selected random number.*/
         pRandom(data?: json): Promise<Data>
-        /**`int` specifies the page. Shows the Homepage of the selected URL. */
+        /**`page` specifies the page. Shows the Homepage of the selected URL. */
         pHomepage(page?: number): Promise<PageInfo>
-        /**`str` only accepts 4 string **japanese**, **english**, **chinese** and **translated** (is this even a language). it also accepts shortcuts like **jp**, **japan**, **eng**, **china**. `int` specifies the page. */
+        /**`str` only accepts 4 `string` **japanese**, **english**, **chinese** and **translated** (is this even a language). it also accepts shortcuts like **jp**, **japan**, **eng**, **china**. `page` specifies the page. */
         pLanguagePage(string: language, page?: number): Promise<PageInfo>
-        /**Shows some list of the searched string of `str`. `int` specifies the page. */
+        /**Shows some list of the searched string of `string`. `page` specifies the page. */
         pSearch(string: string, page?: number): Promise<PageInfo>
-        /**Shows some list of the searched tag string of `str`. `int` specifies the page. */
-        pTagePage(string: tags, page?: number): Promise<PageInfo>
+        /**Shows some list of the searched tag string of `string`. `page` specifies the page. */
+        pTagPage(string: tags, page?: number): Promise<PageInfo>
 
     }
     export = Main;
