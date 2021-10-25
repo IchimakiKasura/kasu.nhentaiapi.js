@@ -4,760 +4,145 @@
     <link rel="stylesheet" type="text/css" href="./other/1.css">
     <link rel="stylesheet" type="text/css" href="./other/2.css" id="_theme">
     <link rel="shortcut icon" href="https://nhentai.net/favicon.ico" type="image/x-icon">
-    <title>Kasura's Docs | Documentation</title>
+    <title>Kasura's Docs | Homepage</title>
+    <style>
+        .nTitle {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            top: -40px;
+            weight: 800;
+        }
+
+        .topBG {
+            /* position: relative; */
+            margin-bottom: -280px;
+            padding: 0px;
+            height: 300px;
+            background-image: url("https://user-images.githubusercontent.com/80595346/138738093-408a1f38-6e3c-45a1-a277-67fb51b18e21.png");
+            box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .6) inset;
+            background-repeat: no-repeat;
+            background-size: 900px;
+            border-radius: 15px;
+        }
+
+        .thingy {
+            margin-left: 20px;
+        }
+
+        .thingy p img {
+            box-shadow: 0 0 15px 5px #d962aa;
+        }
+
+        .thingy p a img {
+            box-shadow: 0 0 15px 5px #d962aa;
+        }
+    </style>
 </head>
 
 <body>
     <div id="_html" class="markdown-body">
-        <div align="center">
-            <img src="https://i.redd.it/fkg9yip5yyl21.png" height="140px" title="nhentai" style="margin:0">
+        <div class="topBG"></div>
+        <img src="https://i.redd.it/fkg9yip5yyl21.png" height="140px" title="nhentai">
+        <h1 class="nTitle" style="color:black !important"><a class="anchor" name="" href="#"><span
+                    class="octicon octicon-link"></span></a>N-hentai API Homepage<br>ようこそ!</h1>
+        <div class="thingy">
 
-            <h1 id="api-documentation">API Documentation</h1>
-            <p>-=Documentation for the kasu.<a href="https://nhentai.net">nhentai</a>api.js=-</p>
+            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352"><img
+                        src="https://img.shields.io/badge/stable%20version-3.6.0-brightgreen?style=for-the-badge"
+                        alt="stable version"></a>
+                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352"><img
+                        src="https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&amp;style=for-the-badge"
+                        alt="Downloads"></a>
+                <a href="https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js"><img
+                        src="https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge"
+                        alt="Build Status"></a>
+                <img src="https://img.shields.io/badge/-minified%20-gray?style=for-the-badge" alt="minified"
+                    title="^3.0.0 versions are now already MINIFIED!"><br>
+                ⠀⠀<img
+                    src="https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge"
+                    alt="lol" title="unofficial api of nhentai">
+            </p>
         </div>
+        <br><br>
 
-        <details>
-            <summary><a href="#apidocumentation">Overview</a></summary>
-            <div class="content">
-
-                <ul>
-                    <li><a href="#get-started">install</a></li>
-                    <li><a href="#basics">Basic use</a></li>
-                </ul>
-            </div>
-        </details>
-
-
-
-        <details>
-            <summary><a href="#⠀constructor⠀" title="module">kasu.nhentaiapi.js</a></summary>
-            <div class="content">
-
-                <ul>
-                    <li><a href="#%E2%A0%80constructor%E2%A0%80" title="main">Class</a>
-                        <ul>
-                            <li><a href="#property-classes" title="Class Properties">Properties</a>
-                                <ul>
-                                    <li><a href="#%E2%A0%80url%E2%A0%80--string" title="url">class.url</a></li>
-                                    <li><a href="#%E2%A0%80connection%E2%A0%80--string"
-                                            title="connection">class.connection</a>
-                                        <ul>
-                                            <li>connection.start()</li>
-                                            <li>connection.close()</li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#%E2%A0%80isdiscord%E2%A0%80--boolean"
-                                            title="IsDiscord">class.IsDiscord</a></li>
-                                    <li><a href="#%E2%A0%80blockedwords%E2%A0%80--string"
-                                            title="blockedWords">class.blockedWords</a></li>
-                                    <li><a href="#%E2%A0%80rerollonfail%E2%A0%80--boolean"
-                                            title="ReRollonFaile">class.ReRollonFail</a></li>
-                                    <li><a href="#%E2%A0%80ignorenone%E2%A0%80--boolean"
-                                            title="IgnoreNone">class.IgnoreNone</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#method-classes" title="Class Method">Methods</a>
-                                <ul>
-                                    <li><a href="#%E2%A0%80getid-string-%E2%A0%80" title="getID()">class.getID</a></li>
-                                    <li><a href="#%E2%A0%80prandid%E2%A0%80" title="pRandID()">class.pRandID</a></li>
-                                    <li><a href="#%E2%A0%80prandspecifictags-string-fn-%E2%A0%80"
-                                            title="pRandSpecificTags()">class.pRandSpecificTags</a></li>
-                                    <li><a href="#prands" title="pRand">pRand</a>
-                                        <ul>
-                                            <li><a href="#%E2%A0%80prandtag-tag-fn-%E2%A0%80"
-                                                    title="pRandTag()">class.pRandTag</a></li>
-                                            <li><a href="#%E2%A0%80prandparody-tag-fn-%E2%A0%80"
-                                                    title="pRandParody()">class.pRandParody</a></li>
-                                            <li><a href="#%E2%A0%80prandartist-tag-fn-%E2%A0%80"
-                                                    title="pRandAtist()">class.pRandArtist</a></li>
-                                            <li><a href="#%E2%A0%80prandgroup-tag-fn-%E2%A0%80"
-                                                    title="pRandGroup()">class.pRandGroup</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#%E2%A0%80prandom-fn-%E2%A0%80" title="pRandom()">class.pRandom</a>
-                                    </li>
-                                    <li><a href="#%E2%A0%80phomepage-int-%E2%A0%80"
-                                            title="pHomepage()">class.pHomepage</a></li>
-                                    <li><a href="#%E2%A0%80planguagepage-str-int-%E2%A0%80"
-                                            title="pLanguagePage()">class.pLanguagePage</a></li>
-                                    <li><a href="#%E2%A0%80psearch-str-int-%E2%A0%80"
-                                            title="pSearch()">class.pSearch</a></li>
-                                    <li><a href="#%E2%A0%80ptagpage-str-int-%E2%A0%80"
-                                            title="pTagPage()">class.pTagePage</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </details>
-
-
-
-
-
-
-
-        <details>
-            <summary><a href="#json-object" title="json">Json Object</a></summary>
-            <div class="content">
-
-                <ul>
-                    <li><a href="#json-interface">Json Interface</a></li>
-                    <li><a href="#ppage-interface">pPage Interface</a></li>
-                </ul>
-            </div>
-        </details>
-
-
-
-
-
-        <p><a href="#clicky-buttons"><code>Return bacc</code></a></p>
-        <hr>
-        <!-- #region Basics -->
-
-        <h2 id="get-started"><a class="anchor" name="get-started" href="#get-started"><span class="octicon octicon-link"></span></a>Get started</h2>
+        <p>The "N-hentai-api" is a fast and easy to use api for connecting to <a
+                href="%22https://nhentai.net/%22">nhentai.net</a> and <a href="%22https://nhentai.to/%22">nhentai.to</a>
+            data.</p>
+        <ul>
+            <li>Fast</li>
+            <li>Easy to use</li>
+            <li>Reliable* :&gt;</li>
+            <li>
+                <blockquote>
+                    <p>Discord friendly?</p>
+                </blockquote>
+            </li>
+        </ul>
+        <h3 id="install"><a class="anchor" name="install" href="#install"><span
+                    class="octicon octicon-link"></span></a>Install</h3>
+        <p>To install "N-hentai-api" type these:</p>
         <pre><code>npm i kasu.nhentaiapi.js</code></pre>
-        <h2 id="basics"><a class="anchor" name="basics" href="#basics"><span
-                    class="octicon octicon-link"></span></a>Basics</h2>
-        <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// experimental, if it doesn't work use 'kasu.nhentaiapi.js'</span>
-    <span class="token keyword">const</span> ExampleApi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">/**
-     * or const ExampleApi = new Example('start', "https://nhentai.net");
-     * If you don't want to add the url and connection.start() after it.
-     * because it automatically start the connection.
-     * 
-     * Check the documentation for more info.
-    */</span>
-    
-    <span class="token comment">//          ----number | strings can do----</span>
-    <span class="token keyword">const</span> <span class="token constant">ID</span> <span class="token operator">=</span> <span class="token number">228922</span> <span class="token comment">//or "228922" or "https://nhentai.net/g/228922"</span>
-    <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    
-        <span class="token comment">// start the connection</span>
-        ExampleApi<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"https://nhentai.net"</span>
-        ExampleApi<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    
-        <span class="token keyword">const</span> val <span class="token operator">=</span> <span class="token keyword">await</span> ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        val<span class="token punctuation">.</span>url
-        <span class="token comment">// OR</span>
-        ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>data<span class="token punctuation">.</span>url<span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token comment">// OR</span>
-        <span class="token punctuation">(</span><span class="token keyword">await</span> ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>url
-        <span class="token comment">// result: https://nhentai.net/g/228922/</span>
-    
-        <span class="token comment">// closes the connection</span>
-        ExampleApi<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span></code></pre>
-        <!-- #endregion -->
+        <h2 id="examples"><a class="anchor" name="examples" href="#examples"><span
+                    class="octicon octicon-link"></span></a>Examples</h2>
+        <h3 id="how-to-use-n-hentai-api"><a class="anchor" name="how-to-use-n-hentai-api"
+                href="#how-to-use-n-hentai-api"><span class="octicon octicon-link"></span></a>How to use n-hentai-api
+        </h3>
+        <p>To start off, to import the module on your project add <code>require</code> then <code>KasuNhentai</code>. If
+            it doesnt
+            work you can use the <code>kasu.nhentaiapi.js</code>.</p>
+        <p>Before accessing the methods create a connection to the nhentai server. There are two ways to start
+            the connection, First is you can use the <a
+                href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/#%E2%A0%80constructor%E2%A0%80"
+                title="Click here to see the Constructor parameters.">Constructor</a> or the
+            <code>connection.start()</code> method.</p>
+        <p>If using the <code>connection.start</code> make sure you already set or inputted the url on the
+            <code>url</code> property.</p>
+        <p>To get the basic info about the ID/Doujin:</p>
+        <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ExampleApi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <hr>
-        <h1 id="⠀constructorconnection-url-debug⠀"><a class="anchor" name="⠀constructorconnection-url-debug⠀"
-                href="#⠀constructorconnection-url-debug⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀Constructor(connection, url, debug)⠀</code></h1>
-        <p><code>connection</code> has 1 inputs that can be accepted, start. Same as the <a
-                href="#%E2%A0%80connection%E2%A0%80--object">connection</a> function below. It just automatically start
-            the <a href="#%E2%A0%80connection%E2%A0%80--object">connection</a> without calling the connection property.
-        </p>
-        <p><code>url</code> see the <a href="#%E2%A0%80url%E2%A0%80--string">url</a> property below.</p>
-        <p><code>debug</code> see the <a href="#%E2%A0%80connection%E2%A0%80--object">connection's</a> debug below.</p>
-        <h1 id="property-classes"><a class="anchor" name="property-classes" href="#property-classes"><span
-                    class="octicon octicon-link"></span></a>Property classes</h1>
-        <h3 id="⠀url⠀--string"><a class="anchor" name="⠀url⠀--string" href="#⠀url⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀url⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>The Inputted URL will be used to connect. As of the 3.5.0 update the domain <code>.to</code> is now
-                supported.</li>
-            <li><a href="https://nhentai.net">https://nhentai.net</a> or <a
-                    href="https://nhentai.to">https://nhentai.to</a> the <code>https://</code> must be included.</li>
-        </ul>
-        <h3 id="⠀connection⠀--object"><a class="anchor" name="⠀connection⠀--object" href="#⠀connection⠀--object"><span
-                    class="octicon octicon-link"></span></a><code>⠀connection⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em>
-        </h3>
-        <ul>
-            <li>If you want to start the connection provided by the <a href="#%E2%A0%80url%E2%A0%80--string">url</a>.<h4
-                    id="⠀⠀--⠀start-debug-⠀--function">⠀⠀- <code>⠀start( debug )⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></em>
-                </h4>
-                ⠀⠀⠀⠀• start the connection.<h4 id="⠀⠀--⠀close-debug-⠀--function">⠀⠀- <code>⠀close( debug )⠀</code> :
-                    <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></em>
-                </h4>
-                ⠀⠀⠀⠀• close the connection.</li>
-        </ul>
-        <p>The <code>debug</code> on the start, close functions is a <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean">boolean</a></em>.
-            If set to <code>true</code> It will show a log that shows that it is working and connected. </p>
-        <h3 id="⠀isdiscord⠀--boolean"><a class="anchor" name="⠀isdiscord⠀--boolean" href="#⠀isdiscord⠀--boolean"><span
-                    class="octicon octicon-link"></span></a><code>⠀IsDiscord⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em>
-        </h3>
-        <ul>
-            <li>If you're using this API on your DiscordBot Enabling this will block some tags that is inappropriate or
-                violates DiscordTOS.</li>
-            <li>default bool set is <code>false</code>.</li>
-        </ul>
-        <h3 id="⠀blockedwords⠀--string"><a class="anchor" name="⠀blockedwords⠀--string"
-                href="#⠀blockedwords⠀--string"><span class="octicon octicon-link"></span></a><code>⠀blockedWords⠀</code>
-            : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Add more tags that will be blocked.
-                <pre
-                    class=" language-js"><code class=" language-js">  blockedWords <span class="token operator">=</span> <span class="token string">"crossdressing brutality penetration"</span></code></pre>
-            </li>
-        </ul>
-        <h3 id="⠀rerollonfail⠀--boolean"><a class="anchor" name="⠀rerollonfail⠀--boolean"
-                href="#⠀rerollonfail⠀--boolean"><span
-                    class="octicon octicon-link"></span></a><code>⠀ReRollonFail⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em>
-        </h3>
-        <ul>
-            <li>If you're using <a href="#isdiscord-boolean"><code>IsDiscord</code></a> and don't wanna do your own
-                retry function use this.</li>
-            <li>note: By enabling this it might slow down the process unless if you have a fast internet or processor.
-            </li>
-            <li>default bool set is <code>false</code>.</li>
-        </ul>
-        <h3 id="⠀ignorenone⠀--boolean"><a class="anchor" name="⠀ignorenone⠀--boolean"
-                href="#⠀ignorenone⠀--boolean"><span class="octicon octicon-link"></span></a><code>⠀IgnoreNone⠀</code> :
-            <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></em>
-        </h3>
-        <ul>
-            <li>Ignore showing empty / none tags on the json object.</li>
-            <li>default bool set is <code>false</code>.
-                <pre class=" language-js"><code class=" language-js"><span class="token comment">// false</span>
-    <span class="token punctuation">{</span>
-      <span class="token string">"tag"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-      <span class="token string">"parodies"</span><span class="token operator">:</span> <span class="token string">"konosuba"</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">// true</span>
-    <span class="token punctuation">{</span>
-      <span class="token string">"parodies"</span><span class="token operator">:</span> <span class="token string">"konosuba"</span>
-    <span class="token punctuation">}</span></code></pre>
-            </li>
-        </ul>
-        <h1 id="method-classes"><a class="anchor" name="method-classes" href="#method-classes"><span
-                    class="octicon octicon-link"></span></a>Method classes</h1>
-        <h3 id="⠀getid-string-⠀"><a class="anchor" name="⠀getid-string-⠀" href="#⠀getid-string-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀getID( string )⠀</code></h3>
-        <ul>
-            <li><code>string</code> can be a string or a number or even the link itself. Example of this method can be
-                seen on the <a href="#basics">Basics</a></li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#json-object"><code>json object</code></a>.</li>
-        </ul>
-        <h3 id="⠀prandid⠀"><a class="anchor" name="⠀prandid⠀" href="#⠀prandid⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pRandID()⠀</code></h3>
-        <ul>
-            <li>Generate random ID based on the website's button 'Random'.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                an ID only!</li>
-        </ul>
-        <h3 id="⠀prandspecifictags-string-fn-⠀"><a class="anchor" name="⠀prandspecifictags-string-fn-⠀"
-                href="#⠀prandspecifictags-string-fn-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pRandSpecificTags( string, fn )⠀</code></h3>
-        <ul>
-            <li>It uses the <a href="https://nhentai.net">Nhentai</a> Searchbar functionality.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#json-object"><code>json object</code></a>.
-                <pre class=" language-js"><code class=" language-js"><span class="token comment">//gets the data of the given tags</span>
-    <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">pRandSpecificTags</span><span class="token punctuation">(</span><span class="token string">"konosuba aqua sole female"</span><span class="token punctuation">,</span> <span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
-      <span class="token comment">/* data.[json object] */</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-            </li>
-        </ul>
-        <h3 id="prands"><a class="anchor" name="prands" href="#prands"><span
-                    class="octicon octicon-link"></span></a>pRand's</h3>
-        <h3 id="⠀prandtag-tag-fn-⠀"><a class="anchor" name="⠀prandtag-tag-fn-⠀" href="#⠀prandtag-tag-fn-⠀"><span
-                    class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandTag( tag, fn )⠀</code></h3>
-        <h3 id="⠀prandparody-tag-fn-⠀"><a class="anchor" name="⠀prandparody-tag-fn-⠀"
-                href="#⠀prandparody-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandParody( tag, fn )⠀</code></h3>
-        <h3 id="⠀prandartist-tag-fn-⠀"><a class="anchor" name="⠀prandartist-tag-fn-⠀"
-                href="#⠀prandartist-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandArtist( tag, fn )⠀</code></h3>
-        <h3 id="⠀prandgroup-tag-fn-⠀"><a class="anchor" name="⠀prandgroup-tag-fn-⠀" href="#⠀prandgroup-tag-fn-⠀"><span
-                    class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
-        <ul>
-            <li><a href="https://nhentai.net/tags">Tag</a>, <a href="https://nhentai.net/parodies">Parody</a>, <a
-                    href="https://nhentai.net/artists">Artist</a>, <a href="https://nhentai.net/groups">Group</a> shares
-                the same function it generate random ID based on the Given Tag. <br>
-                NOTE: It only accepts 1 tag/name that <strong>exist</strong> on the <a
-                    href="https://nhentai.net">Nhentai</a> database.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#json-object"><code>json object</code></a>.
-                <pre class=" language-js"><code class=" language-js"><span class="token comment">//returns a link | id</span>
-    <span class="token keyword">await</span> <span class="token function">pRandtag</span><span class="token punctuation">(</span><span class="token string">"&lt;name of the tag&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>link <span class="token operator">|</span> <span class="token punctuation">.</span>id
-    <span class="token comment">//get data of the random generated ID of the given tag</span>
-    <span class="token keyword">await</span> <span class="token function">pRandtag</span><span class="token punctuation">(</span><span class="token string">"&lt;name of the tag&gt;"</span><span class="token punctuation">,</span> <span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
-      <span class="token comment">/* data.[json object] */</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-            </li>
-        </ul>
-        <h3 id="⠀prandom-fn-⠀"><a class="anchor" name="⠀prandom-fn-⠀" href="#⠀prandom-fn-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pRandom( fn )⠀</code></h3>
-        <ul>
-            <li>Generate random ID based on the website's button 'Random'.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#json-object"><code>json object</code></a>.
-                <pre class=" language-js"><code class=" language-js"><span class="token comment">// gives random number</span>
-    <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">pRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token comment">// you can get the random number's data</span>
-    <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token function">pRandom</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
-      data<span class="token punctuation">.</span>images<span class="token punctuation">.</span>cover
-    <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
-            </li>
-        </ul>
-        <h3 id="⠀phomepage-int-⠀"><a class="anchor" name="⠀phomepage-int-⠀" href="#⠀phomepage-int-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pHomepage( int )⠀</code></h3>
-        <ul>
-            <li><code>int</code> specifies the page. Shows the Homepage of the selected <a
-                    href="#%E2%A0%80url%E2%A0%80--string">URL</a>.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#ppage-json"><code>json object</code></a></li>
-        </ul>
-        <h3 id="⠀planguagepage-str-int-⠀"><a class="anchor" name="⠀planguagepage-str-int-⠀"
-                href="#⠀planguagepage-str-int-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pLanguagePage( str, int )⠀</code></h3>
-        <ul>
-            <li><code>str</code> only accepts 4 string <strong>japanese</strong>, <strong>english</strong>,
-                <strong>chinese</strong> and <strong>translated</strong> (is this even a language). it also accepts
-                shortcuts like <strong>jp</strong>, <strong>japan</strong>, <strong>eng</strong>,
-                <strong>china</strong>. <code>int</code> specifies the page.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#ppage-json"><code>json object</code></a></li>
-        </ul>
-        <h3 id="⠀psearch-str-int-⠀"><a class="anchor" name="⠀psearch-str-int-⠀" href="#⠀psearch-str-int-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pSearch( str, int )⠀</code></h3>
-        <ul>
-            <li>Shows some list of the searched string of <code>str</code>. <code>int</code> specifies the page.</li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#ppage-json"><code>json object</code></a></li>
-        </ul>
-        <h3 id="⠀ptagpage-str-int-⠀"><a class="anchor" name="⠀ptagpage-str-int-⠀" href="#⠀ptagpage-str-int-⠀"><span
-                    class="octicon octicon-link"></span></a><code>⠀pTagPage( str, int )⠀</code></h3>
-        <ul>
-            <li>Shows some list of the searched tag string of <code>str</code>. <code>int</code> specifies the page.
-            </li>
-            <li><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
-                a <a href="#ppage-json"><code>json object</code></a></li>
-        </ul>
-        <br>
+<span class="token keyword">const</span> <span class="token constant">ID</span> <span class="token operator">=</span> <span class="token number">228922</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-        <hr>
-        <h2 id="json-object"><a class="anchor" name="json-object" href="#json-object"><span
-                    class="octicon octicon-link"></span></a>Json Object</h2>
-        <p>This object is also used on <code>pRand's</code> data functions.</p>
-        <pre class=" language-json"><code class=" language-json"><span class="token punctuation">{</span>
-        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">228922</span><span class="token punctuation">,</span>
-        <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://nhentai.net/g/228922/"</span><span class="token punctuation">,</span>
-        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
-            <span class="token property">"origin"</span><span class="token operator">:</span> <span class="token string">"エログロス Vol.2"</span><span class="token punctuation">,</span>
-            <span class="token property">"translated"</span><span class="token operator">:</span> <span class="token string">"EROGROS Vol. 2"</span><span class="token punctuation">,</span>
-            <span class="token property">"originFull"</span><span class="token operator">:</span> <span class="token string">"[アンソロジー] エログロス Vol.2 [DL版]"</span><span class="token punctuation">,</span>
-            <span class="token property">"translatedFull"</span><span class="token operator">:</span> <span class="token string">"[Anthology] EROGROS Vol. 2 [Digital]"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token property">"images"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
-            <span class="token property">"cover"</span><span class="token operator">:</span> <span class="token string">"https://t.nhentai.net/galleries/1205270/cover.jpg"</span><span class="token punctuation">,</span>
-            <span class="token property">"pages_source"</span><span class="token operator">:</span> <span class="token string">"https://t.hentain.net/galleries/1205270/"</span><span class="token punctuation">,</span>
-            <span class="token property">"pages"</span><span class="token operator">:</span> <span class="token punctuation">[</span>Function<span class="token punctuation">]</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token property">"tag_table"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token property">"parodies"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-            <span class="token property">"characters"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-            <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token string">"&lt;censored&gt; sorry can't show on github"</span><span class="token punctuation">,</span>
-            <span class="token property">"artists"</span><span class="token operator">:</span> <span class="token string">"uziga waita, horihone saizou, momoiro manjiru, tksn, faith, zero punch, hayami kuro, ai7n, senmu"</span><span class="token punctuation">,</span>
-            <span class="token property">"groups"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-            <span class="token property">"languages"</span><span class="token operator">:</span> <span class="token string">"japanese"</span><span class="token punctuation">,</span>
-            <span class="token property">"categories"</span><span class="token operator">:</span> <span class="token string">"manga"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token property">"number_pages"</span><span class="token operator">:</span> <span class="token string">"244"</span><span class="token punctuation">,</span>
-        <span class="token property">"uploaded"</span><span class="token operator">:</span> <span class="token string">"2 years, 1 month ago"</span>
-    <span class="token punctuation">}</span></code></pre>
-        <h2 id="json-interface"><a class="anchor" name="json-interface" href="#json-interface"><span
-                    class="octicon octicon-link"></span></a>Json Interface</h2>
-        <p>NOTE: Some of it is literally nonsense because this is what is in the declaration file.</p>
-        <h3 id="⠀id⠀--number"><a class="anchor" name="⠀id⠀--number" href="#⠀id⠀--number"><span
-                    class="octicon octicon-link"></span></a><code>⠀id⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></em>
-        </h3>
-        <ul>
-            <li>ID or Code or whatever you call.
-                <br><br>
-            </li>
-        </ul>
-        <h3 id="⠀url⠀--string-1"><a class="anchor" name="⠀url⠀--string-1" href="#⠀url⠀--string-1"><span
-                    class="octicon octicon-link"></span></a><code>⠀url⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Url of the selected code.
-                <br><br>
-            </li>
-        </ul>
-        <h3 id="⠀title⠀--object"><a class="anchor" name="⠀title⠀--object" href="#⠀title⠀--object"><span
-                    class="octicon octicon-link"></span></a><code>⠀title⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em>
-        </h3>
-        <ul>
-            <li>titles?<h4 id="⠀⠀--⠀origin⠀--string">⠀⠀- <code>⠀origin⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• original<h4 id="⠀⠀--⠀translated⠀--string">⠀⠀- <code>⠀translated⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• トランスレイト??? wait it's supposed to be in english cuz' it's translated.<h4
-                    id="⠀⠀--⠀originfull⠀--string">⠀⠀- <code>⠀originFull⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• original but its full version of it.<h4 id="⠀⠀--⠀translatedfull⠀--string">⠀⠀-
-                    <code>⠀translatedFull⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.
-                <br><br>
-            </li>
-        </ul>
-        <h3 id="⠀images⠀--object"><a class="anchor" name="⠀images⠀--object" href="#⠀images⠀--object"><span
-                    class="octicon octicon-link"></span></a><code>⠀images⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em>
-        </h3>
-        <ul>
-            <li>images?<h4 id="⠀⠀--⠀cover⠀--string">⠀⠀- <code>⠀cover⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• Doujin cover image.<h4 id="⠀⠀--⠀pages_source⠀--string">⠀⠀- <code>⠀pages_source⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• Doujin image source. <h4 id="⠀⠀--⠀pages⠀--function">⠀⠀- <code>⠀pages⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></em>
-                </h4>
-                ⠀⠀⠀⠀• Usage: <code>page( int )</code>. <code>Int</code> specifies the image number page.
-                <br><br>
-            </li>
-        </ul>
-        <h3 id="⠀tag_table⠀--object"><a class="anchor" name="⠀tag_table⠀--object" href="#⠀tag_table⠀--object"><span
-                    class="octicon octicon-link"></span></a><code>⠀tag_table⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></em>
-        </h3>
-        <ul>
-            <li>tags?<h4 id="⠀⠀--⠀parodies⠀--string">⠀⠀- <code>⠀parodies⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• I Like konosuba<h4 id="⠀⠀--⠀characters⠀--string">⠀⠀- <code>⠀characters⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• I love megumin<h4 id="⠀⠀--⠀tag⠀--string">⠀⠀- <code>⠀tag⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• what?<h4 id="⠀⠀--⠀artist⠀--string">⠀⠀- <code>⠀artist⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• I don't really know about this<h4 id="⠀⠀--⠀groups⠀--string">⠀⠀- <code>⠀groups⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• Can't think 1 group tag.<h4 id="⠀⠀--⠀languages⠀--string">⠀⠀- <code>⠀languages⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• english ofc.<h4 id="⠀⠀--⠀categories⠀--string">⠀⠀- <code>⠀categories⠀</code> : <em><a
-                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-                </h4>
-                ⠀⠀⠀⠀• ca
-                <br><br>
-            </li>
-        </ul>
-        <h3 id="⠀number_pages⠀--string"><a class="anchor" name="⠀number_pages⠀--string"
-                href="#⠀number_pages⠀--string"><span class="octicon octicon-link"></span></a><code>⠀number_pages⠀</code>
-            : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>haha 69 pages seems cool.<br>
+    <span class="token comment">// start the connection</span>
+    ExampleApi<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"https://nhentai.net"</span>
+    ExampleApi<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-            </li>
-        </ul>
-        <h3 id="⠀uploaded⠀--string"><a class="anchor" name="⠀uploaded⠀--string" href="#⠀uploaded⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀uploaded⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.<br>
-                In 1722 the government made a law banning hentai manga, which means it was common even earlier.<br>
-                Suzumi-fune is probobly the oldest hentai anime, it's from 1932.<br></li>
-        </ul>
-        <h2 id="ppage-json"><a class="anchor" name="ppage-json" href="#ppage-json"><span
-                    class="octicon octicon-link"></span></a>pPage Json</h2>
-        <p>This object will show on <a href="#%E2%A0%80phomepage-int-%E2%A0%80">pHomepage</a>, <a
-                href="#%E2%A0%80planguagepage-str-int-%E2%A0%80">pLanguagePage</a>, <a
-                href="#%E2%A0%80psearch-str-int-%E2%A0%80">pSearch</a>, <a
-                href="#%E2%A0%80ptagpage-str-int-%E2%A0%80">pTagPage</a>.</p>
-        <pre class=" language-json"><code class=" language-json"><span class="token comment">// using nhentai.to for this example</span>
-    <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        <span class="token property">"CurrentUrl"</span><span class="token operator">:</span> <span class="token string">"https://nhentai.to"</span><span class="token punctuation">,</span>
-        <span class="token property">"typePage"</span><span class="token operator">:</span> <span class="token string">"language / japanese"</span><span class="token punctuation">,</span>
-        <span class="token property">"CurrentPage"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-        <span class="token property">"Total"</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
-        <span class="token property">"TotalPage"</span><span class="token operator">:</span> <span class="token string">"8524"</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    
-      <span class="token punctuation">{</span>
-        <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">374305</span>
-        <span class="token property">"title"</span><span class="token operator">:</span>  <span class="token string">"[LV43 (Shia)] Onee-sama, Kore ga Hoshiino (Jinrou Judgement) [Digital]"</span><span class="token punctuation">,</span>
-        <span class="token property">"thumbnail"</span><span class="token operator">:</span>  <span class="token string">"https://t.dogehls.xyz/galleries/2018823/thumb.jpg"</span><span class="token punctuation">,</span>
-        <span class="token property">"url"</span><span class="token operator">:</span>  <span class="token string">"https://nhentai.to/g/374305"</span><span class="token punctuation">,</span>
-        <span class="token property">"languages"</span><span class="token operator">:</span>  <span class="token string">"japanese"</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span>
-        <span class="token comment">//and more...</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span></code></pre>
-        <h2 id="ppage-interface"><a class="anchor" name="ppage-interface" href="#ppage-interface"><span
-                    class="octicon octicon-link"></span></a>pPage Interface</h2>
-        <h3 id="⠀currenturl⠀--string"><a class="anchor" name="⠀currenturl⠀--string" href="#⠀currenturl⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀CurrentUrl⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Gives the Url.<br>
+    <span class="token keyword">const</span> val <span class="token operator">=</span> <span class="token keyword">await</span> ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    val<span class="token punctuation">.</span>url
+    <span class="token comment">// OR</span>
+    ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>data<span class="token punctuation">.</span>url<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// OR</span>
+    <span class="token punctuation">(</span><span class="token keyword">await</span> ExampleApi<span class="token punctuation">.</span><span class="token function">getID</span><span class="token punctuation">(</span><span class="token constant">ID</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>url
+    <span class="token comment">// result: https://nhentai.net/g/228922/</span>
 
-            </li>
-        </ul>
-        <h3 id="⠀typepage⠀--string"><a class="anchor" name="⠀typepage⠀--string" href="#⠀typepage⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀typePage⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>idk.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀currentpage⠀--number"><a class="anchor" name="⠀currentpage⠀--number"
-                href="#⠀currentpage⠀--number"><span class="octicon octicon-link"></span></a><code>⠀CurrentPage⠀</code> :
-            <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></em>
-        </h3>
-        <ul>
-            <li>Gives an index number of what page you are currently in.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀total⠀--number"><a class="anchor" name="⠀total⠀--number" href="#⠀total⠀--number"><span
-                    class="octicon octicon-link"></span></a><code>⠀Total⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></em>
-        </h3>
-        <ul>
-            <li>Total arrays.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀totalpage⠀--string"><a class="anchor" name="⠀totalpage⠀--string" href="#⠀totalpage⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀TotalPage⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Total Pages ofc.</li>
-        </ul>
-        <h3 id="⠀id⠀--number-1"><a class="anchor" name="⠀id⠀--number-1" href="#⠀id⠀--number-1"><span
-                    class="octicon octicon-link"></span></a><code>⠀id⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></em>
-        </h3>
-        <ul>
-            <li>ID or Code or whatever you call.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀title⠀--string"><a class="anchor" name="⠀title⠀--string" href="#⠀title⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀title⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>taitoru.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀thumbnail⠀--string"><a class="anchor" name="⠀thumbnail⠀--string" href="#⠀thumbnail⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀thumbnail⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>Cover picture.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀url⠀--string-2"><a class="anchor" name="⠀url⠀--string-2" href="#⠀url⠀--string-2"><span
-                    class="octicon octicon-link"></span></a><code>⠀url⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>It's just the combination of the currenturl with id innit.<br>
-
-            </li>
-        </ul>
-        <h3 id="⠀languages⠀--string"><a class="anchor" name="⠀languages⠀--string" href="#⠀languages⠀--string"><span
-                    class="octicon octicon-link"></span></a><code>⠀languages⠀</code> : <em><a
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></em>
-        </h3>
-        <ul>
-            <li>NANI TTE- <br>
-
-            </li>
-        </ul>
-        <hr>
+    <span class="token comment">// closes the connection</span>
+    ExampleApi<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
         <div align="center">
 
-            <h2 id="clicky-buttons">clicky buttons</h2>
-            <p><a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/LICENSE" title="MIT Licence"><img
+            <hr>
+            <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
+
+            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/license" title="MIT Licence"><img
                         src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png"
                         alt=""></a><br>
-                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs"
-                    title="Update History"><img
+                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation"
+                    title="API Documentation"><img
+                        src="https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png"
+                        alt=""></a><br>
+                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs" title="Update History"><img
                         src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
-                        alt=""></a><br><br>
-                <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img
-                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
+                        alt=""></a>
             </p>
-            <p>
-                <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a><br>
-                ©copyright 2021
-            </p>
+            <hr>
+            Enjoy using it! crediting me will be an appreciation!<br>
+            <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Star it!">Star</a> it if you like
+            it!<br>
+            <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/astorufo.png"
+                title="Created by Ichimaki" height="60">
         </div>
-
-        <!-- copy&paste haha brr -->
-        <script>
-            class Accordion {
-                constructor(el) {
-                    // Store the <details> element
-                    this.el = el;
-                    // Store the <summary> element
-                    this.summary = el.querySelector('summary');
-                    // Store the <div class="content"> element
-                    this.content = el.querySelector('.content');
-
-                    // Store the animation object (so we can cancel it if needed)
-                    this.animation = null;
-                    // Store if the element is closing
-                    this.isClosing = false;
-                    // Store if the element is expanding
-                    this.isExpanding = false;
-                    // Detect user clicks on the summary element
-                    this.summary.addEventListener('click', (e) => this.onClick(e));
-                }
-
-                onClick(e) {
-                    // Stop default behaviour from the browser
-                    e.preventDefault();
-                    // Add an overflow on the <details> to avoid content overflowing
-                    this.el.style.overflow = 'hidden';
-                    // Check if the element is being closed or is already closed
-                    if (this.isClosing || !this.el.open) {
-                        this.open();
-                        // Check if the element is being openned or is already open
-                    } else if (this.isExpanding || this.el.open) {
-                        this.shrink();
-                    }
-                }
-
-                shrink() {
-                    // Set the element as "being closed"
-                    this.isClosing = true;
-
-                    // Store the current height of the element
-                    const startHeight = `${this.el.offsetHeight}px`;
-                    // Calculate the height of the summary
-                    const endHeight = `${this.summary.offsetHeight}px`;
-
-                    // If there is already an animation running
-                    if (this.animation) {
-                        // Cancel the current animation
-                        this.animation.cancel();
-                    }
-
-                    // Start a WAAPI animation
-                    this.animation = this.el.animate({
-                        // Set the keyframes from the startHeight to endHeight
-                        height: [startHeight, endHeight]
-                    }, {
-                        duration: 300,
-                        easing: 'ease-out'
-                    });
-
-                    // When the animation is complete, call onAnimationFinish()
-                    this.animation.onfinish = () => this.onAnimationFinish(false);
-                    // If the animation is cancelled, isClosing variable is set to false
-                    this.animation.oncancel = () => this.isClosing = false;
-                }
-
-                open() {
-                    // Apply a fixed height on the element
-                    this.el.style.height = `${this.el.offsetHeight}px`;
-                    // Force the [open] attribute on the details element
-                    this.el.open = true;
-                    // Wait for the next frame to call the expand function
-                    window.requestAnimationFrame(() => this.expand());
-                }
-
-                expand() {
-                    // Set the element as "being expanding"
-                    this.isExpanding = true;
-                    // Get the current fixed height of the element
-                    const startHeight = `${this.el.offsetHeight}px`;
-                    // Calculate the open height of the element (summary height + content height)
-                    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
-
-                    // If there is already an animation running
-                    if (this.animation) {
-                        // Cancel the current animation
-                        this.animation.cancel();
-                    }
-
-                    // Start a WAAPI animation
-                    this.animation = this.el.animate({
-                        // Set the keyframes from the startHeight to endHeight
-                        height: [startHeight, endHeight]
-                    }, {
-                        duration: 300,
-                        easing: 'ease-out'
-                    });
-                    // When the animation is complete, call onAnimationFinish()
-                    this.animation.onfinish = () => this.onAnimationFinish(true);
-                    // If the animation is cancelled, isExpanding variable is set to false
-                    this.animation.oncancel = () => this.isExpanding = false;
-                }
-
-                onAnimationFinish(open) {
-                    // Set the open attribute based on the parameter
-                    this.el.open = open;
-                    // Clear the stored animation
-                    this.animation = null;
-                    // Reset isClosing & isExpanding
-                    this.isClosing = false;
-                    this.isExpanding = false;
-                    // Remove the overflow hidden and the fixed height
-                    this.el.style.height = this.el.style.overflow = '';
-                }
-            }
-
-            document.querySelectorAll('details').forEach((el) => {
-                new Accordion(el);
-            });
-        </script>
     </div>
 </body>
 
