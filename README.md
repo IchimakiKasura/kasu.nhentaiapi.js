@@ -3,7 +3,7 @@
 <h1>N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-3.5.2-brightgreen?style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
+[![stable version](https://img.shields.io/badge/stable%20version-3.6.0-brightgreen?style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
 [![Downloads](https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
