@@ -35,26 +35,36 @@ let start = new Date().getTime()
     // pRand Test
     log(`pRandSpecificTags:\n`)
     try{
-        await api.pRandSpecificTags("konosuba aqua sole-female",data=>{log(data.title)})
+        await api.pRandSpecificTags("konosuba aqua sole-female",data=>{log(data)})
     }catch(e){log(e)}
 
     log(`\n==========================================================\n`)
 
     log(`\npRandTag: -crossdressing-\n`)
     try{
-        await api.pRandTag("crossdressing",(data)=>{log(data.title)}) 
+        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
     }catch(e){log(e)}
     log(`\n==========================================================\n`)
     log(`\npRandTag: -lolicon-\n`)
     try{
-        await api.pRandTag("lolicon",(data)=>{log(data.title)}) // should cause and error
+        await api.pRandTag("lolicon",(data)=>{log(data)}) // should cause and error
     }catch(e){log(e)}
     api.blockedWords = "crossdressing"
     log(`\n==========================================================\n`)
     log(`\nAdds crossdressing to blocked Tags:`)
     log(`\npRandTag: -crossdressing-\n`)
     try{
-        await api.pRandTag("crossdressing",(data)=>{log(data.title)}) 
+        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
+    }catch(e){log(e)}
+    log(`\n==========================================================\n`)
+    log(`\npRandom:\n`)
+    try{
+        log(await api.pRandom()) 
+    }catch(e){log(e)}
+    log(`\n==========================================================\n`)
+    log(`\npSearch:\n`)
+    try{
+        log(await api.pSearch("crossdressing"))
     }catch(e){log(e)}
     log(`\n==========================================================\n`)
 let end = new Date().getTime()

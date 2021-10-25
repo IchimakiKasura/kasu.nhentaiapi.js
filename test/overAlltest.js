@@ -14,12 +14,10 @@ function execPromise(command, name) {
 }
 (async ()=>{
 let start = new Date().getTime()
-log(`   testing '.js' files: main.js`)
-console.log(await execPromise("node lib/main.js",'main.js'))
-log(`   testing '.js' files: fetcher.js`)
-console.log(await execPromise("node lib/src/fetcher.js",'fetcher.js'))
-log(`   testing '.js' files: shorter.js`)
-console.log(await execPromise("node lib/src/shorter.js",'shorter.js'))
+log(`   testing '.js' files: kasuApi.js`)
+console.log(await execPromise("node lib/kasuApi.js",'kasuApi.js'))
+log(`   testing '.js' files: parser.js`)
+console.log(await execPromise("node lib/src/Parser.js",'Parser.js'))
 log("\n\n------------------TEST STARTED------------------\n\n\n")
 
 let pRandData = ""

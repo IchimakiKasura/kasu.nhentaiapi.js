@@ -3,7 +3,7 @@
 <h1>N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/badge/stable%20version-3.5.1-brightgreen?style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
+[![stable version](https://img.shields.io/badge/stable%20version-3.6.0-brightgreen?style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
 [![Downloads](https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#352)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
@@ -32,7 +32,7 @@ const ExampleApi = new Example();
  * If you don't want to add the url and connection.start() after it.
  * because it automatically start the connection.
  * 
- * Check the documentation for more info.
+ * Check the documentation or the homepage for more info.
 */
 
 //          ----number | strings can do----
@@ -59,9 +59,10 @@ async function json(){
 
 <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
 
-[![](https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png)](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/LICENSE "MIT Licence")<br/>
-[![](https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/ "API Documentation")<br/>
+[![](https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/license "MIT Licence")<br/>
+[![](https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation "API Documentation")<br/>
 [![](https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs "Update History")
+# [Homepage](https://ichimakikasura.github.io/kasu.nhentaiapi.js/ "I ran out of pics sorry")
 <hr>
 Enjoy using it! crediting me will be an appreciation!<br/>
 <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Star it!">Star</a> it if you like it!<br/>
