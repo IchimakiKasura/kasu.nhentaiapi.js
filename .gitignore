@@ -9,6 +9,7 @@ node_modules
 /lib/src/fetcher.min.js
 /lib/src/shorter.min.js
 /docs/other/*.md
+/docs/other/embeded link.psd
 test.js
 
 minifier.js

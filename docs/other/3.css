@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.nImg {
+    position: absolute;
+    top: 20px;
+    left: 2%;
+}
+.topBG {
+    position: relative;
+    padding: 0px;
+    border-radius: 50px;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+}   
+.top {
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .6) inset!important;
+    border-radius: 50px;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.thingy {
+    position: absolute;
+    top: 39vw;
+    left: 5%;
+    box-shadow: 0 0 20px 10px #d962aa;
+}
+.thingy2 {
+    position: absolute;
+    top: 39vw;
+    left: 38%;
+    box-shadow: 0 0 20px 10px #d962aa;
+}
+.thingy3 {
+    position: absolute;
+    top: 39vw;
+    left: 66%;
+    box-shadow: 0 0 20px 10px #d962aa;
+}
