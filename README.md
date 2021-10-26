@@ -61,10 +61,10 @@ async function json(){
 
 <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
 
-[![](https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/license "MIT Licence")<br/>
+[![](https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses "MIT Licence")<br/>
 [![](https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation "API Documentation")<br/>
-[![](https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs "Update History")
-# [Homepage](https://ichimakikasura.github.io/kasu.nhentaiapi.js/ "I ran out of pics sorry")
+[![](https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs "Update History")<br/><br/>
+<a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/" title="Homepage"><img src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" width="55%" alt="embed"><br/>
 <hr>
 Enjoy using it! crediting me will be an appreciation!<br/>
 <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Star it!">Star</a> it if you like it!<br/>

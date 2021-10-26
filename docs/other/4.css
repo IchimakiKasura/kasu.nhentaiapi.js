@@ -1,0 +1,30 @@
+.nTitle {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top: -40px;
+}
+
+.topBG {
+    /* position: relative; */
+    margin-bottom: -280px;
+    padding: 0px;
+    height: 300px;
+    background-image: url("https://user-images.githubusercontent.com/80595346/138738093-408a1f38-6e3c-45a1-a277-67fb51b18e21.png");
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .6) inset;
+    background-repeat: no-repeat;
+    background-size: 900px;
+    border-radius: 15px;
+}
+
+.thingy {
+    margin-left: 20px;
+}
+
+.thingy p img {
+    box-shadow: 0 0 15px 5px #d962aa;
+}
+
+.thingy p a img {
+    box-shadow: 0 0 15px 5px #d962aa;
+}

@@ -6,23 +6,27 @@
     <link rel="shortcut icon" href="https://nhentai.net/favicon.ico" type="image/x-icon">
     <title>Kasura's Docs | Documentation</title>
     <!-- bruh idk -->
-        <meta name="owner" content="IchimakiKasura">
-        <meta name="title" content="Documentation">
-        <meta name="description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
-        <!-- fb -->
-        <meta property="og:url" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Documentation" />
-        <meta property="og:description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
-        <!-- twitter -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@pkpit">
-        <meta name="twitter:creator" content="IchimakiKasura">
-        <meta name="twitter:title" content="Documentation" />
-        <meta name="twitter:description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <meta name="owner" content="IchimakiKasura">
+    <meta name="keyword" content="nhentai,nhentai.net,nhentai.to,R18,api,hentai,unofficial,wrapper,parser">
+    <meta name="title" content="Documentation">
+    <meta name="description"
+        content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
+    <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <!-- fb -->
+    <meta property="og:url" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Documentation" />
+    <meta property="og:description"
+        content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
+    <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@pkpit">
+    <meta name="twitter:creator" content="IchimakiKasura">
+    <meta name="twitter:title" content="Documentation" />
+    <meta name="twitter:description"
+        content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
+    <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
 </head>
 
 <body>
@@ -140,14 +144,14 @@
         <pre><code>npm i kasu.nhentaiapi.js</code></pre>
         <h2 id="basics"><a class="anchor" name="basics" href="#basics"><span
                     class="octicon octicon-link"></span></a>Basics</h2>
-    <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// experimental, if it doesn't work use 'kasu.nhentaiapi.js'</span>
+        <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// experimental, if it doesn't work use 'kasu.nhentaiapi.js'</span>
 <span class="token keyword">const</span> ExampleApi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">/**
-* or const ExampleApi = new Example('start', "https://nhentai.net");
-* If you don't want to add the url and connection.start() after it.
-* because it automatically start the connection.
-* 
-* Check the documentation for more info.
+    * or const ExampleApi = new Example('start', "https://nhentai.net");
+    * If you don't want to add the url and connection.start() after it.
+    * because it automatically start the connection.
+    * 
+    * Check the documentation for more info.
 */</span>
 
 <span class="token comment">//          ----number | strings can do----</span>
@@ -251,7 +255,7 @@
         <ul>
             <li>Ignore showing empty / none tags on the json object.</li>
             <li>default bool set is <code>false</code>.
-            <pre class=" language-js"><code class=" language-js"><span class="token comment">// false</span>
+                <pre class=" language-js"><code class=" language-js"><span class="token comment">// false</span>
 <span class="token punctuation">{</span>
     <span class="token string">"tag"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
     <span class="token string">"parodies"</span><span class="token operator">:</span> <span class="token string">"konosuba"</span>
@@ -301,10 +305,12 @@
                     class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandTag( tag, fn )⠀</code></h3>
         <h3 id="⠀prandparody-tag-fn-⠀"><a class="anchor" name="⠀prandparody-tag-fn-⠀"
                 href="#⠀prandparody-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandParody( tag, fn )⠀</code></h3>
+            <code>⠀pRandParody( tag, fn )⠀</code>
+        </h3>
         <h3 id="⠀prandartist-tag-fn-⠀"><a class="anchor" name="⠀prandartist-tag-fn-⠀"
                 href="#⠀prandartist-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandArtist( tag, fn )⠀</code></h3>
+            <code>⠀pRandArtist( tag, fn )⠀</code>
+        </h3>
         <h3 id="⠀prandgroup-tag-fn-⠀"><a class="anchor" name="⠀prandgroup-tag-fn-⠀" href="#⠀prandgroup-tag-fn-⠀"><span
                     class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
         <ul>
@@ -355,7 +361,8 @@
             <li><code>str</code> only accepts 4 string <strong>japanese</strong>, <strong>english</strong>,
                 <strong>chinese</strong> and <strong>translated</strong> (is this even a language). it also accepts
                 shortcuts like <strong>jp</strong>, <strong>japan</strong>, <strong>eng</strong>,
-                <strong>china</strong>. <code>int</code> specifies the page.</li>
+                <strong>china</strong>. <code>int</code> specifies the page.
+            </li>
             <li><a
                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
                 a <a href="#ppage-json"><code>json object</code></a></li>
@@ -411,7 +418,7 @@
     <span class="token property">"number_pages"</span><span class="token operator">:</span> <span class="token number">244</span><span class="token punctuation">,</span>
     <span class="token property">"uploaded"</span><span class="token operator">:</span> <span class="token string">"2 years, 1 month ago"</span>
 <span class="token punctuation">}</span></code></pre>
-        <h2 id="json-interface"><a class="anchor" name="json-interface" href="#json-interface"><span
+    <h2 id="json-interface"><a class="anchor" name="json-interface" href="#json-interface"><span
                     class="octicon octicon-link"></span></a>Json Interface</h2>
         <p>NOTE: Some of it is literally nonsense because this is what is in the declaration file.</p>
         <h3 id="⠀id⠀--number"><a class="anchor" name="⠀id⠀--number" href="#⠀id⠀--number"><span
@@ -653,19 +660,18 @@
         <div align="center">
 
             <h2 id="clicky-buttons">clicky buttons</h2>
-            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/license" title="MIT Licence"><img
+            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses" title="MIT Licence"><img
                         src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png"
                         alt=""></a><br>
                 <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs" title="Update History"><img
-                        src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
+                        src="https://user-images.githubusercontvivo-1907ent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
                         alt=""></a>
             </p>
-            <h1 id="homepage"><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/"
-                    title="I ran out of pics sorry">Homepage</a></h1>
-            <p>
-                <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img
-                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
-            </p>
+            <iframe title="kasura's nhentai API" src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101.html" frameborder="0" width="500"
+                height="244"></iframe>
+            <br>
+            <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img
+                    src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
             <p>
                 <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a><br>
                 ©copyright 2021
