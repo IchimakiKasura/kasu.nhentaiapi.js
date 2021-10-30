@@ -10,301 +10,322 @@
         <meta name="keyword" content="nhentai,nhentai.net,nhentai.to,R18,api,hentai,unofficial,wrapper,parser">
         <meta name="title" content="Changelogs">
         <meta name="description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+        <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
         <!-- fb -->
         <meta property="og:url" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Changelogs" />
         <meta property="og:description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+        <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
         <!-- twitter -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@pkpit">
         <meta name="twitter:creator" content="IchimakiKasura">
         <meta name="twitter:title" content="Changelogs" />
         <meta name="twitter:description" content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-        <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+        <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
 </head>
-<body><div id="_html" class="markdown-body"><!-- All versions changelog -->
-    <h1 style="font-size: 70px" align="center"><a class="anchor" name="" href="#"><span class="octicon octicon-link"></span></a>Changelogs</h1>
-    <div style="font-size:15px" align="center">
-    versions
-    
-    <p><a href="#100">1.0.0</a> |
-    <a href="#200">2.0.0</a> |
-    <a href="#250">2.5.0</a> |
-    <a href="#270">2.7.0</a> |
-    <a href="#281">2.8.1</a> |
-    <a href="#290">2.9.0</a> |
-    <a href="#300">3.0.0</a> |
-    <a href="#321">3.2.1</a> |
-    <a href="#350">3.5.0</a> |
-    <a href="#360">3.6.0</a> </p>
-    <div style="margin-top:-17px; font-size:10px">( patches are not included )</div>
-    </div>
-    
-    <h1 id="360"><a class="anchor" name="360" href="#360"><span class="octicon octicon-link"></span></a>3.6.0</h1>
-    <h2 id="fix-update"><a class="anchor" name="fix-update" href="#fix-update"><span class="octicon octicon-link"></span></a>Fix Update</h2>
-    <ul>
-    <li><p>Fixed tons of bugs/problems/errors on the last update.</p>
-    <ul>
-    <li>No longer receive "too many request" as it has retry-after on the <code>fetcher</code> for now.</li>
-    <li>Added new "favorites" on the json object.</li>
-    </ul>
-    </li>
-    <li><p><strong>[ NEW! ]</strong> No longer depends on cheerio, Implemented new parser for less error/bug and clean code**</p>
-    <ul>
-    <li>Next update will be an experimental as I'll introduce few function of my new <a href="https://nhentai.net">nhentai</a> parser</li>
-    </ul>
-    </li>
-    <li><p><strong>[ Goal Achieved! ]</strong> no longer depended on the "isomorphic-fetch" and "cheerio".</p>
-    </li>
-    </ul>
-    <p>Any bugs / Error encouner please make an <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/new">issue</a> so I can fix it.</p>
-    <hr>
-    <h1 id="351"><a class="anchor" name="351" href="#351"><span class="octicon octicon-link"></span></a>3.5.1</h1>
-    <ul>
-    <li>IF YOU HAVE A FAST AF INTERNET PLS CAN U SLOW?<br>
-    On my travis.ci build on 3.5.0 It has a status code 429 which stands for "too many request" so do not request TOO MUCH or TOO MANY if you have a fast internet. I don't know how to fix this yet but I will find a way soon.</li>
-    </ul>
-    <hr>
-    <h1 id="350"><a class="anchor" name="350" href="#350"><span class="octicon octicon-link"></span></a>3.5.0</h1>
-    <h2 id="new-update"><a class="anchor" name="new-update" href="#new-update"><span class="octicon octicon-link"></span></a>New Update</h2>
-    <ul>
-    <li><p>Class constructor changed.</p>
-    </li>
-    <li><p>New properties Added:</p>
-    <ul>
-    <li>url</li>
-    <li>connection</li>
-    </ul>
-    </li>
-    <li><p>New methods Added:</p>
-    <ul>
-    <li>pHomepage</li>
-    <li>pLanguagePage</li>
-    <li>pSearch</li>
-    <li>pTagPage</li>
-    </ul>
-    </li>
-    </ul>
-    <p>-&gt; <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">See the Documentation for more info</a></p>
-    <p><strong>Removed</strong> request headers property:<br></p>
-    <blockquote>
-    <p>Module's fetcher is now changed from <code>https</code> to <code>http2</code> which no longer require <code>keepAlive</code> which is also made the module performance better*</p>
-    </blockquote>
-    <h3 id="code-rebuild"><a class="anchor" name="code-rebuild" href="#code-rebuild"><span class="octicon octicon-link"></span></a>Code rebuild!</h3>
-    <p>The <code>fecther</code> and <code>shorter</code> is now one piece and named <code>parser.js</code>.<br>
-    Code rebuild also improve some performance*.</p>
-    <p>Definition is also more friendly to be able to access properties, methods and more.</p>
-    <blockquote>
-    <p><img src="https://user-images.githubusercontent.com/80595346/138507052-91cc4737-99de-4c77-888e-b6a8e2518e8c.png" alt="">
-    <img src="https://user-images.githubusercontent.com/80595346/138507326-99124b4a-2e83-49c7-aed1-6e1f4e51fb17.png" alt="">
-    <img src="https://user-images.githubusercontent.com/80595346/138507826-0901a67f-bd49-42dc-b18d-ce9d932e0ef0.png" alt="">
-    <img src="https://user-images.githubusercontent.com/80595346/138507546-b99afde1-8d69-4eda-9909-ef9caabffee9.png" alt=""></p>
-    </blockquote>
-    <hr>
-    <h1 id="322"><a class="anchor" name="322" href="#322"><span class="octicon octicon-link"></span></a>3.2.2</h1>
-    <h2 id="documentation-update"><a class="anchor" name="documentation-update" href="#documentation-update"><span class="octicon octicon-link"></span></a>Documentation Update</h2>
-    <ul>
-    <li>Added Documentation</li>
-    <li>New readme.md style</li>
-    </ul>
-    <hr>
-    <h1 id="321"><a class="anchor" name="321" href="#321"><span class="octicon octicon-link"></span></a>3.2.1</h1>
-    <h2 id="quick-fix"><a class="anchor" name="quick-fix" href="#quick-fix"><span class="octicon octicon-link"></span></a>Quick Fix</h2>
-    <ul>
-    <li><p><a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/3">issue #3</a> is fixed.</p>
-    <h2 id="changes">Changes</h2>
-    </li>
-    <li><p>You can now see the property inside of the json's Data on the new Declaration.<br>
-    example of the new declaration:</p>
-    <br>
-    <img src="https://user-images.githubusercontent.com/80595346/137313293-342282e4-fa55-475f-aa9b-47dcab9c8cc6.png" width="450px"><br>
-    </li>
-    <li><p>New property <code>requestHeaders</code></p>
-    </li>
-    <li><p>API's fetcher now uses <code>https</code>. If you experience slowdowns you can use <code>Isomorpic-fetch</code> again from the
-    previous version but you can't use the new property <code>requestHeaders</code>. check my test on some few "<a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/src/bruh.log">fetchers</a>" </p>
-    </li>
-    </ul>
-    <h2 id="idk"><a class="anchor" name="idk" href="#idk"><span class="octicon octicon-link"></span></a>idk</h2>
-    <ul>
-    <li>Added <code>IgnoreNone</code>, Idk about this but it just removes the "blank/empty" tags on the Json when received. Example:<pre class=" language-js"><code class=" language-js"><span class="token comment">// IgnoreNone = false;</span>
-    <span class="token comment">// the json object will join the empty tags</span>
-      title<span class="token operator">:</span> <span class="token punctuation">{</span>
-          origin<span class="token operator">:</span> <span class="token string">'none'</span>
-          translated<span class="token operator">:</span> <span class="token string">'example'</span>
-      <span class="token punctuation">}</span>
-    <span class="token comment">// IgnoreNone = true;</span>
-    <span class="token comment">// It'll remove the 'none' or 'blank/empty' tags in the object</span>
-      title<span class="token operator">:</span> <span class="token punctuation">{</span>
-          translated<span class="token operator">:</span> <span class="token string">'example'</span>
-      <span class="token punctuation">}</span>
-    <span class="token comment">// calling the removed tag will result in an error if IgnoreNone is True.</span></code></pre>
-    </li>
-    </ul>
-    <hr>
-    <h1 id="301"><a class="anchor" name="301" href="#301"><span class="octicon octicon-link"></span></a>3.0.1</h1>
-    <h2 id="quick-patch"><a class="anchor" name="quick-patch" href="#quick-patch"><span class="octicon octicon-link"></span></a>Quick patch</h2>
-    <ul>
-    <li>version 3.0.0 code clean has some problem, putted too many <code>awaits</code> that makes it slow is now Fixed.<br>
-    note: <code>overAlltest.js</code> should always end with a 1min test or lower, If it exceed 1min30sec means there's something wrong in my code please do a PR.</li>
-    </ul>
-    <hr>
-    <h1 id="300"><a class="anchor" name="300" href="#300"><span class="octicon octicon-link"></span></a>3.0.0</h1>
-    <h2 id="update"><a class="anchor" name="update" href="#update"><span class="octicon octicon-link"></span></a>Update</h2>
-    <ul>
-    <li>cleaned the codes to reduce the file size.</li>
-    <li>all JS files are now minified when installing through <code>npm install</code>.</li>
-    <li>Added <code>blockedWords</code> for <code>IsDiscord</code>.<br>
-    example:<pre class=" language-js"><code class=" language-js">  api<span class="token punctuation">.</span>blockedWords <span class="token operator">=</span> <span class="token string">"crossderssing gore etc"</span>
-      <span class="token comment">// or "crossderssing,gore,etc" or "crossderssing gore,etc"</span></code></pre>
-    </li>
-    </ul>
-    <hr>
-    <h1 id="292"><a class="anchor" name="292" href="#292"><span class="octicon octicon-link"></span></a>2.9.2</h1>
-    <p>Hotfix and code update</p>
-    <ul>
-    <li>reduced the file size again by cleaning the codes.</li>
-    <li><code>pRandom</code> is now fixed from giving <code>link is not defined</code> error message.</li>
-    <li>last 2.9.0 the json object that showed on the readme is fixed and available to all pRand functions. </li>
-    <li>updated the <code>fetcher.js</code>.</li>
-    </ul>
-    <hr>
-    <h1 id="290"><a class="anchor" name="290" href="#290"><span class="octicon octicon-link"></span></a>2.9.0</h1>
-    <h2 id="new-update-1"><a class="anchor" name="new-update-1" href="#new-update-1"><span class="octicon octicon-link"></span></a>New Update</h2>
-    <h3 id="added-new-isdiscord"><a class="anchor" name="added-new-isdiscord" href="#added-new-isdiscord"><span class="octicon octicon-link"></span></a>Added new <code>IsDiscord</code></h3>
-    <ul>
-    <li>It blocks some selected tags that violate Discord rules.
-    If the doujin has those tags it will throw an error. So that you will need to
-    execute another one again until that doujin has a clean tags.</li>
-    </ul>
-    <ul>
-    <li><p>Added the <code>ReRollonFail</code> bool for this specific new feature.</p>
-    </li>
-    <li><p>this feature is credited to <a href="https://github.com/crackheadakira">crackheadakira</a>
-    <code>getID()</code> update:</p>
-    </li>
-    <li><p>the function <code>list()</code> is now removed so you can now only use 1 function <code>json()</code>
-    this will cause changes on some codes that uses <code>list()</code> like <code>data.cover</code> is now <code>data.images.cover</code> see more on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md">README</a> page </p>
-    </li>
-    <li><p>You can now download the mini file version of this 2.9 <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/releases/tag/2.9.0">here</a></p>
-    </li>
-    <li><p>Problem right now after publishing 2.9:<br>
-    the function <code>pRandom</code> has something weird saying <code>link is not defined</code> this will be fixed soon</p>
-    </li>
-    </ul>
-    <hr>
-    <h1 id="281"><a class="anchor" name="281" href="#281"><span class="octicon octicon-link"></span></a>2.8.1</h1>
-    <p>Code update</p>
-    <ul>
-    <li>Cleaned some trash code I've done like the 7 while statements on the <code>shorter.js</code> into a single
-    for statement. like removing 1kb  from 3.86kb to 2.99kb* and Codes that repeats with same function but 
-    different names has calling function so less space.</li>
-    </ul>
-    <hr>
-    <h1 id="276"><a class="anchor" name="276" href="#276"><span class="octicon octicon-link"></span></a>2.7.6</h1>
-    <p>Quick Patch </p>
-    <ul>
-    <li><code>main.d.ts</code> is finally fixed, I don't know how to use typescript but adding them so functions have meanings or 
-    how they work. I don't know? Im not an expert.</li>
-    </ul>
-    <hr>
-    <h1 id="275"><a class="anchor" name="275" href="#275"><span class="octicon octicon-link"></span></a>2.7.5</h1>
-    <p>Quick Hotfix Patch </p>
-    <ul>
-    <li>removed the <code>console.log</code> on the <code>pRandSpecificTags()</code>.</li>
-    </ul>
-    <hr>
-    <h1 id="274"><a class="anchor" name="274" href="#274"><span class="octicon octicon-link"></span></a>2.7.4</h1>
-    <p>Patch update</p>
-    <ul>
-    <li>updated: README.md</li>
-    <li>FIXED: <code>pRandSpecificTags()</code>. if the nhentai page has 0 it causes an error because it can't compute to randomize it fixed by adding a <code>try</code> and <code>catch</code>.</li>
-    <li>added Throw error when the given ID is invalid to make it easier to create custom errors using <code>try and catch</code></li>
-    </ul>
-    <hr>
-    <h1 id="273"><a class="anchor" name="273" href="#273"><span class="octicon octicon-link"></span></a>2.7.3</h1>
-    <p>Patch update</p>
-    <ul>
-    <li>updated: README.md</li>
-    <li>added my self-made discord bot called "nhentai-roulette" using this api.</li>
-    </ul>
-    <hr>
-    <h1 id="272"><a class="anchor" name="272" href="#272"><span class="octicon octicon-link"></span></a>2.7.2</h1>
-    <p>Quick Hotfix Patch </p>
-    <ul>
-    <li>FIXED: <code>main.js</code> url is accidentally put to <code>${url}</code> instead of the link.</li>
-    </ul>
-    <hr>
-    <h1 id="270"><a class="anchor" name="270" href="#270"><span class="octicon octicon-link"></span></a>2.7.0</h1>
-    <p>Minor update</p>
-    <ul>
-    <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
-    <li><code>Randrange.js</code> is too short so it has been removed but the contents has been transfered to the <code>main.js</code></li>
-    <li>added few more testing on <code>test.js</code> to make sure everything works.</li>
-    <li>added changelog :&gt;</li>
-    </ul>
-    <hr>
-    <h1 id="254"><a class="anchor" name="254" href="#254"><span class="octicon octicon-link"></span></a>2.5.4</h1>
-    <p>Update</p>
-    <ul>
-    <li>added github repos :&gt; correct my codes! or add more?</li>
-    </ul>
-    <hr>
-    <h1 id="252"><a class="anchor" name="252" href="#252"><span class="octicon octicon-link"></span></a>2.5.2</h1>
-    <p>Patch update</p>
-    <ul>
-    <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
-    </ul>
-    <hr>
-    <h1 id="250"><a class="anchor" name="250" href="#250"><span class="octicon octicon-link"></span></a>2.5.0</h1>
-    <p>Not really a major update but why not</p>
-    <ul>
-    <li>Fixed the <code>.json()</code> where the page array is <code>undefined</code></li>
-    <li>added <code>d.ts</code> idk what that does but yeah you should see what kinda of function does </li>
-    </ul>
-    <hr>
-    <h1 id="200"><a class="anchor" name="200" href="#200"><span class="octicon octicon-link"></span></a>2.0.0</h1>
-    <p>Not really a major update but why not</p>
-    <ul>
-    <li>some new stuff</li>
-    </ul>
-    <hr>
-    <h1 id="103"><a class="anchor" name="103" href="#103"><span class="octicon octicon-link"></span></a>1.0.3</h1>
-    <p>Patch update</p>
-    <ul>
-    <li>Fixed <code>.json()</code> data picture pages call<pre class=" language-js"><code class=" language-js"><span class="token comment">//old</span>
-    data<span class="token punctuation">.</span><span class="token constant">BASE</span><span class="token punctuation">.</span><span class="token constant">IMAGES</span><span class="token punctuation">.</span><span class="token constant">THUMBS</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-    <span class="token comment">//new</span>
-    data<span class="token punctuation">.</span>base<span class="token punctuation">.</span>images<span class="token punctuation">.</span>page_pic<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></code></pre>
-    </li>
-    </ul>
-    <hr>
-    <h1 id="101"><a class="anchor" name="101" href="#101"><span class="octicon octicon-link"></span></a>1.0.1</h1>
-    <p>Patch update</p>
-    <ul>
-    <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
-    </ul>
-    <hr>
-    <h1 id="100"><a class="anchor" name="100" href="#100"><span class="octicon octicon-link"></span></a>1.0.0</h1>
-    <p>The Creation</p>
-    <ul>
-    <li>added tons</li>
-    </ul>
-    <hr>
-    <div align="center">
-    
-    <h2 id="clicky-buttons">clicky buttons</h2>
-    <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses" title="MIT Licence"><img src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png" alt=""></a><br>
-    <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation" title="API Documentation"><img src="https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png" alt=""></a></p>
-    <h1 id="homepage"><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/" title="I ran out of pics sorry">Homepage</a></h1>
-    <iframe title="kasura's nhentai API" src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101.html" frameborder="0" width="500" height="244"></iframe>
-    <br>
-    <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
-    <p>
-        <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a><br>
-        ©copyright 2021
-    </p>
-    </div></div></body></html>
+<body><link rel="stylesheet" type="text/css" href="chrome-extension://ckkdlimhmcjmikdlpkmbgfkaikojcbjk/themes/github-dark.css" id="_theme"><div id="_html" class="markdown-body"><!-- All versions changelog -->
+  <h1 style="font-size: 70px" align="center"><a class="anchor" name="" href="#"><span class="octicon octicon-link"></span></a>Changelogs</h1>
+  <div style="font-size:15px" align="center">
+  versions
+  
+  <p><a href="#100">1.0.0</a> |
+  <a href="#200">2.0.0</a> |
+  <a href="#250">2.5.0</a> |
+  <a href="#270">2.7.0</a> |
+  <a href="#281">2.8.1</a> |
+  <a href="#290">2.9.0</a> |
+  <a href="#300">3.0.0</a> |
+  <a href="#321">3.2.1</a> |
+  <a href="#350">3.5.0</a> |
+  <a href="#360">3.6.0</a> |
+  <a href="#370">3.7.0</a> </p>
+  <div style="margin-top:-17px; font-size:10px">( patches are not included )</div>
+  </div>
+  
+  <h1 id="370"><a class="anchor" name="370" href="#370"><span class="octicon octicon-link"></span></a>3.7.0</h1>
+  <h2 id="new-update--fix-update"><a class="anchor" name="new-update--fix-update" href="#new-update--fix-update"><span class="octicon octicon-link"></span></a>New Update / Fix Update</h2>
+  <ul>
+  <li><p>Fixed the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/4#issuecomment-955539135">parser</a> problem on the NPM package.</p>
+  </li>
+  <li><p>Fixed the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/4#issuecomment-953081260">length is missing</a>.</p>
+  </li>
+  <li><p>Fixed the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/4#issue-1037513496">pTagPage</a> giving No results.</p>
+  </li>
+  <li><p><strong>[ NEW! ]</strong></p>
+  <ul>
+  <li>Added a <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation#cli%E2%A0%80prototype">CLI</a> <code>prototype</code>. This new feature is still not stable as I doubt it will problems like my past mistakes.</li>
+  <li>the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/test/test.js">test</a> is now more epic, try doing <code>npm run bruhmocha</code> lol.</li>
+  </ul>
+  </li>
+  <li><p>To get the full <strong>Tags</strong>, <strong>Artists</strong>, <strong>Parodies</strong>, <strong>Groups</strong> list download the <code>tags.d.ts.full</code> on github and replace the <code>tags.d.ts</code> on the <code>lib/d.ts</code> and remove the <code>.full</code>. Will add an automatic download soon.</p>
+  </li>
+  </ul>
+  <p>Any bugs / Error encouner please make an <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/new">issue</a> so I can fix it.</p>
+  <hr>
+  <h1 id="360"><a class="anchor" name="360" href="#360"><span class="octicon octicon-link"></span></a>3.6.0</h1>
+  <h2 id="fix-update"><a class="anchor" name="fix-update" href="#fix-update"><span class="octicon octicon-link"></span></a>Fix Update</h2>
+  <ul>
+  <li><p>Fixed tons of bugs/problems/errors on the last update.</p>
+  <ul>
+  <li>No longer receive "too many request" as it has retry-after on the <code>fetcher</code> for now.</li>
+  <li>Added new "favorites" on the json object.</li>
+  </ul>
+  </li>
+  <li><p><strong>[ NEW! ]</strong> No longer depends on cheerio, Implemented new parser for less error/bug and clean code**</p>
+  <ul>
+  <li>Next update will be an experimental as I'll introduce few function of my new <a href="https://nhentai.net">nhentai</a> parser</li>
+  </ul>
+  </li>
+  <li><p><strong>[ Goal Achieved! ]</strong> no longer depended on the "isomorphic-fetch" and "cheerio".</p>
+  </li>
+  </ul>
+  <p>Any bugs / Error encouner please make an <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/new">issue</a> so I can fix it.</p>
+  <hr>
+  <h1 id="351"><a class="anchor" name="351" href="#351"><span class="octicon octicon-link"></span></a>3.5.1</h1>
+  <ul>
+  <li>IF YOU HAVE A FAST AF INTERNET PLS CAN U SLOW?<br>
+  On my travis.ci build on 3.5.0 It has a status code 429 which stands for "too many request" so do not request TOO MUCH or TOO MANY if you have a fast internet. I don't know how to fix this yet but I will find a way soon.</li>
+  </ul>
+  <hr>
+  <h1 id="350"><a class="anchor" name="350" href="#350"><span class="octicon octicon-link"></span></a>3.5.0</h1>
+  <h2 id="new-update"><a class="anchor" name="new-update" href="#new-update"><span class="octicon octicon-link"></span></a>New Update</h2>
+  <ul>
+  <li><p>Class constructor changed.</p>
+  </li>
+  <li><p>New properties Added:</p>
+  <ul>
+  <li>url</li>
+  <li>connection</li>
+  </ul>
+  </li>
+  <li><p>New methods Added:</p>
+  <ul>
+  <li>pHomepage</li>
+  <li>pLanguagePage</li>
+  <li>pSearch</li>
+  <li>pTagPage</li>
+  </ul>
+  </li>
+  </ul>
+  <p>-&gt; <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">See the Documentation for more info</a></p>
+  <p><strong>Removed</strong> request headers property:<br></p>
+  <blockquote>
+  <p>Module's fetcher is now changed from <code>https</code> to <code>http2</code> which no longer require <code>keepAlive</code> which is also made the module performance better*</p>
+  </blockquote>
+  <h3 id="code-rebuild"><a class="anchor" name="code-rebuild" href="#code-rebuild"><span class="octicon octicon-link"></span></a>Code rebuild!</h3>
+  <p>The <code>fecther</code> and <code>shorter</code> is now one piece and named <code>parser.js</code>.<br>
+  Code rebuild also improve some performance*.</p>
+  <p>Definition is also more friendly to be able to access properties, methods and more.</p>
+  <blockquote>
+  <p><img src="https://user-images.githubusercontent.com/80595346/138507052-91cc4737-99de-4c77-888e-b6a8e2518e8c.png" alt="">
+  <img src="https://user-images.githubusercontent.com/80595346/138507326-99124b4a-2e83-49c7-aed1-6e1f4e51fb17.png" alt="">
+  <img src="https://user-images.githubusercontent.com/80595346/138507826-0901a67f-bd49-42dc-b18d-ce9d932e0ef0.png" alt="">
+  <img src="https://user-images.githubusercontent.com/80595346/138507546-b99afde1-8d69-4eda-9909-ef9caabffee9.png" alt=""></p>
+  </blockquote>
+  <hr>
+  <h1 id="322"><a class="anchor" name="322" href="#322"><span class="octicon octicon-link"></span></a>3.2.2</h1>
+  <h2 id="documentation-update"><a class="anchor" name="documentation-update" href="#documentation-update"><span class="octicon octicon-link"></span></a>Documentation Update</h2>
+  <ul>
+  <li>Added Documentation</li>
+  <li>New readme.md style</li>
+  </ul>
+  <hr>
+  <h1 id="321"><a class="anchor" name="321" href="#321"><span class="octicon octicon-link"></span></a>3.2.1</h1>
+  <h2 id="quick-fix"><a class="anchor" name="quick-fix" href="#quick-fix"><span class="octicon octicon-link"></span></a>Quick Fix</h2>
+  <ul>
+  <li><p><a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues/3">issue #3</a> is fixed.</p>
+  <h2 id="changes">Changes</h2>
+  </li>
+  <li><p>You can now see the property inside of the json's Data on the new Declaration.<br>
+  example of the new declaration:</p>
+  <br>
+  <img src="https://user-images.githubusercontent.com/80595346/137313293-342282e4-fa55-475f-aa9b-47dcab9c8cc6.png" width="450px"><br>
+  </li>
+  <li><p>New property <code>requestHeaders</code></p>
+  </li>
+  <li><p>API's fetcher now uses <code>https</code>. If you experience slowdowns you can use <code>Isomorpic-fetch</code> again from the
+  previous version but you can't use the new property <code>requestHeaders</code>. check my test on some few "<a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/src/bruh.log">fetchers</a>" </p>
+  </li>
+  </ul>
+  <h2 id="idk"><a class="anchor" name="idk" href="#idk"><span class="octicon octicon-link"></span></a>idk</h2>
+  <ul>
+  <li>Added <code>IgnoreNone</code>, Idk about this but it just removes the "blank/empty" tags on the Json when received. Example:<pre class=" language-js"><code class=" language-js"><span class="token comment">// IgnoreNone = false;</span>
+  <span class="token comment">// the json object will join the empty tags</span>
+    title<span class="token operator">:</span> <span class="token punctuation">{</span>
+        origin<span class="token operator">:</span> <span class="token string">'none'</span>
+        translated<span class="token operator">:</span> <span class="token string">'example'</span>
+    <span class="token punctuation">}</span>
+  <span class="token comment">// IgnoreNone = true;</span>
+  <span class="token comment">// It'll remove the 'none' or 'blank/empty' tags in the object</span>
+    title<span class="token operator">:</span> <span class="token punctuation">{</span>
+        translated<span class="token operator">:</span> <span class="token string">'example'</span>
+    <span class="token punctuation">}</span>
+  <span class="token comment">// calling the removed tag will result in an error if IgnoreNone is True.</span></code></pre>
+  </li>
+  </ul>
+  <hr>
+  <h1 id="301"><a class="anchor" name="301" href="#301"><span class="octicon octicon-link"></span></a>3.0.1</h1>
+  <h2 id="quick-patch"><a class="anchor" name="quick-patch" href="#quick-patch"><span class="octicon octicon-link"></span></a>Quick patch</h2>
+  <ul>
+  <li>version 3.0.0 code clean has some problem, putted too many <code>awaits</code> that makes it slow is now Fixed.<br>
+  note: <code>overAlltest.js</code> should always end with a 1min test or lower, If it exceed 1min30sec means there's something wrong in my code please do a PR.</li>
+  </ul>
+  <hr>
+  <h1 id="300"><a class="anchor" name="300" href="#300"><span class="octicon octicon-link"></span></a>3.0.0</h1>
+  <h2 id="update"><a class="anchor" name="update" href="#update"><span class="octicon octicon-link"></span></a>Update</h2>
+  <ul>
+  <li>cleaned the codes to reduce the file size.</li>
+  <li>all JS files are now minified when installing through <code>npm install</code>.</li>
+  <li>Added <code>blockedWords</code> for <code>IsDiscord</code>.<br>
+  example:<pre class=" language-js"><code class=" language-js">  api<span class="token punctuation">.</span>blockedWords <span class="token operator">=</span> <span class="token string">"crossderssing gore etc"</span>
+    <span class="token comment">// or "crossderssing,gore,etc" or "crossderssing gore,etc"</span></code></pre>
+  </li>
+  </ul>
+  <hr>
+  <h1 id="292"><a class="anchor" name="292" href="#292"><span class="octicon octicon-link"></span></a>2.9.2</h1>
+  <p>Hotfix and code update</p>
+  <ul>
+  <li>reduced the file size again by cleaning the codes.</li>
+  <li><code>pRandom</code> is now fixed from giving <code>link is not defined</code> error message.</li>
+  <li>last 2.9.0 the json object that showed on the readme is fixed and available to all pRand functions. </li>
+  <li>updated the <code>fetcher.js</code>.</li>
+  </ul>
+  <hr>
+  <h1 id="290"><a class="anchor" name="290" href="#290"><span class="octicon octicon-link"></span></a>2.9.0</h1>
+  <h2 id="new-update-1"><a class="anchor" name="new-update-1" href="#new-update-1"><span class="octicon octicon-link"></span></a>New Update</h2>
+  <h3 id="added-new-isdiscord"><a class="anchor" name="added-new-isdiscord" href="#added-new-isdiscord"><span class="octicon octicon-link"></span></a>Added new <code>IsDiscord</code></h3>
+  <ul>
+  <li>It blocks some selected tags that violate Discord rules.
+  If the doujin has those tags it will throw an error. So that you will need to
+  execute another one again until that doujin has a clean tags.</li>
+  </ul>
+  <ul>
+  <li><p>Added the <code>ReRollonFail</code> bool for this specific new feature.</p>
+  </li>
+  <li><p>this feature is credited to <a href="https://github.com/crackheadakira">crackheadakira</a>
+  <code>getID()</code> update:</p>
+  </li>
+  <li><p>the function <code>list()</code> is now removed so you can now only use 1 function <code>json()</code>
+  this will cause changes on some codes that uses <code>list()</code> like <code>data.cover</code> is now <code>data.images.cover</code> see more on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/README.md">README</a> page </p>
+  </li>
+  <li><p>You can now download the mini file version of this 2.9 <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js/releases/tag/2.9.0">here</a></p>
+  </li>
+  <li><p>Problem right now after publishing 2.9:<br>
+  the function <code>pRandom</code> has something weird saying <code>link is not defined</code> this will be fixed soon</p>
+  </li>
+  </ul>
+  <hr>
+  <h1 id="281"><a class="anchor" name="281" href="#281"><span class="octicon octicon-link"></span></a>2.8.1</h1>
+  <p>Code update</p>
+  <ul>
+  <li>Cleaned some trash code I've done like the 7 while statements on the <code>shorter.js</code> into a single
+  for statement. like removing 1kb  from 3.86kb to 2.99kb* and Codes that repeats with same function but 
+  different names has calling function so less space.</li>
+  </ul>
+  <hr>
+  <h1 id="276"><a class="anchor" name="276" href="#276"><span class="octicon octicon-link"></span></a>2.7.6</h1>
+  <p>Quick Patch </p>
+  <ul>
+  <li><code>main.d.ts</code> is finally fixed, I don't know how to use typescript but adding them so functions have meanings or 
+  how they work. I don't know? Im not an expert.</li>
+  </ul>
+  <hr>
+  <h1 id="275"><a class="anchor" name="275" href="#275"><span class="octicon octicon-link"></span></a>2.7.5</h1>
+  <p>Quick Hotfix Patch </p>
+  <ul>
+  <li>removed the <code>console.log</code> on the <code>pRandSpecificTags()</code>.</li>
+  </ul>
+  <hr>
+  <h1 id="274"><a class="anchor" name="274" href="#274"><span class="octicon octicon-link"></span></a>2.7.4</h1>
+  <p>Patch update</p>
+  <ul>
+  <li>updated: README.md</li>
+  <li>FIXED: <code>pRandSpecificTags()</code>. if the nhentai page has 0 it causes an error because it can't compute to randomize it fixed by adding a <code>try</code> and <code>catch</code>.</li>
+  <li>added Throw error when the given ID is invalid to make it easier to create custom errors using <code>try and catch</code></li>
+  </ul>
+  <hr>
+  <h1 id="273"><a class="anchor" name="273" href="#273"><span class="octicon octicon-link"></span></a>2.7.3</h1>
+  <p>Patch update</p>
+  <ul>
+  <li>updated: README.md</li>
+  <li>added my self-made discord bot called "nhentai-roulette" using this api.</li>
+  </ul>
+  <hr>
+  <h1 id="272"><a class="anchor" name="272" href="#272"><span class="octicon octicon-link"></span></a>2.7.2</h1>
+  <p>Quick Hotfix Patch </p>
+  <ul>
+  <li>FIXED: <code>main.js</code> url is accidentally put to <code>${url}</code> instead of the link.</li>
+  </ul>
+  <hr>
+  <h1 id="270"><a class="anchor" name="270" href="#270"><span class="octicon octicon-link"></span></a>2.7.0</h1>
+  <p>Minor update</p>
+  <ul>
+  <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
+  <li><code>Randrange.js</code> is too short so it has been removed but the contents has been transfered to the <code>main.js</code></li>
+  <li>added few more testing on <code>test.js</code> to make sure everything works.</li>
+  <li>added changelog :&gt;</li>
+  </ul>
+  <hr>
+  <h1 id="254"><a class="anchor" name="254" href="#254"><span class="octicon octicon-link"></span></a>2.5.4</h1>
+  <p>Update</p>
+  <ul>
+  <li>added github repos :&gt; correct my codes! or add more?</li>
+  </ul>
+  <hr>
+  <h1 id="252"><a class="anchor" name="252" href="#252"><span class="octicon octicon-link"></span></a>2.5.2</h1>
+  <p>Patch update</p>
+  <ul>
+  <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
+  </ul>
+  <hr>
+  <h1 id="250"><a class="anchor" name="250" href="#250"><span class="octicon octicon-link"></span></a>2.5.0</h1>
+  <p>Not really a major update but why not</p>
+  <ul>
+  <li>Fixed the <code>.json()</code> where the page array is <code>undefined</code></li>
+  <li>added <code>d.ts</code> idk what that does but yeah you should see what kinda of function does </li>
+  </ul>
+  <hr>
+  <h1 id="200"><a class="anchor" name="200" href="#200"><span class="octicon octicon-link"></span></a>2.0.0</h1>
+  <p>Not really a major update but why not</p>
+  <ul>
+  <li>some new stuff</li>
+  </ul>
+  <hr>
+  <h1 id="103"><a class="anchor" name="103" href="#103"><span class="octicon octicon-link"></span></a>1.0.3</h1>
+  <p>Patch update</p>
+  <ul>
+  <li>Fixed <code>.json()</code> data picture pages call<pre class=" language-js"><code class=" language-js"><span class="token comment">//old</span>
+  data<span class="token punctuation">.</span><span class="token constant">BASE</span><span class="token punctuation">.</span><span class="token constant">IMAGES</span><span class="token punctuation">.</span><span class="token constant">THUMBS</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  <span class="token comment">//new</span>
+  data<span class="token punctuation">.</span>base<span class="token punctuation">.</span>images<span class="token punctuation">.</span>page_pic<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span></code></pre>
+  </li>
+  </ul>
+  <hr>
+  <h1 id="101"><a class="anchor" name="101" href="#101"><span class="octicon octicon-link"></span></a>1.0.1</h1>
+  <p>Patch update</p>
+  <ul>
+  <li>Fixed some typos on the <a href="https://github.com/IchimakiKasura/kasu.nhentaiap.js#readme">readme.md</a></li>
+  </ul>
+  <hr>
+  <h1 id="100"><a class="anchor" name="100" href="#100"><span class="octicon octicon-link"></span></a>1.0.0</h1>
+  <p>The Creation</p>
+  <ul>
+  <li>added tons</li>
+  </ul>
+  <hr>
+  <div align="center">
+  
+  <h2 id="clicky-buttons">clicky buttons</h2>
+  <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses" title="MIT Licence"><img src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png" alt=""></a><br>
+  <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation" title="API Documentation"><img src="https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png" alt=""></a></p>
+  <h1 id="homepage"><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/" title="I ran out of pics sorry">Homepage</a></h1>
+  <iframe title="kasura's nhentai API" src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101.html" frameborder="0" width="500" height="244"></iframe>
+  <br>
+  <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
+  <p>
+      <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a><br>
+      ©copyright 2021
+  </p>
+  </div></div></body></html>

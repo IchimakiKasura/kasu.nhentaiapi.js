@@ -5,12 +5,18 @@ node_modules
 .npmignore
 
 # minified files
-/lib/main.min.js
-/lib/src/fetcher.min.js
-/lib/src/shorter.min.js
+/lib/kasuApi.min.js
+/lib/src/parser.min.js
+
+/.nyc_output
 /docs/other/*.md
 /docs/other/embeded link.psd
 test.js
+package-lock.json
+
+# whenever I rewrite the code to clean it
+/lib/src/newParser.min.js
+/lib/src/newkasuApi.min.js
 
 minifier.js
 

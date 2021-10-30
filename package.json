@@ -1,6 +1,6 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "contributors": [
     "crackheadakira"
   ],
@@ -16,16 +16,43 @@
     "hentai",
     "unofficial",
     "wrapper",
-    "parser"
+    "parser",
+    "cli"
   ],
   "scripts": {
     "test": "test.bat",
-    "go": "node ./test/overAlltest.js"
+    "bruhmocha": "node ./test/test.js",
+    "overallTest": "node ./test/overAlltest.js",
+    "build": "cmd /c test.bat 4 && npm run bruhmocha build",
+    "cov": "node ./test/coverageTest.js",
+    "cli": "node ./lib/src/parser"
   },
-  "author": "Ichimaki Kasura",
+  "author": {
+    "name": "Ichimaki Kasura",
+    "url": "https://github.com/IchimakiKasura",
+    "email": "ichmakiKasura@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^8.1.0"
+  },
+  "files": [
+    "lib/src/parser.min.js",
+    "lib/kasuApi.min.js",
+    "lib/kasuApi.d.ts",
+    "lib/d.ts/*.d.ts",
+    "test/test.js",
+    "nhentai.bat",
+    "nhentai.sh"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/kasuApi.min.js",
+      "require": "./lib/kasuApi.min.js",
+      "default": "./lib/kasuApi.min.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiapi.js.git"
@@ -33,5 +60,12 @@
   "bugs": {
     "url": "https://github.com/IchimakiKasura/kasu.nhentaiapi.js/issues"
   },
-  "homepage": "https://ichimakikasura.github.io/kasu.nhentaiapi.js/"
+  "homepage": "https://ichimakikasura.github.io/kasu.nhentaiapi.js/",
+  "engines": {
+    "node": ">=14"
+  },
+  "bin": {
+    "nhentai": "./nhentai",
+    "nhentaibat": "./nhentai.bat"
+  }
 }

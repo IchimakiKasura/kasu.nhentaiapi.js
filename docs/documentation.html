@@ -11,14 +11,14 @@
     <meta name="title" content="Documentation">
     <meta name="description"
         content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-    <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <meta property="image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
     <!-- fb -->
     <meta property="og:url" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Documentation" />
     <meta property="og:description"
         content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-    <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <meta property="og:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
     <!-- twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@pkpit">
@@ -26,8 +26,11 @@
     <meta name="twitter:title" content="Documentation" />
     <meta name="twitter:description"
         content='The "N-hentai-api" is a fast and easy to use api for connecting to nhentai.net and nhentai.to data.' />
-    <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.jpg" />
+    <meta name="twitter:image" content="https://ichimakikasura.github.io/kasu.nhentaiapi.js/other/previewLink.png" />
 </head>
+<html>
+
+<head></head>
 
 <body>
     <div id="_html" class="markdown-body">
@@ -37,7 +40,6 @@
 
             <p>-=Documentation for the kasu.<a href="https://nhentai.net">nhentai</a>api.js=-</p>
         </div>
-
         <details>
             <summary><a href="#apidocumentation">Overview</a></summary>
             <div class="content">
@@ -48,9 +50,6 @@
                 </ul>
             </div>
         </details>
-
-
-
         <details>
             <summary><a href="#⠀constructor⠀" title="module">kasu.nhentaiapi.js</a></summary>
             <div class="content">
@@ -113,13 +112,6 @@
                 </ul>
             </div>
         </details>
-
-
-
-
-
-
-
         <details>
             <summary><a href="#json-object" title="json">Json Object</a></summary>
             <div class="content">
@@ -130,15 +122,10 @@
                 </ul>
             </div>
         </details>
-
-
-
-
-
+        <p><a href="#cli%E2%A0%80prototype">CLI</a></p>
         <p><a href="#clicky-buttons"><code>Return bacc</code></a></p>
         <hr>
         <!-- #region Basics -->
-
         <h2 id="get-started"><a class="anchor" name="get-started" href="#get-started"><span
                     class="octicon octicon-link"></span></a>Get started</h2>
         <pre><code>npm i kasu.nhentaiapi.js</code></pre>
@@ -147,11 +134,11 @@
         <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// experimental, if it doesn't work use 'kasu.nhentaiapi.js'</span>
 <span class="token keyword">const</span> ExampleApi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">/**
-    * or const ExampleApi = new Example('start', "https://nhentai.net");
-    * If you don't want to add the url and connection.start() after it.
-    * because it automatically start the connection.
-    * 
-    * Check the documentation for more info.
+* or const ExampleApi = new Example('start', "https://nhentai.net");
+* If you don't want to add the url and connection.start() after it.
+* because it automatically start the connection.
+* 
+* Check the documentation for more info.
 */</span>
 
 <span class="token comment">//          ----number | strings can do----</span>
@@ -305,12 +292,10 @@
                     class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandTag( tag, fn )⠀</code></h3>
         <h3 id="⠀prandparody-tag-fn-⠀"><a class="anchor" name="⠀prandparody-tag-fn-⠀"
                 href="#⠀prandparody-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandParody( tag, fn )⠀</code>
-        </h3>
+            <code>⠀pRandParody( tag, fn )⠀</code></h3>
         <h3 id="⠀prandartist-tag-fn-⠀"><a class="anchor" name="⠀prandartist-tag-fn-⠀"
                 href="#⠀prandartist-tag-fn-⠀"><span class="octicon octicon-link"></span></a>&nbsp; &nbsp;
-            <code>⠀pRandArtist( tag, fn )⠀</code>
-        </h3>
+            <code>⠀pRandArtist( tag, fn )⠀</code></h3>
         <h3 id="⠀prandgroup-tag-fn-⠀"><a class="anchor" name="⠀prandgroup-tag-fn-⠀" href="#⠀prandgroup-tag-fn-⠀"><span
                     class="octicon octicon-link"></span></a>&nbsp; &nbsp; <code>⠀pRandGroup( tag, fn )⠀</code></h3>
         <ul>
@@ -361,8 +346,7 @@
             <li><code>str</code> only accepts 4 string <strong>japanese</strong>, <strong>english</strong>,
                 <strong>chinese</strong> and <strong>translated</strong> (is this even a language). it also accepts
                 shortcuts like <strong>jp</strong>, <strong>japan</strong>, <strong>eng</strong>,
-                <strong>china</strong>. <code>int</code> specifies the page.
-            </li>
+                <strong>china</strong>. <code>int</code> specifies the page.</li>
             <li><a
                     href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">returns</a>
                 a <a href="#ppage-json"><code>json object</code></a></li>
@@ -653,9 +637,17 @@
         </h3>
         <ul>
             <li>NANI TTE- <br>
-
             </li>
         </ul>
+        <hr>
+        <h1 id="cli⠀prototype"><a class="anchor" name="cli⠀prototype" href="#cli⠀prototype"><span
+                    class="octicon octicon-link"></span></a>CLI⠀<code>prototype</code></h1>
+        <p><img src="https://user-images.githubusercontent.com/80595346/139554302-1ccb08aa-3dc5-4b75-95aa-8fd65b1c130e.png"
+                alt="![]()">
+            the CLI of the module is still WIP. You may experience weird bugs or other, Use it if you want.<br>
+            <code>nhentai</code> for bash<br>
+            <code>nhentaibat</code> for batch
+        </p>
         <hr>
         <div align="center">
 
@@ -664,10 +656,11 @@
                         src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png"
                         alt=""></a><br>
                 <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs" title="Update History"><img
-                        src="https://user-images.githubusercontvivo-1907ent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
+                        src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
                         alt=""></a>
             </p>
-            <iframe title="kasura's nhentai API" src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101.html" frameborder="0" width="500"
+            <iframe title="kasura's nhentai API"
+                src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101" frameborder="0" width="500"
                 height="244"></iframe>
             <br>
             <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img

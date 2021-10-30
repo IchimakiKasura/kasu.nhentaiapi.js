@@ -1,74 +1,154 @@
 "use strict";
-const API = require("../lib/kasuApi")
-const exec = require("child_process").exec;
-const api = new API('start','https://nhentai.net',true);
+let Parser = require("../lib/src/parser");
+let Main = require("../lib/kasuApi");
+const { connect } = require("http2");
+const { exec } = require('child_process');
+const { log } = require("console");
+const { performance } = require("perf_hooks");
+const cli = process.argv.slice(2)[0]
+if (cli == "build") {
+    log("[BUILD CONFIRMED]\n\n")
+    Parser = require("../lib/src/parser.min");
+    Main = require("../lib/kasuApi.min");
+} else log("[BUILD UNCONFIRMED]\n\n")
 
-const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
+// haha
+async function bruhMocha(callback, line) {
+    let status = ''
+    let result = ''
+    let tag = ''
+    let start = performance.now()
+    let end;
+    let error = ''
+    try {
+        result = await callback
+        end = performance.now() - start
+        end = end.toFixed(2)
+        status = '   ✔️  \x1b[32mpassed\x1b[0m:';
+    } catch (e) {
+        error = e
+        status = '   ❌ \x1b[31merror\x1b[0m :';
+        end = performance.now() - start
+        end = end.toFixed(2)
+    }
+    try{
+        // if results go haha error
+        tag = result.tag_table.tag
+        if (tag.length > 85) {
+            tag = tag.substring(0, 85) + "..."
+        }
+    } catch {
+        //burp
+    }
 
-const log = (...string)=>{
-    return console.log(...string);
+    return {
+        book: (text) => {
+            log(`\n${status} \x1b[36m${text}\x1b[0m\x1b[2m [Function line: ${line}]\x1b[0m`);
+            if (status.match('error')) log(`       \x1b[2mproblem: ${error}\n       time took: ${end}\x1b[0m`);
+            if (status.match('passed')) log(`       \x1b[2mtags: ${tag}\n       id: ${result.id}\n       time took: ${end}\x1b[0m`);
+        },
+        page: (text) => {
+            log(`\n${status} \x1b[36m${text}\x1b[0m\x1b[2m [Function line: ${line}]\x1b[0m`);
+            if (status.match('error')) log(`       \x1b[2mproblem: ${error}\n       time took: ${end}\x1b[0m`);
+            if (status.match('passed')) log(`       \x1b[2mTotalPages: ${result[0].TotalPage}\n       typePage: ${result[0].typePage}\n       first Array ID: ${result[1].id}\n       time took: ${end}\x1b[0m\x1b[0m`);
+        }
+    }
 }
-let execPromise=(command, name)=>{
-    return new Promise(function(resolve, reject) {
-        exec(command, (e,s,st) => {
-            resolve(name+" done");
+let execPromise = (command, name) => {
+    return new Promise(function (resolve, reject) {
+        exec(command, (e, s, st) => {
+            if (s) resolve(`   ❌  \x1b[31merror\x1b[0m: ${name}`);
+            resolve(`   ✔️  \x1b[32mpassed\x1b[0m: ${name}`);
         });
     });
 }
+(async () => {
+    log(`Eslint:\n`)
+    let start = performance.now()
+    log(await execPromise("call node_modules/.bin/eslint lib/kasuApi.js", 'kasuApi.js'))
+    let end = performance.now() - start
+    end = end.toFixed(2)
+    log(`       \x1b[2mtime took: ${end}\x1b[0m`);
+    start = performance.now()
+    log(await execPromise("call node_modules/.bin/eslint lib/src/parser.js", 'Parser.js'))
+    end = performance.now() - start
+    end = end.toFixed(2)
+    log(`       \x1b[2mtime took: ${end}\x1b[0m`);
 
-// excess test are removed after build only important remains
-(async ()=>{
-let start = new Date().getTime()
-    api.IgnoreNone = true;
-    log(`   testing '.js' files: kasuApi.js`)
-    console.log(await execPromise("node lib/kasuApi.js",'kasuApi.js'))
-    log(`   testing '.js' files: Parser.js`)
-    console.log(await execPromise("node lib/src/shorter.js",'Parse.js'))
-    const test = await api.getID("https://nhentai.net/g/228922/").json()
-    log(`\ngetID().json():\n`)
-    log(test)
-    //should show a whole json
-    log(`\n==========================================================\n`)
+    // nhentai.net
+    log(`\nNhentai.net:`)
+    log(`parser (.net):`)
+    let client = connect("https://nhentai.net")
+        ; (await bruhMocha(Parser.book('https://nhentai.net/g/278407', client), '146:5')).book('book')
+        ; (await bruhMocha(Parser.page(5, 'https://nhentai.net/character/astolfo', client), '269:5')).page('page')
+    client.close()
+    log(`\nConstructor (.net): \n`)
+    let api;
+    start = performance.now()
+    try {
+        api = new Main()
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('   ✔️  \x1b[32mpassed\x1b[0m: \x1b[33mnew constructor\x1b[0m \x1b[2m[Function line: 9:5]\x1b[0m')
+        log(`       \x1b[2mParameters:\n        connection: ${api.connection.status()}\n        url: ${api.url}\n        time took: ${end}\x1b[0m`);
+    } catch {
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('   ❌  \x1b[31merror\x1b[0m: \x1b[33mnew constructor\x1b[0m \x1b[2m[Function 9:5]\x1b[0m')
+        log(`       \x1b[2mtime took: ${end}\x1b[0m`);
+    }
+    try {
+        api.connection.start()
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('\n   ✔️  \x1b[32mpassed\x1b[0m: \x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 18:13]\x1b[0m')
+        log(`       \x1b[2mParameters:\n        connection: ${api.connection.status()}\n        url: ${api.url}\n        time took: ${end}\x1b[0m`);
+        
+    } catch {
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('\n   ❌  \x1b[31merror\x1b[0m: x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 18:13]\x1b[0m')
+        log(`       \x1b[2mtime took: ${end}\x1b[0m`);
+    }
+    log(`\nClass methods etc (selected) (.net):`)
+        ; (await bruhMocha(api.getID(228722).json(), '117:9')).book('getID')
+        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '96:9')).book('pRandSpecificTags')
+        ; (await bruhMocha(api.pRandom(), '148:9')).book('pRandom')
+        ; (await bruhMocha(api.pHomepage(2), '173:9')).page('pHomepage')
+        ; (await bruhMocha(api.pLanguagePage("jp", 5), '178:9')).page('pLanguagePage')
+        ; (await bruhMocha(api.pSearch("astolfo", 3), '196:9')).page('pSearch')
+        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '204:9')).page('pTagPage')
+    api.connection.close()
 
-    api.IsDiscord = true;
-    api.ReRollonFail = true;
-    // pRand Test
-    log(`pRandSpecificTags:\n`)
-    try{
-        await api.pRandSpecificTags("konosuba aqua sole-female",data=>{log(data)})
-    }catch(e){log(e)}
-
-    log(`\n==========================================================\n`)
-
-    log(`\npRandTag: -crossdressing-\n`)
-    try{
-        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
-    }catch(e){log(e)}
-    log(`\n==========================================================\n`)
-    log(`\npRandTag: -lolicon-\n`)
-    try{
-        await api.pRandTag("lolicon",(data)=>{log(data)}) // should cause and error
-    }catch(e){log(e)}
-    api.blockedWords = "crossdressing"
-    log(`\n==========================================================\n`)
-    log(`\nAdds crossdressing to blocked Tags:`)
-    log(`\npRandTag: -crossdressing-\n`)
-    try{
-        await api.pRandTag("crossdressing",(data)=>{log(data)}) 
-    }catch(e){log(e)}
-    log(`\n==========================================================\n`)
-    log(`\npRandom:\n`)
-    try{
-        log(await api.pRandom()) 
-    }catch(e){log(e)}
-    log(`\n==========================================================\n`)
-    log(`\npSearch:\n`)
-    try{
-        log(await api.pSearch("crossdressing"))
-    }catch(e){log(e)}
-    log(`\n==========================================================\n`)
-let end = new Date().getTime()
-log(`---------the test took '${date(end - start)}' to finish---------`)
-log(`NOTE: TIME DOES NOT START UNTIL THE JAVASCRIPT IS STARTED`)
-api.connection.close()
+    // nhentai.to
+    log(`\nNhentai.to:`)
+    log(`parser (.to):`)
+    client = connect("https://nhentai.to")
+        ; (await bruhMocha(Parser.book('https://nhentai.to/g/278407', client), '146:5')).book('book')
+        ; (await bruhMocha(Parser.page(5, 'https://nhentai.to/character/astolfo', client), '269:5')).page('page')
+    client.close()
+    log(`\nConstructor (.to): \n`)
+    start = performance.now()
+    try {
+        api = new Main('start', "https://nhentai.to")
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('   ✔️  \x1b[32mpassed\x1b[0m: \x1b[33mnew constructor\x1b[0m \x1b[2m[Function line: 9:5]\x1b[0m')
+        log(`       \x1b[2mParameters:\n        connection: ${api.connection.status()}\n        url: ${api.url}\n        time took: ${end}\x1b[0m`);
+        
+    } catch {
+        end = performance.now() - start;
+        end = end.toFixed(2)
+        log('   ❌  \x1b[31merror\x1b[0m: \x1b[33mnew constructor\x1b[0m \x1b[2m[Function 9:5]\x1b[0m')
+        log(`       \x1b[2mtime took: ${end}\x1b[0m`);
+    }
+    log(`\nClass methods etc (selected) (.to):`)
+        ; (await bruhMocha(api.getID(228722).json(), '117:9')).book('getID')
+        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '96:9')).book('pRandSpecificTags')
+        ; (await bruhMocha(api.pRandom(), '148:9')).book('pRandom')
+        ; (await bruhMocha(api.pHomepage(2), '173:9')).page('pHomepage')
+        ; (await bruhMocha(api.pLanguagePage("jp", 5), '178:9')).page('pLanguagePage')
+        ; (await bruhMocha(api.pSearch("astolfo", 3), '196:9')).page('pSearch')
+        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '204:9')).page('pTagPage')
+    api.connection.close()
 })();

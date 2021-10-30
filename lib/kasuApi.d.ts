@@ -1,94 +1,14 @@
+import("./d.ts/tags")
+import("./d.ts/json")
 /**Thank you for choosing this API library.*/
 declare module "KasuNhentai" {
-    
-    /**Download Full list on github for maximum experience*/
-    type tags = "39tei"|"3d"|"abortion"|"absorption"|"netorare"|"crossdressings"|"sister"|"sole-female"|"yuri"|"yaoi"|"zombie"
-    /**book data*/
-    interface Data {
-        /**ID or Code or whatever you call.*/
-        id: string,
-        /**Url of the selected code.*/
-        url: string,
-        /**titles?*/
-        title: {
-            /**original.*/
-            origin: string,
-            /**トランスレイト??? wait it's supposed to be in english cuz' it's translated.*/
-            translated: string
-            /**original but its full version of it.*/
-            originFull: string,
-            /**YES ITS FULL VERSION OF THE TRANSLATED TITLE OF IT.*/
-            translatedFull: string
-        },
-        /**images?*/
-        images: {
-            /**Doujin cover image.*/
-            cover: string,
-            /**Doujin image source.*/
-            pages_source: string,
-            /**Int specifies the image number page.*/
-            pages(pages?: number): void
-        },
-        /**tags?*/
-        tag_table: {
-            /**I Like konosuba*/
-            parodies: string,
-            /**I love megumin*/
-            characters: string,
-            /**what?*/
-            tag: string,
-            /**I don't really know about this*/
-            artist: string,
-            /**Can't think 1 group tag.*/
-            groups: string,
-            /**english ofc.*/
-            languages: string,
-            /**ca*/
-            categories: string,
-        },
-        /**damn that many people ey?*/
-        favorites: number,
-        /**haha 69 pages seems cool.*/
-        number_pages: number,
-        /**
-        Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.
-
-        In 1722 the government made a law banning hentai manga, which means it was common even earlier.
-
-        Suzumi-fune is probobly the oldest hentai anime, it's from 1932.
-        */
-        uploaded: string
-    }
-    /**Idk why it named 0? pls help*/
-    type PageInfo = [
-        {
-            /**Gives the Url.*/
-            CurrentURL: string,
-            /**idk*/
-            typePage: string,
-            /**Gives an index number of what page you are currently in.*/
-            CurrentPage: number,
-            /**Total arrays.*/
-            Total: number,
-            /**Total Pages ofc.*/
-            TotalPage: number,
-        }, ...{
-            /**ID or Code or whatever you call.*/
-            id: string,
-            /**taitoru.*/
-            title: string,
-            /**Cover picture.*/
-            thumbnail: string,
-            /**It's just the combination of the currenturl with id innit.*/
-            url: string,
-            /**NANI TTE-*/
-            languages: string,
-    }[]]
+    import {tags, artist, parodies, groups} from "./d.ts/tags";
+    import {page, book} from "./d.ts/json";
     /**j s o n*/
-    type json = (response: Data) => {}
+    type json = (response: book) => {}
     type returns = {
         /**Retrieve the response json object.*/
-        json(data?: json): Promise<Data>
+        json(data?: json): Promise<book>
     }
     type connection = {
         /**start the connection?*/
@@ -103,13 +23,11 @@ declare module "KasuNhentai" {
     /**You horni user.*/
     class Main {
         /**
-         * `connection` has 1 inputs that can be accepted, start. Same as the connection function below. It just automatically start the connection without calling the connection property.
-
-        `url` https://nhentai.net or https://nhentai.to
-
-        `debug` If set to true It will show a log that shows that it is working and connected.
+         @param {connection} connection has 1 inputs that can be accepted, start. Same as the connection function below. It just automatically start the connection without calling the connection property.
+         @param {_url} url https://nhentai.net or https://nhentai.to
+         @param {boolean} debug If set to true It will show a log that shows that it is working and connected.
         */
-        constructor(connection: connection, url: _url, debug: boolean)
+        constructor(connection?: connection, url?: _url, debug?: boolean)
         /**The Inputted URL will be used to connect. As of the 3.5.0 update the domain .to is now supported.
          
         https://nhentai.net or https://nhentai.to the https:// must be included.*/
@@ -118,6 +36,8 @@ declare module "KasuNhentai" {
         connection: connection
         /**If you're using this API on discord bot enable this to true
         
+        contributer: [crackheadakira](https://github.com/crackheadakira)
+
         default: `false`*/
         IsDiscord: boolean
         /**Add more blocked tags into the API
@@ -125,8 +45,7 @@ declare module "KasuNhentai" {
         Example:
          ```js
         blockedWords = "crossdressing brutality penetration"
-        ```
-        contributer: crackheadakira*/
+        ```*/
         blockedWords: string
         /**If you're using `IsDiscord` and don't wanna do your own retry function use this.
         
@@ -140,56 +59,75 @@ declare module "KasuNhentai" {
          default: `false`*/
         IgnoreNone: boolean
         /**
-        `ID`ー Accepts string of numbers or just numbers. Any letter is declined.
-        
-        Example
-        ```js
-        getID(12938 | "12938" | "https://nhentai.net/g/12938")
-        ```
+         @param {boolean} MoreLike If set to `**true**`, It will show the 'More Like this' section of the page. 
+         @param {string|number} ID Accepts string of numbers or just numbers. Any letter is declined.
+         
+         Example: 
+         ```js
+         getID(12938 | "12938" | "https://nhentai.net/g/12938", false)
+         ```
         */
-        getID(ID: string | number): returns
+        getID(ID: string | number, MoreLike?: boolean): returns
         /**
         `returns` a random "Existing" Doujin number
         */
         pRandID(): Promise<number>
         /**
-       `string`ー Any tags would do or mixed tag, see example below.
+         @param {string} string Any tags would do or mixed tag, see example below.
+         @param {boolean} MoreLike If set to **`true`**, It will show the 'More Like this' section of the page. 
+         @param {json} data Use this if you want to get its properties like images or links etc.
+
+         If no callback it will return a number or the selected ID.
+
+         Example: 
+         ```js
+         // using callback can access list object
+         pRandSpecificTags("konosuba aqua sole-female",data=>{data.images.cover})
         
-        `data`ー Use this if you want to get its properties like images or links etc.
-        If no callback it will return a number or the selected ID.
-        
-        Example: 
-        ```js
-        // using callback can access list object
-        pRandSpecificTags("konosuba aqua sole-female",data=>{data.images.cover})
-        
-        // no callback will return a number | ID
-        pRandSpecificTags("konosuba aqua sole-female") // returns ID only
-        ```
+         // no callback will return a number | ID
+         pRandSpecificTags("konosuba aqua sole-female") // returns ID only
+         ```
         */
-        pRandSpecificTags(string?: string, data?: json): Promise<Data>
+        pRandSpecificTags(string?: string, MoreLike?: boolean, data?: json): Promise<book>
         /**
-        Same as the `pRandSpecificTags` but strictly for Tag Search only.
+         @param {tags} string [Download](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/tags.d.ts) the full list on github for better search
+
+         Same as the `pRandSpecificTags` but strictly for Tag Search only.
         
-        If a non-Tag entered will cause an error.
+         If a non-Tag entered will cause an error.
         */
-        pRandTag(string?: tags, data?: json): Promise<Data>
-        /**Same as the `pRandSpecificTags` but strictly for Parody Search only.*/
-        pRandParody(string?: string, data?: json): Promise<Data>
-        /**Same as the `pRandSpecificTags` but strictly for Artist Search only.*/
-        pRandArtist(string?: string, data?: json): Promise<Data>
-        /**Same as the `pRandSpecificTags` but strictly for Group Search only.*/
-        pRandGroup(string?: string, data?: json): Promise<Data>
+        pRandTag(string: tags, MoreLike?: boolean, data?: json): Promise<book>
+        /**
+         @param {parodies} string [Download](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/tags.d.ts) the full list on github for better search
+          
+          Same as the `pRandSpecificTags` but strictly for Parody Search only.*/
+        pRandParody(string: parodies, MoreLike?: boolean, data?: json): Promise<book>
+        /**
+         @param {artist} string [Download](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/tags.d.ts) the full list on github for better search
+          
+         Same as the `pRandSpecificTags` but strictly for Artist Search only.*/
+        pRandArtist(string: artist, MoreLike?: boolean, data?: json): Promise<book>
+        /**
+         @param {groups} string [Download](https://github.com/IchimakiKasura/kasu.nhentaiapi.js/blob/main/lib/tags.d.ts) the full list on github for better search
+         
+         Same as the `pRandSpecificTags` but strictly for Group Search only.*/
+        pRandGroup(string: groups, MoreLike?: boolean, data?: json): Promise<book>
         /**Same as the `pRandID` but will give you the properties of the selected random number.*/
-        pRandom(data?: json): Promise<Data>
-        /**`page` specifies the page. Shows the Homepage of the selected URL. */
-        pHomepage(page?: number): Promise<PageInfo>
-        /**`str` only accepts 4 `string` **japanese**, **english**, **chinese** and **translated** (is this even a language). it also accepts shortcuts like **jp**, **japan**, **eng**, **china**. `page` specifies the page. */
-        pLanguagePage(string: language, page?: number): Promise<PageInfo>
-        /**Shows some list of the searched string of `string`. `page` specifies the page. */
-        pSearch(string: string, page?: number): Promise<PageInfo>
-        /**Shows some list of the searched tag string of `string`. `page` specifies the page. */
-        pTagPage(string: tags, page?: number): Promise<PageInfo>
+        pRandom(data?: json, MoreLike?: boolean): Promise<book>
+        /**@param {number} page specifies the page. Shows the Homepage of the selected URL. */
+        pHomepage(page?: number): Promise<page>
+        /**
+         * @param {langauge} string only accepts 4 `string` **japanese**, **english**, **chinese** and **translated** (is this even a language). it also accepts shortcuts like **jp**, **japan**, **eng**, **china**.
+         * @param {number} page specifies the page.*/
+        pLanguagePage(string: language, page?: number): Promise<page>
+        /**
+         * @param {string} string some list of the searched string of `string`.
+         * @param {number} page specifies the page. */
+        pSearch(string: string, page?: number): Promise<page>
+        /**
+         * @param {tags} string Shows some list of the searched tag string of `string`.
+         * @param {number} page specifies the page. */
+        pTagPage(string: tags, page?: number): Promise<page>
 
     }
     export = Main;

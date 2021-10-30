@@ -57,6 +57,19 @@ async function json(){
     ExampleApi.connection.close()
 }
 ```
+---
+## For CLI `new`
+run Bash
+
+    nhentai 228922 
+run batch
+
+    nhentaibat 228922
+
+check the changelogs for more info
+
+---
+
 <div align="center">
 
 <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
