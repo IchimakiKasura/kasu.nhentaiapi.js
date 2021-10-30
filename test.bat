@@ -4,6 +4,7 @@ if %1 == 1 goto stest
 if %1 == 2 goto otest
 if %1 == 3 goto bruhmocha
 if %1 == 4 goto minify
+if %1 == 5 goto menu
 :menu
 cls
 title Test picker

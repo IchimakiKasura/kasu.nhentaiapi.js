@@ -20,7 +20,7 @@
     "cli"
   ],
   "scripts": {
-    "test": "test.bat",
+    "test": "test.bat 5",
     "bruhmocha": "node ./test/test.js",
     "overallTest": "node ./test/overAlltest.js",
     "build": "cmd /c test.bat 4 && npm run bruhmocha build",
