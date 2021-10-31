@@ -1,9 +1,11 @@
-import("./d.ts/tags")
-import("./d.ts/json")
 /**Thank you for choosing this API library.*/
 declare module "KasuNhentai" {
-    import {tags, artist, parodies, groups} from "./d.ts/tags";
-    import {page, book} from "./d.ts/json";
+    type book = import("./json").book;
+    type page = import("./json").page;
+    type tags = import("./tags").tags;
+    type artist = import("./tags").artist;
+    type parodies = import("./tags").parodies;
+    type groups = import("./tags").groups;
     /**j s o n*/
     type json = (response: book) => {}
     type returns = {

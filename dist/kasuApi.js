@@ -1,5 +1,5 @@
 "use strict";
-const Parser = require('./src/parser');
+const Parser = require('../lib/parser');
 const { log, error } = require('console');
 const { connect } = require('http2');
 

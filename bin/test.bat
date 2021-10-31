@@ -38,7 +38,7 @@ echo.
 echo.
 echo.
 echo Running Javascript test
-node ./test/simpletest.js
+node ../test/simpletest.js
 echo.
 echo TEST ENDED
 title TEST ENDED -simple test-
@@ -59,7 +59,7 @@ call npm version
 echo.
 echo.
 echo Running Javascript test
-node ./test/overAlltest.js
+node ../test/overAlltest.js
 echo.
 echo TEST ENDED
 title TEST ENDED -overall test-
@@ -71,13 +71,13 @@ cls
 echo Minifying JS files...
 echo.
 echo Minifying kasuApi.js
-call minify ./lib/kasuApi.js > ./lib/kasuApi.min.js
+call minify ../dist/kasuApi.js > ./dist/kasuApi.min.js
 cls
 echo Minifying JS files...
 echo.
 echo Minifying kasuApi.js - DONE
 echo Minifying parser.js
-call minify ./lib/src/parser.js > ./lib/src/parser.min.js
+call minify ../lib/parser.js > ./lib/parser.min.js
 cls
 echo Minifying JS files...
 echo.
@@ -104,7 +104,7 @@ echo CHECKING OTHER FILE VERSIONS:
 call npm version
 echo.
 echo.
-node ./test/test
+node ../test/test
 echo.
 echo TEST ENDED
 title TEST ENDED -bruhmocha test-

@@ -5,8 +5,8 @@
     "crackheadakira"
   ],
   "description": "Easy nhentai API",
-  "main": "./lib/kasuApi.min.js",
-  "types": "./lib/kasuApi.d.ts",
+  "main": "./dist/kasuApi.min.js",
+  "types": "./lib/d.ts/kasuApi.d.ts",
   "keywords": [
     "nhentai",
     "nhentai.net",
@@ -20,12 +20,12 @@
     "cli"
   ],
   "scripts": {
-    "test": "test.bat 5",
+    "test": "./bin/test.bat 5",
     "bruhmocha": "node ./test/test.js",
     "overallTest": "node ./test/overAlltest.js",
-    "build": "cmd /c test.bat 4 && npm run bruhmocha build",
+    "build": "cmd /c ./bin/test.bat 4 && npm run bruhmocha build",
     "cov": "node ./test/coverageTest.js",
-    "cli": "node ./lib/src/parser"
+    "cli": "node ./lib/parser build"
   },
   "author": {
     "name": "Ichimaki Kasura",
@@ -38,13 +38,14 @@
     "eslint": "^8.1.0"
   },
   "files": [
-    "lib/src/parser.min.js",
-    "lib/kasuApi.min.js",
-    "lib/kasuApi.d.ts",
-    "lib/d.ts/*.d.ts",
-    "test/test.js",
-    "nhentai.bat",
-    "nhentai.sh"
+    "bin/nhentai",
+    "bin/nhentai.bat",
+    "dist/kasuApi.min.js",
+    "lib/parser.min.js",
+    "lib/d.ts/kasuApi.d.ts",
+    "lib/d.ts/json.d.ts",
+    "lib/d.ts/tags.d.ts",
+    "test/test.js"
   ],
   "exports": {
     ".": {
@@ -65,7 +66,7 @@
     "node": ">=14"
   },
   "bin": {
-    "nhentai": "./nhentai",
-    "nhentaibat": "./nhentai.bat"
+    "nhentai": "./bin/nhentai",
+    "nhentaibat": "./bin/nhentai.bat"
   }
 }

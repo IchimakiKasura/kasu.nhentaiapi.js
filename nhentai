@@ -1,2 +1,0 @@
-# kasura's Nhentai CLI for bash
-node ./lib/src/parser.js --confirm "$@"

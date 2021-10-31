@@ -1,5 +1,5 @@
 "use strict";
-const API = require("../lib/kasuApi")
+const API = require("../dist/kasuApi")
 const exec = require("child_process").exec;
 const api = new API('start','https://nhentai.net',true);
 

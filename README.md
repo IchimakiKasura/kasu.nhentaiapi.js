@@ -3,7 +3,7 @@
 <h1>N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=green&label=stable%20version&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#360)
+[![stable version](https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=green&label=stable%20version&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#370)
 [![Downloads](https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/)
 [![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/kasu.nhentaiapi.js?style=for-the-badge)

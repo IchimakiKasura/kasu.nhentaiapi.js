@@ -1,6 +1,6 @@
 "use strict";
-let Parser = require("../lib/src/parser");
-let Main = require("../lib/kasuApi");
+let Parser = require("../lib/parser");
+let Main = require("../dist/kasuApi");
 const { connect } = require("http2");
 const { log } = require("console");
 const { performance } = require("perf_hooks");

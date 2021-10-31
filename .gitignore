@@ -1,25 +1,8 @@
-# dependencies
-node_modules
-/excess
-# ignores the overalltest.js when publishing to npm
-.npmignore
-
-# minified files
-/lib/kasuApi.min.js
-/lib/src/parser.min.js
-
+/minifier.js
 /.nyc_output
-/docs/other/*.md
-/docs/other/embeded link.psd
+node_modules
 /test.js
+/lib/parser.min.js
+/docs/md
+/dist/kasuApi.min.js
 /package-lock.json
-.gitcommit
-
-# whenever I rewrite the code to clean it
-#/lib/src/newParser.min.js
-#/lib/src/newkasuApi.min.js
-
-minifier.js
-
-# So I'll no longer include the minified download files
-# I'll just minify the file before publishing it.
