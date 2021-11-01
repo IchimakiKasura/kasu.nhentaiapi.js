@@ -71,13 +71,13 @@ cls
 echo Minifying JS files...
 echo.
 echo Minifying kasuApi.js
-call minify ../dist/kasuApi.js > ./dist/kasuApi.min.js
+call minify ./dist/kasuApi.js > ./dist/kasuApi.min.js
 cls
 echo Minifying JS files...
 echo.
 echo Minifying kasuApi.js - DONE
 echo Minifying parser.js
-call minify ../lib/parser.js > ./lib/parser.min.js
+call minify ./lib/parser.js > ./lib/parser.min.js
 cls
 echo Minifying JS files...
 echo.
