@@ -1,5 +1,5 @@
 /**Thank you for choosing this API library.*/
-declare module "KasuNhentai" {
+declare module "kasu.nhentaiapi.js" {
     type book = import("./json").book;
     type page = import("./json").page;
     type tags = import("./tags").tags;

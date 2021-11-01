@@ -61,70 +61,44 @@
         }
     </style>
 </head>
+<body><div id="_html" class="markdown-body">
+<div class="topBG"></div>
+<img src="https://i.redd.it/fkg9yip5yyl21.png" height="140px" title="nhentai">
+<h1 class="nTitle" style="color:black !important"><a class="anchor" name="" href="#"><span class="octicon octicon-link"></span></a>N-hentai API Homepage<br>ようこそ!</h1>
+<div class="thingy">
 
-<body>
-    <div id="_html" class="markdown-body">
-        <div class="topBG"></div>
-        <img src="https://i.redd.it/fkg9yip5yyl21.png" height="140px" title="nhentai">
-        <h1 class="nTitle" style="color:black !important"><a class="anchor" name="" href="#"><span
-                    class="octicon octicon-link"></span></a>N-hentai API Homepage<br>ようこそ!</h1>
-        <div class="thingy">
+<p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#360"><img src="https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=green&amp;label=stable%20version&amp;style=for-the-badge" alt="stable version"></a>
+<a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/"><img src="https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&amp;style=for-the-badge" alt="Downloads"></a>
+<a href="https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js"><img src="https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge" alt="Build Status"></a>
+<img src="https://img.shields.io/snyk/vulnerabilities/npm/kasu.nhentaiapi.js?style=for-the-badge" alt="Snyk Vulnerabilities for npm package">
+<img src="https://img.shields.io/badge/-minified%20-gray?style=for-the-badge" alt="minified" title="^3.0.0 versions are now already MINIFIED!"><br>
+<img src="https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge" alt="lol" title="unofficial api of nhentai"><br>
+<a href="https://snyk.io/advisor/npm-package/kasu.nhentaiapi.js" title="bruh"><img src="https://snyk.io/advisor/npm-package/kasu.nhentaiapi.js/badge.svg" alt="kasu.nhentaiapi.js"></a></p>
+</div>
+<br><br>
 
-            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#360"><img
-                        src="https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=green&amp;label=stable%20version&amp;style=for-the-badge"
-                        alt="stable version"></a>
-                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/"><img
-                        src="https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&amp;style=for-the-badge"
-                        alt="Downloads"></a>
-                <a href="https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js"><img
-                        src="https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge"
-                        alt="Build Status"></a>
-                <img src="https://img.shields.io/snyk/vulnerabilities/npm/kasu.nhentaiapi.js?style=for-the-badge"
-                    alt="Snyk Vulnerabilities for npm package">
-                <img src="https://img.shields.io/badge/-minified%20-gray?style=for-the-badge" alt="minified"
-                    title="^3.0.0 versions are now already MINIFIED!"><br>
-                <img src="https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge"
-                    alt="lol" title="unofficial api of nhentai"><br>
-               <img style="margin-top: 8px;" src="https://snyk.io/advisor/npm-package/kasu.nhentaiapi.js/badge.svg"
-                        alt="kasu.nhentaiapi.js"></a>
-            </p>
-        </div>
-        <br><br>
-
-        <p>The "N-hentai-api" is a fast and easy to use api for connecting to <a
-                href="%22https://nhentai.net/%22">nhentai.net</a> and <a href="%22https://nhentai.to/%22">nhentai.to</a>
-            data.</p>
-        <ul>
-            <li>Fast</li>
-            <li>Easy to use</li>
-            <li>Reliable* :&gt;</li>
-            <li>
-                <blockquote>
-                    <p>Discord friendly?</p>
-                </blockquote>
-            </li>
-        </ul>
-        <h3 id="install"><a class="anchor" name="install" href="#install"><span
-                    class="octicon octicon-link"></span></a>Install</h3>
-        <p>To install "N-hentai-api" type these:</p>
-        <pre><code>npm i kasu.nhentaiapi.js</code></pre>
-        <h2 id="examples"><a class="anchor" name="examples" href="#examples"><span
-                    class="octicon octicon-link"></span></a>Examples</h2>
-        <h3 id="how-to-use-n-hentai-api"><a class="anchor" name="how-to-use-n-hentai-api"
-                href="#how-to-use-n-hentai-api"><span class="octicon octicon-link"></span></a>How to use n-hentai-api
-        </h3>
-        <p>To start off, to import the module on your project add <code>require</code> then <code>KasuNhentai</code>. If
-            it doesnt
-            work you can use the <code>kasu.nhentaiapi.js</code>.</p>
-        <p>Before accessing the methods create a connection to the nhentai server. There are two ways to start
-            the connection, First is you can use the <a
-                href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/#%E2%A0%80constructor%E2%A0%80"
-                title="Click here to see the Constructor parameters.">Constructor</a> or the
-            <code>connection.start()</code> method.</p>
-        <p>If using the <code>connection.start</code> make sure you already set or inputted the url on the
-            <code>url</code> property.</p>
-        <p>To get the basic info about the ID/Doujin:</p>
-        <pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>The "N-hentai-api" is a fast and easy to use api for connecting to <a href="%22https://nhentai.net/%22">nhentai.net</a> and <a href="%22https://nhentai.to/%22">nhentai.to</a> data.</p>
+<ul>
+<li>Fast</li>
+<li>Easy to use</li>
+<li>Reliable* :&gt;</li>
+<li><blockquote>
+<p>Discord friendly?</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="install"><a class="anchor" name="install" href="#install"><span class="octicon octicon-link"></span></a>Install</h3>
+<p>To install "N-hentai-api" type these:</p>
+<pre><code>npm i kasu.nhentaiapi.js</code></pre>
+<h2 id="examples"><a class="anchor" name="examples" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+<h3 id="how-to-use-n-hentai-api"><a class="anchor" name="how-to-use-n-hentai-api" href="#how-to-use-n-hentai-api"><span class="octicon octicon-link"></span></a>How to use n-hentai-api</h3>
+<p>To start off, to import the module on your project add <code>require</code> then <code>KasuNhentai</code>. If it doesnt
+work you can use the <code>kasu.nhentaiapi.js</code>.</p>
+<p>Before accessing the methods create a connection to the nhentai server. There are two ways to start 
+the connection, First is you can use the <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/#%E2%A0%80constructor%E2%A0%80" title="Click here to see the Constructor parameters.">Constructor</a> or the <code>connection.start()</code> method.</p>
+<p>If using the <code>connection.start</code> make sure you already set or inputted the url on the <code>url</code> property.</p>
+<p>To get the basic info about the ID/Doujin:</p>
+<pre class=" language-js"><code class=" language-js"><span class="token keyword">const</span> Example <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'KasuNhentai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> ExampleApi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token constant">ID</span> <span class="token operator">=</span> <span class="token number">228922</span>
@@ -145,47 +119,26 @@
     <span class="token comment">// closes the connection</span>
     ExampleApi<span class="token punctuation">.</span>connection<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span></code></pre>
-        <h2 id="for-cli-new"><a class="anchor" name="for-cli-new" href="#for-cli-new"><span
-                    class="octicon octicon-link"></span></a>For CLI <code>new</code></h2>
-        <p>for Bash</p>
-        <pre><code>./nhentai.sh 228922 </code></pre>
-        <p>for CMD</p>
-        <pre><code>nhentai.bat 228922</code></pre>
-        <p>check the changelogs for more info</p>
-        <hr>
-        <div align="center">
+<h2 id="for-cli-new"><a class="anchor" name="for-cli-new" href="#for-cli-new"><span class="octicon octicon-link"></span></a>For CLI <code>new</code></h2>
+<p>How to run:</p>
+<pre><code>nhentai 228922 </code></pre>
+<p>check the changelogs for more info</p>
+<hr>
+<div align="center">
 
-            <h3 id="if-you-are-intrested-on-this-project-or-want-to-share-it-you-can-embed-it-to-your-website">If you
-                are intrested on this project or want to share it you can embed it to your website!</h3>
-            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kasura<span class="token punctuation">'</span>s nhentai API<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>244<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
+<h3 id="if-you-are-intrested-on-this-project-or-want-to-share-it-you-can-embed-it-to-your-website">If you are intrested on this project or want to share it you can embed it to your website!</h3>
+<pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kasura<span class="token punctuation">'</span>s nhentai API<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>244<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
-            <iframe title="kasura's nhentai API" src="https://ichimakikasura.github.io/kasu.nhentaiapi.js/embed/embed101" frameborder="0" width="500"
-                height="244"></iframe>
+<iframe title="kasura's nhentai API" src="../embed/embed101.html" frameborder="0" width="500" height="244"></iframe>
 
-            <hr>
-            <h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
+<hr>
+<h3> (≧▽≦*) Other Informations (≧▽≦*)</h3>
 
-            <p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses" title="MIT Licence"><img
-                        src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png"
-                        alt=""></a><br>
-                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation"
-                    title="API Documentation"><img
-                        src="https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png"
-                        alt=""></a><br>
-                <a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs" title="Update History"><img
-                        src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png"
-                        alt=""></a><br><br>
-                <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img
-                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a>
-            </p>
-            <hr>
-            Enjoy using it! crediting me will be an appreciation!<br>
-            <a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Star it!">Star</a> it if you like
-            it!<br>
-            <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/astorufo.png"
-                title="Created by Ichimaki" height="60">
-        </div>
-    </div>
-</body>
-
-</html>
+<p><a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/licenses" title="MIT Licence"><img src="https://user-images.githubusercontent.com/80595346/137737347-4585f4d6-a590-43e5-af3e-1a3b489886f6.png" alt=""></a><br>
+<a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/documentation" title="API Documentation"><img src="https://user-images.githubusercontent.com/80595346/137737333-90ca92bc-5d01-4119-b5c4-d76a4867946d.png" alt=""></a><br>
+<a href="https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs" title="Update History"><img src="https://user-images.githubusercontent.com/80595346/137737338-26bd22d1-370f-4521-858e-5abd34b8fade.png" alt=""></a><br><br>
+<a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Return to github"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="100px"></a></p>
+<hr>
+Enjoy using it! crediting me will be an appreciation!<br>
+<a href="https://github.com/IchimakiKasura/kasu.nhentaiapi.js" title="Star it!">Star</a> it if you like it!<br>
+<img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/astorufo.png" title="Created by Ichimaki" height="60"></div></div></body></html>

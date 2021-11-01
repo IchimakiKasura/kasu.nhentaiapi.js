@@ -27,7 +27,7 @@ npm i kasu.nhentaiapi.js
 ### How to use n-hentai-api
 To get the basic info about the ID/Doujin:
 ```js
-const Example = require('KasuNhentai'); // experimental, if it doesn't work use 'kasu.nhentaiapi.js'
+const Example = require('kasu.nhentaiapi.js');
 const ExampleApi = new Example();
 /**
  * or const ExampleApi = new Example('start', "https://nhentai.net");
@@ -59,12 +59,9 @@ async function json(){
 ```
 ---
 ## For CLI `new`
-run Bash
-
+How to run:
+    
     nhentai 228922 
-run batch
-
-    nhentaibat 228922
 
 check the changelogs for more info
 

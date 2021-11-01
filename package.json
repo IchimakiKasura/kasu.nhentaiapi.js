@@ -1,6 +1,6 @@
 {
   "name": "kasu.nhentaiapi.js",
-  "version": "3.7.0",
+  "version": "3.7.2",
   "contributors": [
     "crackheadakira"
   ],
@@ -25,7 +25,7 @@
     "overallTest": "node ./test/overAlltest.js",
     "build": "cmd /c ./bin/test.bat 4 && npm run bruhmocha build",
     "cov": "node ./test/coverageTest.js",
-    "cli": "node ./lib/parser build"
+    "cli": "nhentai help"
   },
   "author": {
     "name": "Ichimaki Kasura",
@@ -47,13 +47,7 @@
     "lib/d.ts/tags.d.ts",
     "test/test.js"
   ],
-  "exports": {
-    ".": {
-      "import": "./lib/kasuApi.min.js",
-      "require": "./lib/kasuApi.min.js",
-      "default": "./lib/kasuApi.min.js"
-    }
-  },
+  "exports": "./dist/kasuApi.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IchimakiKasura/kasu.nhentaiapi.js.git"
@@ -66,7 +60,6 @@
     "node": ">=14"
   },
   "bin": {
-    "nhentai": "./bin/nhentai",
-    "nhentaibat": "./bin/nhentai.bat"
+    "nhentai": "./bin/nhentai.js"
   }
 }
