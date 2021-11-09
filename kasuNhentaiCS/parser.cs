@@ -1,8 +1,9 @@
-﻿using System.Text;
+﻿using System.Security.AccessControl;
+using System.Text;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
-using System.IO;
-using System.Net;
+using System.Net.Http;
+using System.Diagnostics;
 using System;
 
 namespace kasuNhentaiCS
@@ -29,39 +30,52 @@ namespace kasuNhentaiCS
             public _Tag_table tag_table { get; set; }
             public int number_pages { get; set; }
             public string uploaded { get; set; }
-        }
 
-        public class _Title
-        {
-            public string origin {get; set;}
-            public string translated {get; set;}
-        }
+            public class _Title
+            {
+                public string origin {get; set;}
+                public string translated {get; set;}
+            }
+            public class _Images
+            {
+                public string cover {get; set;}
+                public string page_source {get; set;}
+            }
+            public class _Tag_table
+            {
+                public string parodies {get; set;}
+                public string characters {get; set;}
+                public string tag {get; set;}
+                public string artist {get; set;}
+                public string groups {get; set;}
+                public string langugaes {get; set;}
+                public string categories {get; set;}
+            }
 
-        public class _Images
-        {
-            public string cover {get; set;}
-            public string page_source {get; set;}
-        }
-
-        public class _Tag_table
-        {
-            public string parodies {get; set;}
-            public string characters {get; set;}
-            public string tag {get; set;}
-            public string artist {get; set;}
-            public string groups {get; set;}
-            public string langugaes {get; set;}
-            public string categories {get; set;}
         }
     }
 
-    class kasunhentaiapi
+    internal class kasunhentaiapi
     {
+
+        static void Log(dynamic args)
+        {
+            Console.WriteLine(args);
+        }
+
         // Testing purposes
         static void Main(string[] args)
         {
             // always add this on your Main or the japanese characters will go "????"
             Console.OutputEncoding = Encoding.UTF8;
+            
+            // var watch = new Stopwatch();
+            // watch.Start();
+            // var req = Parse.book("https://nhentai.net/g/228922");
+            // var data = JsonConvert.DeserializeObject<DataObj.Data>(req);
+            // watch.Stop();
+            // Log(watch.Elapsed);
+            // Log(req);
         }
     }
 
@@ -70,22 +84,18 @@ namespace kasuNhentaiCS
         public static string fetch(string url)
         {
             string res = "";
-            string status = "";
-            WebRequest request = WebRequest.Create(url);
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            int status;
+            using (var client = new HttpClient())
             {
-                // Status code
-                status = response.StatusCode.ToString();
-                using (Stream dStream = response.GetResponseStream())
-                {
-                    StreamReader reader = new(dStream);
-                    res = reader.ReadToEnd();
-                }
-                response.Close();
+                client.DefaultRequestVersion = new Version(2, 0);
+                var result = client.GetAsync(url).Result;
+                status = (int)result.StatusCode;
+                res = result.Content.ReadAsStringAsync().Result;
             }
 
-            if (status != "OK")
+            if (status != 200)
             {
+                Console.WriteLine("Retry Fetch");
                 return fetch(url);
             }
             else return res;
@@ -94,15 +104,15 @@ namespace kasuNhentaiCS
 
     internal static class Matcher
     {
-        readonly static Regex bookThumbRegex = new(@"<img.*data-src=""(?<thumbs>.*?)"".*?src="".*?"" \/>");
-        readonly static Regex bookTimeRegex = new(@"<time (.*)>(?<date>.*)<\/time>");
-        readonly static Regex errorRegex = new(@"<h2>(0|No) [r|R]esults");
+        // readonly static Regex errorRegex = new(@"<h2>(0|No) [r|R]esults", RegexOptions.Compiled);
 
         private static string time;
         private static string thumbnail;
         private static string img_source;
         static void kagebunshin(string html)
         {
+            Regex bookThumbRegex = new(@"<img.*data-src=""(?<thumbs>.*?)"".*?src="".*?"" \/>", RegexOptions.Compiled);
+            Regex bookTimeRegex = new(@"<time (.*)>(?<date>.*)<\/time>", RegexOptions.Compiled);
             time = bookTimeRegex.Match(html).Groups["date"].ToString();
             thumbnail = bookThumbRegex.Match(html).Groups["thumbs"].ToString();
             img_source = thumbnail.Replace("/cover.jpg", "");
@@ -110,9 +120,9 @@ namespace kasuNhentaiCS
         public static string BOOKnet(string url)
         {
             var html = fetcher.fetch(url);
-            Regex json = new(@"JSON\.parse\(""(?<parse>.*)""\)");
-            string body = Regex.Unescape(Regex.Unescape(json.Match(html).Groups["parse"].ToString()));
             kagebunshin(html);
+            Regex json = new(@"JSON\.parse\(""(?<parse>.*)""\)", RegexOptions.Compiled);
+            string body = Regex.Unescape(Regex.Unescape(json.Match(html).Groups["parse"].ToString()));
             DataObj.BookData returnee = new()
             {
                 body = body,
@@ -126,9 +136,9 @@ namespace kasuNhentaiCS
         public static string BOOKto(string url)
         {
             var html = fetcher.fetch(url);
+            kagebunshin(html);
             Regex json = new(@"N\.gallery\((?<parse>.*?)\);", RegexOptions.Singleline);
             var body = Regex.Unescape(json.Match(html.Replace(@"[\r|\n]+| ", "")).Groups["parse"].ToString());
-            kagebunshin(html);
             DataObj.BookData returnee = new()
             {
                 body = body,
@@ -140,8 +150,14 @@ namespace kasuNhentaiCS
         }
     }
 
+    // <summary>
+    // A class for Book and Page.
+    // </summary>
     public static class Parse
     {
+        // <summary>
+        // book.
+        // </summary>
         public static string book(string url)
         {
             string parodies = "none";

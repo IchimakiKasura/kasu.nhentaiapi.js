@@ -2,8 +2,6 @@
 
 I'll try implementing a C# version of my API's parser.
 
-NOTE: The fetcher uses HTTP/1.1 or HTTP/1.0 or idk so its gonna be slow request.
-
 ## requirements
 - [**`Newtonsoft.json`**](https://www.newtonsoft.com/json) - because freaking **System.Text.Json** wont do sh*t.
 
