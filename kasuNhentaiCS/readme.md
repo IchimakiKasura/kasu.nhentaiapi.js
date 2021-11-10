@@ -11,7 +11,7 @@ Add this on the `<ItemGroup>`:<br/>
     <HintPath>-your path to-\kasu.nhentaiapi.js\kasuNhentaiCS\output\kasuNhentaiCS.dll</HintPath>
 </Reference>
 ```
-Or put the `kasuNhentaiCS.dll` and the `Newtonsoft.json.dll` in your root project and do
+Or put the `kasuNhentaiCS.dll` in your root project and do
 ```csproj
 <Reference Include="kasuNhentaiCS">
     <HintPath>kasuNhentaiCS.dll</HintPath>
