@@ -1,84 +1,10 @@
-﻿using System.Security.AccessControl;
-using System.Text;
-using Newtonsoft.Json;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using System.Text.Json;
 using System.Net.Http;
-using System.Diagnostics;
 using System;
 
 namespace kasuNhentaiCS
 {
-    // objects
-    namespace DataObj
-    {
-        internal class BookData
-        {
-            public string body { get; set; }
-            public string time { get; set; }
-            public string thumbnail { get; set; }
-            public string img_source { get; set; }
-
-        }
-
-        [Serializable]
-        public class Data
-        {
-            public int id { get; set; }
-            public string url { get; set; }
-            public _Title title { get; set; }
-            public _Images images { get; set; }
-            public _Tag_table tag_table { get; set; }
-            public int number_pages { get; set; }
-            public string uploaded { get; set; }
-
-            public class _Title
-            {
-                public string origin {get; set;}
-                public string translated {get; set;}
-            }
-            public class _Images
-            {
-                public string cover {get; set;}
-                public string page_source {get; set;}
-            }
-            public class _Tag_table
-            {
-                public string parodies {get; set;}
-                public string characters {get; set;}
-                public string tag {get; set;}
-                public string artist {get; set;}
-                public string groups {get; set;}
-                public string langugaes {get; set;}
-                public string categories {get; set;}
-            }
-
-        }
-    }
-
-    internal class kasunhentaiapi
-    {
-
-        static void Log(dynamic args)
-        {
-            Console.WriteLine(args);
-        }
-
-        // Testing purposes
-        static void Main(string[] args)
-        {
-            // always add this on your Main or the japanese characters will go "????"
-            Console.OutputEncoding = Encoding.UTF8;
-            
-            // var watch = new Stopwatch();
-            // watch.Start();
-            // var req = Parse.book("https://nhentai.net/g/228922");
-            // var data = JsonConvert.DeserializeObject<DataObj.Data>(req);
-            // watch.Stop();
-            // Log(watch.Elapsed);
-            // Log(req);
-        }
-    }
-
     internal static class fetcher
     {
         public static string fetch(string url)
@@ -123,14 +49,14 @@ namespace kasuNhentaiCS
             kagebunshin(html);
             Regex json = new(@"JSON\.parse\(""(?<parse>.*)""\)", RegexOptions.Compiled);
             string body = Regex.Unescape(Regex.Unescape(json.Match(html).Groups["parse"].ToString()));
-            DataObj.BookData returnee = new()
+            BookData returnee = new()
             {
                 body = body,
                 time = time,
                 thumbnail = thumbnail,
                 img_source = img_source
             };
-            return JsonConvert.SerializeObject(returnee);
+            return JsonSerializer.Serialize(returnee);
         }
 
         public static string BOOKto(string url)
@@ -139,25 +65,34 @@ namespace kasuNhentaiCS
             kagebunshin(html);
             Regex json = new(@"N\.gallery\((?<parse>.*?)\);", RegexOptions.Singleline);
             var body = Regex.Unescape(json.Match(html.Replace(@"[\r|\n]+| ", "")).Groups["parse"].ToString());
-            DataObj.BookData returnee = new()
+            BookData returnee = new()
             {
                 body = body,
                 time = time,
                 thumbnail = thumbnail,
                 img_source = img_source
             };
-            return JsonConvert.SerializeObject(returnee);
+            return JsonSerializer.Serialize(returnee);
         }
     }
 
-    // <summary>
-    // A class for Book and Page.
-    // </summary>
-    public static class Parse
+    /// <summary>
+    /// A class for Book and Page. <br/>
+    /// For this time only "book" method is currently supported <br/>
+    /// while "page" method is still work in progress.
+    /// </summary>
+    public static class Parser
     {
-        // <summary>
-        // book.
-        // </summary>
+        /// <summary>
+        /// Nhentai.net | Nhentai.to<br/>
+        /// Request object data from the url 
+        /// </summary>
+        /// <param name="url">".net" or ".to" are fully supported.<br/>
+        /// but It doesnt support numbers yet only full links.<br/>
+        /// e.g: <br/>
+        /// https://nhentai.net/g/227834/ <br/>
+        /// https://nhentai.to/g/132446/
+        /// </param>
         public static string book(string url)
         {
             string parodies = "none";
@@ -167,59 +102,64 @@ namespace kasuNhentaiCS
             string Groups = "none";
             string Lang = "none";
             string Ctg = "none";
-            DataObj.BookData data;
+            BookData data;
             if (Regex.IsMatch(url, @".net"))
             {
-                data = JsonConvert.DeserializeObject<DataObj.BookData>(Matcher.BOOKnet(url));
+                data = JsonSerializer.Deserialize<BookData>(Matcher.BOOKnet(url));
             }
             else
             {
-                data = JsonConvert.DeserializeObject<DataObj.BookData>(Matcher.BOOKto(url));
+                data = JsonSerializer.Deserialize<BookData>(Matcher.BOOKto(url));
             }
-            dynamic newBody = JsonConvert.DeserializeObject<dynamic>(data.body);
 
-            for (int i = 0; i < newBody.tags.Count; i++)
+            var newBody = JsonDocument.Parse(Convert.ToString(data.body), new JsonDocumentOptions{
+                AllowTrailingCommas = true
+            }).RootElement;
+
+            for (int i = 0; i < newBody.GetProperty("tags").GetArrayLength(); i++)
             {
-                switch (newBody.tags[i].type.ToString())
+                string value = newBody.GetProperty("tags")[i].GetProperty("name").GetString();
+                switch (newBody.GetProperty("tags")[i].GetProperty("type").ToString())
                 {
                     case "tag":
                         if (tags == "none") tags = "";
-                        tags += $"{newBody.tags[i].name}, ";
+                        tags += $"{value}, ";
                         break;
                     case "character":
                         if (chr == "none") chr = "";
-                        chr += $"{newBody.tags[i].name}, ";
+                        chr += $"{value}, ";
                         break;
                     case "parody":
                         if (parodies == "none") parodies = "";
-                        parodies += $"{newBody.tags[i].name}, ";
+                        parodies += $"{value}, ";
                         break;
                     case "artist":
                         if (Artist == "none") Artist = "";
-                        Artist += $"{newBody.tags[i].name}, ";
+                        Artist += $"{value}, ";
                         break;
                     case "language":
                         if (Lang == "none") Lang = "";
-                        Lang += $"{newBody.tags[i].name}, ";
+                        Lang += $"{value}, ";
                         break;
                     case "category":
                         if (Ctg == "none") Ctg = "";
-                        Ctg += $"{newBody.tags[i].name}, ";
+                        Ctg += $"{value}, ";
                         break;
                     case "group":
                         if (Groups == "none") Groups = "";
-                        Groups += $"{newBody.tags[i].name}, ";
+                        Groups += $"{value}, ";
                         break;
                 }
             }
-            DataObj.Data returnee = new()
+            
+            BookObj returnee = new()
             {
-                id = newBody.id,
+                id = newBody.GetProperty("id").GetInt32(),
                 url = url,
                 title = new()
                 {
-                    origin = newBody.title.japanese,
-                    translated = newBody.title.english
+                    origin = newBody.GetProperty("title").GetProperty("japanese").GetString(),
+                    translated = newBody.GetProperty("title").GetProperty("english").GetString()
                 },
                 images = new()
                 {
@@ -236,11 +176,11 @@ namespace kasuNhentaiCS
                     langugaes = Lang,
                     categories = Ctg
                 },
-                number_pages = newBody.num_pages,
+                number_pages = newBody.GetProperty("num_pages").GetInt32(),
                 uploaded = data.time
             };
             
-            return JsonConvert.SerializeObject(returnee);
+            return JsonSerializer.Serialize(returnee);
         }
     }
 }

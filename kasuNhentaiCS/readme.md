@@ -2,36 +2,28 @@
 
 I'll try implementing a C# version of my API's parser.
 
-## requirements
-- [**`Newtonsoft.json`**](https://www.newtonsoft.com/json) - because freaking **System.Text.Json** wont do sh*t.
-
-- how to install newtonsoft:
-```powershell
-dotnet add package Newtonsoft.Json
-```
-
 ## Usage
 
-### Before using Add it to your `.csproj` file
+### Before using Reference the `.DLL` to your `.csproj` file
 Add this on the `<ItemGroup>`:<br/>
 ```csproj
 <Reference Include="kasuNhentaiCS">
     <HintPath>-your path to-\kasu.nhentaiapi.js\kasuNhentaiCS\output\kasuNhentaiCS.dll</HintPath>
 </Reference>
 ```
-Or put the `kasuNhentaiCS.dll` in your root project and do
+Or put the `kasuNhentaiCS.dll` and the `Newtonsoft.json.dll` in your root project and do
 ```csproj
 <Reference Include="kasuNhentaiCS">
     <HintPath>kasuNhentaiCS.dll</HintPath>
 </Reference>
 ```
 
+## Example
 ```cs
 using System;
 using System.Text;
 using System.Text.Json;
-using kasuNhentaiCS;
-using kasuNhentaiCS.DataObj;
+using kasuNhentaiCS;    // You don't wanna miss this
 
 namespace Sample
 {
@@ -40,13 +32,14 @@ namespace Sample
         static void Main(string[] args)
         {
             // Always do this unless you don't wanna see japanese characters will go "????"
+            // when doing a "Console.WriteLine"
             Console.OutputEncoding = Encoding.UTF8;
             
             // Make a Request
-            string Json = Parse.book("https://nhentai.net/g/228922");
+            string Json = Parser.book("https://nhentai.net/g/228922");
 
             // Deserialize to get the Properites
-            var Data = JsonSerializer.Deserialize<Data>(Json);
+            BookObj Data = JsonSerializer.Deserialize<BookObj>(Json);
 
             // Tada!
             Console.WriteLine(Data.id);
@@ -64,8 +57,8 @@ namespace Sample
     "id": 228922,
     "url": "https://nhentai.net/g/228922/",
     "title": { 
-        "origin": "エログロス Vol.2",
-        "translated": "EROGROS Vol. 2",
+        "origin": "[アンソロジー] エログロス Vol.2 [DL版]",
+        "translated": "[Anthology] EROGROS Vol. 2 [Digital]",
     },
     "images": { 
         "cover": "https://t.nhentai.net/galleries/1205270/cover.jpg",
