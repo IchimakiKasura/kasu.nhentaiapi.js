@@ -1,8 +1,14 @@
+using System.Runtime.CompilerServices;
+using System.Text.Json;
 using System;
+
+#nullable enable annotations
+
 namespace kasuNhentaiCS
 {
-    internal class BookData
+    internal sealed class BookData
     {
+        public string id { get; set; }
         public string body { get; set; }
         public string time { get; set; }
         public string thumbnail { get; set; }
@@ -102,28 +108,59 @@ namespace kasuNhentaiCS
         }
 
     }
-
+    /// <summary>
+    /// Page Object properties.
+    /// </summary>
     [Serializable]
-    public class PageObj
+    public sealed class PageObj
     {
-        public class _firstObject
-        {
-            public string CurrentUrl { get; set; }
-            public string typePage { get; set; }
-            public string CurrentPage { get; set; }
-            public int Total { get; set; }
-            public int TotalPage { get; set; }
-        }
-
+        /// <summary>
+        /// Gives the Url.
+        /// </summary>
+        public string CurrentUrl { get; set; }
+        /// <summary>
+        /// idk.
+        /// </summary>
+        public string typePage { get; set; }
+        /// <summary>
+        /// Gives an index number of what page you are currently in.
+        /// </summary>
+        public int CurrentPage { get; set; }
+        /// <summary>
+        /// Total arrays.
+        /// </summary>
+        public int Total { get; set; }
+        /// <summary>
+        /// Total Pages ofc.
+        /// </summary>
+        public int TotalPage { get; set; }
+        /// <summary>
+        /// results in array. wha-
+        /// </summary>
+        public _secondObject[] results { get; set; }
+        
         public class _secondObject
         {
+            /// <summary>
+            /// ID or Code or whatever you call.
+            /// </summary>
             public int id { get; set; }
+            /// <summary>
+            /// taitoru.
+            /// </summary>    
             public string title { get; set; }
+            /// <summary>
+            /// Cover picture.
+            /// </summary>    
             public string thumbnail { get; set; }
+            /// <summary>
+            /// It's just the combination of the currenturl with id innit.
+            /// </summary>    
             public string url { get; set; }
+            /// <summary>
+            /// NANI TTE-
+            /// </summary>    
             public string languages { get; set; }
-
         }
     }
-
 }

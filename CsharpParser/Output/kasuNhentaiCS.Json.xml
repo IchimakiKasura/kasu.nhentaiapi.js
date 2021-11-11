@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>kasuNhentaiCS.Json</name>
+    </assembly>
+    <members>
+        <member name="M:kasuNhentaiCS.JsonDocOptions.#ctor">
+            <summary>
+            Provides options to be used with <see cref="T:System.Text.Json.JsonSerializer"/> or <see cref="T:System.Text.Json.JsonDocument"/>
+            </summary>
+        </member>
+        <member name="T:kasuNhentaiCS.Json.JsonDeserializer">
+            <summary>
+            Json parser. <br/>
+            by: https://github.com/IchimakiKasura
+            </summary>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.#ctor(System.String,kasuNhentaiCS.JsonDocOptions)">
+            <summary>
+            It parses the json file to access its properties by using a <see cref="M:kasuNhentaiCS.Json.JsonDeserializer.selector(System.String)"/>.
+            </summary>
+            <param name="SerializedJson">Serialized Object here or an Object in a string format.</param>
+            <param name="options">Provides the ability for the user to define cusom behavior when parsing JSON to create a <see cref="T:System.Text.Json.JsonDocument"/></param>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.selector(System.String)">
+            <summary>
+            Selector, It's kinda like the html selector "div>a>span"
+            </summary>
+            <example> parseData.selector("array:2>object>string") </example>
+            <param name="selector">location of where you want to get idk. <br/>
+            example: "sample>yo>epic"</param>
+            <returns><see cref="T:System.Text.Json.JsonElement"/> or <see cref="T:System.String"/> or <see cref="T:System.Int32"/></returns>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.rawText">
+            <summary>
+            Gets a string that represents the original input data backing this value.
+            </summary>
+            <returns><see cref="M:System.Text.Json.JsonElement.GetRawText"/></returns>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.serializeObj(System.Object,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Converts the value of a specified type into a JSON string.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <param name="options">Provides options to be used with <see cref="T:System.Text.Json.JsonSerializer"/>.</param>
+            <returns>A JSON string representation of the value.</returns>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.serializeObjAsync(System.IO.Stream,System.Object,System.Type,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously converts a value of a type specified by a generic type parameter to UTF-8 encoded JSON text and writes it to a stream.
+            </summary>
+            <param name="stream">The UTF-8 stream to write to.</param>
+            <param name="value">The value to convert.</param>
+            <param name="options">Provides options to be used with <see cref="T:System.Text.Json.JsonSerializer"/>.</param>
+            <param name="InputType">The type of the value to convert.</param>
+            <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
+            <returns>A task that represents the asynchronous write operation.</returns>
+        </member>
+        <member name="M:kasuNhentaiCS.Json.JsonDeserializer.deserialize``1(System.String,kasuNhentaiCS.JsonDocOptions)">
+            <summary>
+            Parses the UTF-8 encoded text representing a single JSON value into an instance of the type specified by a generic type parameter. <br/>
+            Kinda like the same <see cref="T:System.Text.Json.JsonSerializer"/>'s Deserialize method but with limited Options
+            </summary>
+            <param name="utf8Json">The JSON text to parse.</param>
+            <param name="options">Provides limited <see cref="T:System.Text.Json.JsonSerializerOptions"/> options.
+            Options to control the behavior during parsing. OPTIONS EVERYWHERE</param>
+            <typeparam name="T">?</typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

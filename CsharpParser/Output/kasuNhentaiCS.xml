@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>kasuNhentaiCS</name>
+    </assembly>
+    <members>
+        <member name="T:kasuNhentaiCS.BookObj">
+            <summary>
+            Book Object properties.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.id">
+            <summary>
+            • ID or Code or whatever you call.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.url">
+            <summary>
+            • Url of the selected code.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.title">
+            <summary>
+            • titles?
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.images">
+            <summary>
+            • images?
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.tag_table">
+            <summary>
+            • tags?
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.number_pages">
+            <summary>
+            • haha 69 pages seems cool.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj.uploaded">
+            <summary>
+            • Hokusai made The Dream of the Fisherman's Wife in 1814, the earliest known Tentacle hentai.
+            In 1722 the government made a law banning hentai manga, which means it was common even earlier.
+            Suzumi-fune is probobly the oldest hentai anime, it's from 1932.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Title.origin">
+            <summary>
+            original
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Title.translated">
+            <summary>
+            トランスレイト??? wait it's supposed to be in english cuz' it's translated.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Images.cover">
+            <summary>
+            • Doujin cover image.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Images.page_source">
+            <summary>
+            • Doujin image source.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.parodies">
+            <summary>
+            • I Like konosuba
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.characters">
+            <summary>
+            • I love megumin
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.tag">
+            <summary>
+            • what?
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.artist">
+            <summary>
+            • I don't really know about this
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.groups">
+            <summary>
+            • Can't think 1 group tag.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.langugaes">
+            <summary>
+            • english ofc.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.BookObj._Tag_table.categories">
+            <summary>
+            • ca
+            </summary>
+        </member>
+        <member name="T:kasuNhentaiCS.PageObj">
+            <summary>
+            Page Object properties.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.CurrentUrl">
+            <summary>
+            Gives the Url.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.typePage">
+            <summary>
+            idk.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.CurrentPage">
+            <summary>
+            Gives an index number of what page you are currently in.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.Total">
+            <summary>
+            Total arrays.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.TotalPage">
+            <summary>
+            Total Pages ofc.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj.results">
+            <summary>
+            results in array. wha-
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj._secondObject.id">
+            <summary>
+            ID or Code or whatever you call.
+            </summary>
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj._secondObject.title">
+            <summary>
+            taitoru.
+            </summary>    
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj._secondObject.thumbnail">
+            <summary>
+            Cover picture.
+            </summary>    
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj._secondObject.url">
+            <summary>
+            It's just the combination of the currenturl with id innit.
+            </summary>    
+        </member>
+        <member name="P:kasuNhentaiCS.PageObj._secondObject.languages">
+            <summary>
+            NANI TTE-
+            </summary>    
+        </member>
+        <member name="T:kasuNhentaiCS.Parser">
+            <summary>
+            A class for Book and Page. <br/>
+            For this time only "book" method is currently supported <br/>
+            while "page" method is still work in progress.
+            </summary>
+        </member>
+        <member name="M:kasuNhentaiCS.Parser.book(System.String)">
+            <summary>
+            Nhentai.net | Nhentai.to<br/>
+            Request object data from the url 
+            </summary>
+            <param name="url">".net" or ".to" are fully supported.<br/>
+            but It doesnt support numbers yet only full links.<br/>
+            e.g: <br/>
+            https://nhentai.net/g/227834/ <br/>
+            https://nhentai.to/g/132446/
+            </param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:kasuNhentaiCS.Parser.page(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Nhentai.net | Nhentai.to<br/>
+            Request object data from the url 
+            </summary>
+            <param name="page">Page yes page.</param>
+            <param name="url">".net" or ".to" are fully supported.<br/>
+            but It doesnt support numbers yet only full links.<br/>
+            e.g: <br/>
+            https://nhentai.net/ <br/>
+            https://nhentai.to/search/konosuba+aqua/ <br/>
+            https://nhentai.net/tag/crossdressing
+            </param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+    </members>
+</doc>
