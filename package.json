@@ -25,7 +25,8 @@
     "overallTest": "node ./test/overAlltest.js",
     "build": "call \"./bin/test.bat\" 4&npm run bruhmocha build",
     "cov": "node ./test/coverageTest.js",
-    "cli": "nhentai help"
+    "cli": "nhentai help",
+    "debug": "node test"
   },
   "author": {
     "name": "Ichimaki Kasura",

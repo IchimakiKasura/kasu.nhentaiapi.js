@@ -108,7 +108,7 @@ nhentai [tag | code/ID] [options]
     TITLE ENGLISH:      ${resultBook.title.translatedFull}
 
     THUMBNAIL/COVER:    ${resultBook.images.cover}
-    IMAGE SOURCE:       ${resultBook.images.page_source}
+    IMAGE SOURCE:       ${resultBook.images.pages_source}
 
     PARODIES:           ${resultBook.tag_table.parodies}
     CHARACTERS:         ${resultBook.tag_table.characters}
