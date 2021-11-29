@@ -4,5 +4,7 @@ os:
   - linux
 node_js:
   - "14"
+  - "15"
+  - "16"
 script:
   - npm run bruhmocha

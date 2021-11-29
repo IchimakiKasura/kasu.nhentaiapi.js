@@ -13,7 +13,7 @@ module.exports = class Main {
         this.blockedWords = "";
         this.ReRollonFail = false;
         this.IgnoreNone = false;
-        /* istanbul ignore next */
+        
         this.connection = {
 
             start: (debug)=> {
@@ -39,7 +39,7 @@ module.exports = class Main {
                 return status;
             }
         }
-        /* istanbul ignore next */
+        
         if(string && string.toLowerCase() == 'start') {
             if(debug == true){
                 log('Connection is started!');
@@ -52,10 +52,10 @@ module.exports = class Main {
     // I need more code imrpovement
 
     //#region PrivateVars
-        /* istanbul ignore next */
+        
         #randrange(int) { return (Math.random() * int) << 0; }
         #replacer(str, rpl){ return str.replace(/ /g, rpl) }
-        /* istanbul ignore next */
+        
         async #pRCL(tag, string, isSearch){
             if(!string) string= ''
             if(/\.net/.test(this.url)) {
@@ -69,9 +69,9 @@ module.exports = class Main {
             }
             return await Parser.page(1, string, this.#client)
         }
-        /* istanbul ignore next */
+        
         async #pRandDataGiver(url, data, string, include){
-            /* istanbul ignore next */
+            
             const urlData = url // idk what the fuck it always says TotalPage undefined
             const RNG = this.#randrange(urlData[0].TotalPage),
             currentURL = urlData[0].CurrentUrl;
@@ -90,11 +90,11 @@ module.exports = class Main {
                 if(data) return data(dlink);
                 return dlink;
             } catch (e) {
-                /* istanbul ignore next */
+                
                 if(this.ReRollonFail && !/DISCORD ToS: REROLL DENIED/.test(e)){
                     return this.#pRandDataGiver(urlData,data,string);
                 }
-                /* istanbul ignore next */
+                
                 throw e
             }
 
@@ -168,10 +168,10 @@ module.exports = class Main {
                     "Include More": include
                 });
                 if(data) return data(dataID);
-                /* istanbul ignore next */
+                
                 return dataID;
             } catch(e){
-                /* istanbul ignore next */
+                
                 return this.pRandom(data);
             }
         }
@@ -192,7 +192,7 @@ module.exports = class Main {
         async pLanguagePage(string, page){
             /* istanbul ignore if */
             if(/translated|english|japanese|chinese|eng|japan|china|jp/.test(string)){
-                /* istanbul ignore next */
+                
                 switch(string){
                     case 'eng': string = 'english'; break;
                     case 'en': string = 'english'; break; // like bruh
@@ -203,28 +203,34 @@ module.exports = class Main {
                 
                 string = `${this.url}/language/${string}/`;
                 let data = await Parser.page(page, string, this.#client);
-                /* istanbul ignore */
+                
                 return data;
             }
-            /* istanbul ignore next */
+            
             this.#client.close()
-            /* istanbul ignore next */
+            
             throw `ERROR: Invalid language (except: translated) lol`
         }
     
         async pSearch(string, page){
             try { string = this.#replacer(string, "+") } catch (e) { /*none*/ }
+
             if(/\.net/.test(this.url)) string = `${this.url}/search/?q=${string}/`
              else string = `${this.url}/search?q=${string}`
+
             let data = await Parser.page(page, string, this.#client);
+
             return data;
         }
     
         async pTagPage(string, page){
             try { string = this.#replacer(string, "+") } catch (e) { /*none*/ }
+
             if(/\.net/.test(this.url)) string = `${this.url}/tag/${string}`
              else string = `${this.url}/tag/${string}`
+            
             let data = await Parser.page(page, string, this.#client);
+
             return data;
         }
     //#endregion

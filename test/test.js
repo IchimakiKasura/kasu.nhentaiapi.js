@@ -5,7 +5,10 @@ const { connect } = require("http2");
 const { exec } = require('child_process');
 const { log } = require("console");
 const { performance } = require("perf_hooks");
+
+// eslint-disable-next-line no-undef
 const cli = process.argv.slice(2)[0]
+
 if (cli == "build") {
     log("[BUILD CONFIRMED]\n\n")
     Parser = require("../lib/src/parser.min");
@@ -55,8 +58,8 @@ async function bruhMocha(callback, line) {
     }
 }
 let execPromise = (command, name) => {
-    return new Promise(function (resolve, reject) {
-        exec(command, (e, s, st) => {
+    return new Promise(function (resolve) {
+        exec(command, (e, s) => {
             if (s) resolve(`   ❌  \x1b[31merror\x1b[0m: ${name}`);
             resolve(`   ✔️  \x1b[32mpassed\x1b[0m: ${name}`);
         });

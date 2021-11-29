@@ -89,7 +89,7 @@ nhentai [tag | code/ID] [options]
             }
         }
         if(type == "book") input = `${url}/g/${argument[0]}`;
-            else input = `${url}/${argument[0]}`
+        else input = `${url}/${argument[0]}`
         const client = connect(url);
         if (type == "book") {
             try{

@@ -7,3 +7,4 @@ node_modules
 /docs/md
 /dist/kasuApi.min.js
 /package-lock.json
+/lib/http
