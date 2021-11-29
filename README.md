@@ -58,12 +58,16 @@ async function json(){
 }
 ```
 ---
-## For CLI `new`
+## For CLI
 How to run:
     
     nhentai 228922 
 
 check the changelogs for more info
+
+---
+## C# port `new`
+C# of this project's parser is now available in beta. click [here](https://github.com/IchimakiKasura/kasu.nhentaiapi.cs) to go there.
 
 ---
 
