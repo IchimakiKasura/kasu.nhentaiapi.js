@@ -9,8 +9,8 @@ const log = (...string)=>{
     return console.log(...string);
 }
 let execPromise=(command, name)=>{
-    return new Promise(function(resolve, reject) {
-        exec(command, (e,s,st) => {
+    return new Promise(function(resolve) {
+        exec(command, () => {
             resolve(name+" done");
         });
     });

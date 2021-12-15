@@ -3,7 +3,7 @@
 const process = require("process");
 const { log } = require("console");
 const { connect } = require("http2")
-const Parser = require("../lib/parser")
+const Parser = require("../lib/parser.min")
 const help = `
 nhentai [tag | code/ID] [options]
 
@@ -81,10 +81,10 @@ nhentai [tag | code/ID] [options]
         if (!type) {
             let ar = +argument.join().replace(/\D+/g,'');
             if (/[0-9]/.test(ar) & ar != 0){
-                log('  ⚠️  "--type" not declared setting default: "book"')
+                log('  ⚠️  "--[type]" not declared setting default: "--book"')
                 type = "book"
             } else {
-                log('  ⚠️  "--type" not declared setting default: "page"')
+                log('  ⚠️  "--[type]" not declared setting default: "--page"')
                 type = "page"
             }
         }
@@ -124,7 +124,8 @@ nhentai [tag | code/ID] [options]
                     `)
                 }
             } catch (e) {
-                log('  ❗  Invalid ID')
+                log('  ❗  Invalid ID or URL')
+                if(/to/.test(url)) log('  ⚠️   If you are using ".to" please don\'t add a "/" in the end.')
                 process.exit(1)
             }
         } else {

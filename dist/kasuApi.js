@@ -8,7 +8,6 @@ module.exports = class Main {
     #client
     constructor(string, url ,debug) {
         this.url = url || `https://nhentai.net`;
-        this.#client;
         this.IsDiscord = false;
         this.blockedWords = "";
         this.ReRollonFail = false;
@@ -49,7 +48,7 @@ module.exports = class Main {
         }
     }
 
-    // I need more code imrpovement
+    // I need more code improvement
 
     //#region PrivateVars
         
@@ -213,7 +212,7 @@ module.exports = class Main {
         }
     
         async pSearch(string, page){
-            try { string = this.#replacer(string, "+") } catch (e) { /*none*/ }
+            try { string = this.#replacer(string, "+") } finally { /*none*/ }
 
             if(/\.net/.test(this.url)) string = `${this.url}/search/?q=${string}/`
              else string = `${this.url}/search?q=${string}`
@@ -224,7 +223,7 @@ module.exports = class Main {
         }
     
         async pTagPage(string, page){
-            try { string = this.#replacer(string, "+") } catch (e) { /*none*/ }
+            try { string = this.#replacer(string, "+") } finally { /*none*/ }
 
             if(/\.net/.test(this.url)) string = `${this.url}/tag/${string}`
              else string = `${this.url}/tag/${string}`

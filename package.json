@@ -20,10 +20,10 @@
     "cli"
   ],
   "scripts": {
-    "test": "call \"./bin/test.bat\" 5",
+    "test": "bin\\test.bat 5",
     "bruhmocha": "node ./test/test.js",
     "overallTest": "node ./test/overAlltest.js",
-    "build": "call \"./bin/test.bat\" 4&npm run bruhmocha build",
+    "build": "cmd /k bin\\test.bat 4 & npm run bruhmocha build",
     "cov": "node ./test/coverageTest.js",
     "cli": "nhentai help",
     "debug": "node test"
@@ -36,7 +36,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^8.1.0"
+    "eslint": "^8.4.0"
   },
   "files": [
     "bin/nhentai.js",

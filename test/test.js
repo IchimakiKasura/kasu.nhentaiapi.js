@@ -11,8 +11,8 @@ const cli = process.argv.slice(2)[0]
 
 if (cli == "build") {
     log("[BUILD CONFIRMED]\n\n")
-    Parser = require("../lib/src/parser.min");
-    Main = require("../lib/kasuApi.min");
+    Parser = require("../lib/parser.min");
+    Main = require("../dist/kasuApi.min");
 } else log("[BUILD UNCONFIRMED]\n\n")
 
 // haha
@@ -82,8 +82,8 @@ let execPromise = (command, name) => {
     log(`\nNhentai.net:`)
     log(`parser (.net):`)
     let client = connect("https://nhentai.net")
-        ; (await bruhMocha(Parser.book('https://nhentai.net/g/278407', client), '146:5')).book('book')
-        ; (await bruhMocha(Parser.page(5, 'https://nhentai.net/character/astolfo', client), '269:5')).page('page')
+        ; (await bruhMocha(Parser.book('https://nhentai.net/g/278407', client), '206:18')).book('book')
+        ; (await bruhMocha(Parser.page(5, 'https://nhentai.net/character/astolfo', client), '397:18')).page('page')
     client.close()
     log(`\nConstructor (.net): \n`)
     let api;
@@ -104,31 +104,31 @@ let execPromise = (command, name) => {
         api.connection.start()
         end = performance.now() - start;
         end = end.toFixed(2)
-        log('\n   ✔️  \x1b[32mpassed\x1b[0m: \x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 18:13]\x1b[0m')
+        log('\n   ✔️  \x1b[32mpassed\x1b[0m: \x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 19:13]\x1b[0m')
         log(`       \x1b[2mParameters:\n        connection: ${api.connection.status()}\n        url: ${api.url}\n        time took: ${end}\x1b[0m`);
         
     } catch {
         end = performance.now() - start;
         end = end.toFixed(2)
-        log('\n   ❌  \x1b[31merror\x1b[0m: x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 18:13]\x1b[0m')
+        log('\n   ❌  \x1b[31merror\x1b[0m: x1b[33mConnection start\x1b[0m \x1b[2m[Function line: 19:13]\x1b[0m')
         log(`       \x1b[2mtime took: ${end}\x1b[0m`);
     }
     log(`\nClass methods etc (selected) (.net):`)
-        ; (await bruhMocha(api.getID(228722).json(), '117:9')).book('getID')
-        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '96:9')).book('pRandSpecificTags')
-        ; (await bruhMocha(api.pRandom(), '148:9')).book('pRandom')
-        ; (await bruhMocha(api.pHomepage(2), '173:9')).page('pHomepage')
-        ; (await bruhMocha(api.pLanguagePage("jp", 5), '178:9')).page('pLanguagePage')
-        ; (await bruhMocha(api.pSearch("astolfo", 3), '196:9')).page('pSearch')
-        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '204:9')).page('pTagPage')
+        ; (await bruhMocha(api.getID(228722).json(), '128:9')).book('getID')
+        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '105:15')).book('pRandSpecificTags')
+        ; (await bruhMocha(api.pRandom(), '160:15')).book('pRandom')
+        ; (await bruhMocha(api.pHomepage(2), '187:15')).page('pHomepage')
+        ; (await bruhMocha(api.pLanguagePage("jp", 5), '192:15')).page('pLanguagePage')
+        ; (await bruhMocha(api.pSearch("astolfo", 3), '215:15')).page('pSearch')
+        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '226:15')).page('pTagPage')
     api.connection.close()
 
     // nhentai.to
     log(`\nNhentai.to:`)
     log(`parser (.to):`)
     client = connect("https://nhentai.to")
-        ; (await bruhMocha(Parser.book('https://nhentai.to/g/278407', client), '146:5')).book('book')
-        ; (await bruhMocha(Parser.page(5, 'https://nhentai.to/character/astolfo', client), '269:5')).page('page')
+        ; (await bruhMocha(Parser.book('https://nhentai.to/g/278407', client), '206:18')).book('book')
+        ; (await bruhMocha(Parser.page(5, 'https://nhentai.to/character/astolfo', client), '397:18')).page('page')
     client.close()
     log(`\nConstructor (.to): \n`)
     start = performance.now()
@@ -146,12 +146,12 @@ let execPromise = (command, name) => {
         log(`       \x1b[2mtime took: ${end}\x1b[0m`);
     }
     log(`\nClass methods etc (selected) (.to):`)
-        ; (await bruhMocha(api.getID(228722).json(), '117:9')).book('getID')
-        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '96:9')).book('pRandSpecificTags')
-        ; (await bruhMocha(api.pRandom(), '148:9')).book('pRandom')
-        ; (await bruhMocha(api.pHomepage(2), '173:9')).page('pHomepage')
-        ; (await bruhMocha(api.pLanguagePage("jp", 5), '178:9')).page('pLanguagePage')
-        ; (await bruhMocha(api.pSearch("astolfo", 3), '196:9')).page('pSearch')
-        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '204:9')).page('pTagPage')
+        ; (await bruhMocha(api.getID(228722).json(), '128:9')).book('getID')
+        ; (await bruhMocha(api.pRandSpecificTags("astolfo"), '105:15')).book('pRandSpecificTags')
+        ; (await bruhMocha(api.pRandom(), '160:15')).book('pRandom')
+        ; (await bruhMocha(api.pHomepage(2), '187:15')).page('pHomepage')
+        ; (await bruhMocha(api.pLanguagePage("jp", 5), '192:15')).page('pLanguagePage')
+        ; (await bruhMocha(api.pSearch("astolfo", 3), '215:15')).page('pSearch')
+        ; (await bruhMocha(api.pTagPage("crossdressing", 1), '226:15')).page('pTagPage')
     api.connection.close()
 })();

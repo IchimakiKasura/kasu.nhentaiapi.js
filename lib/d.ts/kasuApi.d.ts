@@ -17,7 +17,7 @@ declare module "kasu.nhentaiapi.js" {
         start(debug?: boolean): void
         /**close the connection?*/
         close(debug?: boolean): void
-    } | "start"
+    }
     /**book*/
     type _url = "https://nhentai.net" | "https://nhentai.to"
     /**language*/
@@ -29,7 +29,7 @@ declare module "kasu.nhentaiapi.js" {
          @param {_url} url https://nhentai.net or https://nhentai.to
          @param {boolean} debug If set to true It will show a log that shows that it is working and connected.
         */
-        constructor(connection?: connection, url?: _url, debug?: boolean)
+        constructor(connection?: "start", url?: _url, debug?: boolean)
         /**The Inputted URL will be used to connect. As of the 3.5.0 update the domain .to is now supported.
          
         https://nhentai.net or https://nhentai.to the https:// must be included.*/
