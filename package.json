@@ -20,7 +20,7 @@
     "cli"
   ],
   "scripts": {
-    "postinstall": "md ..\\kasuNhentaiJS & echo module.exports = require(\"kasu.nhentaiapi.js\"); > ..\\kasuNhentaiJS/index.js",
+    "postinstall": "cmd /k md ..\\kasuNhentaiJS & echo module.exports = require(\"kasu.nhentaiapi.js\"); > ..\\kasuNhentaiJS/index.js",
     "test": "bin\\test.bat 5",
     "bruhmocha": "node ./test/test.js",
     "overallTest": "node ./test/overAlltest.js",
@@ -47,8 +47,7 @@
     "lib/d.ts/kasuApi.d.ts",
     "lib/d.ts/json.d.ts",
     "lib/d.ts/tags.d.ts",
-    "test/test.js",
-    "postinstall.cmd"
+    "test/test.js"
   ],
   "exports": "./dist/kasuApi.min.js",
   "repository": {
