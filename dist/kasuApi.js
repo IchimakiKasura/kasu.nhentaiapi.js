@@ -3,6 +3,9 @@ const Parser = require('../lib/parser');
 const { log, error } = require('console');
 const { connect } = require('http2');
 
+// idk
+(()=>{ if(typeof window !== 'undefined') console.log("kasu.nhentaiapi.js v3.9.3 loaded"); })();
+
 module.exports = class Main {
 
     #client
@@ -193,11 +196,11 @@ module.exports = class Main {
             if(/translated|english|japanese|chinese|eng|japan|china|jp/.test(string)){
                 
                 switch(string){
-                    case 'eng': string = 'english'; break;
-                    case 'en': string = 'english'; break; // like bruh
-                    case 'japan': string = 'japanese'; break;
-                    case 'jp': string = 'japanese'; break;
-                    case 'china': string = 'chinese'; break;
+                    case 'eng':     string = 'english';     break;
+                    case 'en':      string = 'english';     break; // like bruh
+                    case 'japan':   string = 'japanese';    break;
+                    case 'jp':      string = 'japanese';    break;
+                    case 'china':   string = 'chinese';     break;
                 }
                 
                 string = `${this.url}/language/${string}/`;
