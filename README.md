@@ -3,15 +3,24 @@
 <h1>N-hentai API</h1>
 <p>
 
-[![stable version](https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=green&label=stable%20version&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#370)
+[![unstable](https://img.shields.io/npm/v/kasu.nhentaiapi.js?color=red&label=unstable&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/changelogs#370)
 [![Downloads](https://img.shields.io/npm/dt/kasu.nhentaiapi.js.svg?maxAge=3600&style=for-the-badge)](https://ichimakikasura.github.io/kasu.nhentaiapi.js/)
-[![Build Status](https://img.shields.io/travis/IchimakiKasura/kasu.nhentaiapi.js.svg?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
+[![Build Status](https://img.shields.io/badge/BUILD-failing-red?style=for-the-badge)](https://app.travis-ci.com/IchimakiKasura/kasu.nhentaiapi.js)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/kasu.nhentaiapi.js?style=for-the-badge)
 ![minified](https://img.shields.io/badge/-minified%20-gray?style=for-the-badge "^3.0.0 versions are now already MINIFIED!")<br/>
-![lol](https://img.shields.io/badge/-Astolfo--chan%20is%20very%20happy%20that%20you%20are%20well%20cultured%20to%20use%20this-ff1100?style=for-the-badge "unofficial api of nhentai")<br>
+![lol](https://img.shields.io/badge/-Astolfo--chan%20is%20now%20sad%20and%20will%20no%20longer%20work%20with%20this%20project-ff1100?style=for-the-badge "unofficial api of nhentai")<br>
 [![kasu.nhentaiapi.js](https://snyk.io/advisor/npm-package/kasu.nhentaiapi.js/badge.svg)](https://snyk.io/advisor/npm-package/kasu.nhentaiapi.js "bruh")
 </div>
 
+# _[PROJECT IS NOW DISCONTINUED]_
+
+Since I notice how my scraping code took too long to load <br>
+the Nhentai website now checks for the browser to check if its a bot or not <br>
+and I am not gonna work with this anymore.
+
+Thank you all who used this package!
+
+---
 The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") and [nhentai.to]("https://nhentai.to/") data.
 * Fast*
 * Easy to use

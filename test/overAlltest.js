@@ -6,8 +6,8 @@ let api = new API('start','https://nhentai.net',true);
 const date = (ms) => {return new Date(ms).toISOString().substr(14, 5)}
 const log = (...string)=>{return console.log(...string);}
 function execPromise(command, name) {
-    return new Promise(function(resolve, reject) {
-        exec(command, (error, stdout, stderr) => {
+    return new Promise(function(resolve,) {
+        exec(command, () => {
             resolve(name+" done");
         });
     });
