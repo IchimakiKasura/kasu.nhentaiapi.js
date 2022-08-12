@@ -20,6 +20,10 @@ and I am not gonna work with this anymore.
 
 Thank you all who used this package!
 
+![](https://user-images.githubusercontent.com/80595346/184431602-94dd3d92-68a7-47e1-8afc-e97b75ba3ee2.png)
+kinda funny how the dev says it.
+Well I can actually bypass it but will take more processe/time to fetch which kinda could be shit when used on some discord bots.
+
 ---
 The "N-hentai-api" is a fast and easy to use api for connecting to [nhentai.net]("https://nhentai.net/") and [nhentai.to]("https://nhentai.to/") data.
 * Fast*
